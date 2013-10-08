@@ -1,0 +1,1115 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kubuntu-es.org, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-26 21:09+0100\n"
+"PO-Revision-Date: 2011-05-22 14:31-0300\n"
+"Last-Translator: kubuntu-es.org\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
+"Language: SPANISH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: kcm/kcm.cpp:131
+msgctxt "kernel module name"
+msgid "Amanda"
+msgstr "Amanda"
+
+#: kcm/kcm.cpp:132
+msgctxt "kernel module name"
+msgid "H.323"
+msgstr "H.323"
+
+#: kcm/kcm.cpp:133
+msgctxt "kernel module name"
+msgid "NetLink"
+msgstr "NetLink"
+
+#: kcm/kcm.cpp:134
+msgctxt "kernel module name"
+msgid "Proto DCCP"
+msgstr "Proto DCCP"
+
+#: kcm/kcm.cpp:135
+msgctxt "kernel module name"
+msgid "Proto GRE"
+msgstr "Proto GRE"
+
+#: kcm/kcm.cpp:136
+msgctxt "kernel module name"
+msgid "Proto SCTP"
+msgstr "Proto SCTP"
+
+#: kcm/kcm.cpp:137
+msgctxt "kernel module name"
+msgid "Proto UDP Lite"
+msgstr "Proto UDP Lite"
+
+#: kcm/kcm.cpp:138
+msgctxt "kernel module name"
+msgid "SLP"
+msgstr "SLP"
+
+#: kcm/kcm.cpp:139
+msgctxt "kernel module name"
+msgid "SNMP Basic"
+msgstr "SNMP Basic"
+
+#: kcm/kcm.cpp:140
+msgctxt "kernel module name"
+msgid "TFTP"
+msgstr "TFTP"
+
+#: kcm/kcm.cpp:157
+msgid "<p>Enables the <b>%1</b> kernel module</p>"
+msgstr "<p>Habilita el módulo <b>%1</b> del kernel</p>"
+
+#: kcm/kcm.cpp:158
+msgid "<p>Enables the <b>%1</b> kernel module (for %2)</p>"
+msgstr "<p>Habilita el módulo <b>%1</b> del kernel (para %2)</p>"
+
+#: kcm/kcm.cpp:198
+msgid "UFW Settings"
+msgstr "Configuraciones de UFW"
+
+#: kcm/kcm.cpp:198
+msgid "GUI front-end for Uncomplicated FireWall"
+msgstr "Interfaz gráfica de usuario para Uncomplicated FireWall"
+
+#: kcm/kcm.cpp:199
+msgid "(C) Craig Drummond, 2011"
+msgstr "(C) Craig Drummond, 2011"
+
+#: kcm/kcm.cpp:201
+msgid "Craig Drummond"
+msgstr "Craig Drummond"
+
+#: kcm/kcm.cpp:201
+msgid "Developer and maintainer"
+msgstr "Desarrollador y Mantenedor"
+
+#: kcm/kcm.cpp:234
+msgid "Adding rules..."
+msgstr "Agregando reglas ..."
+
+#: kcm/kcm.cpp:234
+msgid "Adding rule..."
+msgstr "Agregando regla ..."
+
+#: kcm/kcm.cpp:262 kcm/kcm.cpp:275
+msgid "Updating rule..."
+msgstr "Actualizando regla ..."
+
+#: kcm/kcm.cpp:283
+msgid "Reset firewall to the default settings?"
+msgstr "¿Restablecer las configuraciones predeterminadas del cortafuegos?"
+
+#: kcm/kcm.cpp:283
+msgid "Reset"
+msgstr "Restablecer"
+
+#: kcm/kcm.cpp:288
+msgid "Resetting to system default settings..."
+msgstr "Restableciendo las configuraciones predeterminadas del sistema ..."
+
+#: kcm/kcm.cpp:300
+msgid "Querying firewall status..."
+msgstr "Consultando estado del cortafuegos ..."
+
+#: kcm/kcm.cpp:311
+msgid "Enabling the firewall..."
+msgstr "Habilitando el cortafuegos ..."
+
+#: kcm/kcm.cpp:311
+msgid "Disabling the firewall..."
+msgstr "Deshabilitando el cortafuegos ..."
+
+#: kcm/kcm.cpp:327
+msgid ""
+"Disabling IPv6 support will remove any IPv6 rules.\n"
+"Proceed?"
+msgstr ""
+"Deshabilitando el soporte para IPv6 eliminará toda regla IPv6.\n"
+"¿Desea continuar?"
+
+#: kcm/kcm.cpp:328
+msgid "Disable IPv6 Support"
+msgstr "Deshabilitar el soporte para IPv6"
+
+#: kcm/kcm.cpp:342
+msgid "Setting firewall IPv6 support..."
+msgstr "Configurando soporte para IPv6 en el cortafuegos ..."
+
+#: kcm/kcm.cpp:384
+msgid "Removing rule from firewall..."
+msgstr "Eliminando regla del cortafuegos ..."
+
+#: kcm/kcm.cpp:417
+msgid "Setting firewall log level..."
+msgstr "Configurando el nivel del registro del cortafuegos ..."
+
+#: kcm/kcm.cpp:428
+msgid "Setting firewall default incomming policy..."
+msgstr ""
+"Configurando la política predeterminada para conexiones entrantes en el "
+"cortafuegos ..."
+
+#: kcm/kcm.cpp:439
+msgid "Setting firewall default outgoing policy..."
+msgstr ""
+"Configurando la política predeterminada para conexiones salientes en el "
+"cortafuegos ..."
+
+#: kcm/kcm.cpp:489
+msgid "<p>Failed to remove rule.</p><p><i>%1</i></p>"
+msgstr "<p>Fallo al eliminar regla.</p><p><i>%1</i></p>"
+
+#: kcm/kcm.cpp:492
+#, fuzzy
+msgid "<p>Failed to save profile.</p><p><i>%1</i></p>"
+msgstr "<p>Fallo al eliminar regla.</p><p><i>%1</i></p>"
+
+#: kcm/kcm.cpp:495
+#, fuzzy
+msgid "<p>Failed to delete profile.</p><p><i>%1</i></p>"
+msgstr "<p>Fallo al eliminar regla.</p><p><i>%1</i></p>"
+
+#: kcm/kcm.cpp:564
+msgid "Setting firewall modules..."
+msgstr "Configurando los módulos del cortafuegos ..."
+
+#: kcm/kcm.cpp:628
+msgid "Activating firewall profile %1..."
+msgstr "Activando perfil del cortafuegos %1 ..."
+
+#: kcm/kcm.cpp:640
+#, fuzzy
+msgid "<p>Remove <i>%1</i>?</p>"
+msgstr "<p>Eliminar <i>%1</i></p>?"
+
+#: kcm/kcm.cpp:640
+msgid "Remove Profile"
+msgstr "Eliminar Perfil"
+
+#: kcm/kcm.cpp:667
+msgid "<p>Failed to remove <i>%1</i></p>"
+msgstr "<p>Fallo al eliminar <i>%1</i></p>"
+
+#: kcm/kcm.cpp:673 kcm/kcm.cpp:702
+msgid "*.ufw|Firewall Settings"
+msgstr "*.ufw|Preferencias del Cortafuegos"
+
+#: kcm/kcm.cpp:692
+msgid "<p><i>%1</i> is not a valid Firewall Settings file</p>"
+msgstr ""
+"<p><i>%1</i> no es un archivo válido de Configuraciones del Cortafuegos</p>"
+
+#: kcm/kcm.cpp:725
+msgid "Failed to create temporary file."
+msgstr "No se pudo crear el archivo temporal."
+
+#: kcm/kcm.cpp:758
+msgid "Profile Name"
+msgstr "Nombre del Perfil"
+
+#: kcm/kcm.cpp:758
+msgid "Please enter a name for the profile:"
+msgstr "Por favor introduzca un nombre para el perfil:"
+
+#: kcm/kcm.cpp:771
+msgid "<p>A profile named <i>%1</i> already exists.</p><p>Overwrite?</p>"
+msgstr "<p>El perfil llamado <i>%1</i> ya existe.</p><p>¿Sobreescribir?</p>"
+
+#: kcm/kcm.cpp:772
+msgid "Overwrite Profile"
+msgstr "Sobreescribir Perfil"
+
+#: kcm/kcm.cpp:863
+#, fuzzy
+msgid "Saving firewall profile %1..."
+msgstr "Activando perfil del cortafuegos %1 ..."
+
+#: kcm/kcm.cpp:1054
+msgid "Moving rule in firewall..."
+msgstr "Moviendo regla en el cortafuegos ..."
+
+#: kcm/kcm.cpp:1075
+msgid "Firewall is enabled, and there are no rules defined.%1"
+msgstr "El cortafuegos está habilitado, y no hay reglas definidas.%1"
+
+#: kcm/kcm.cpp:1076
+msgid "Firewall is enabled, and there is 1 rule defined.%2"
+msgid_plural "Firewall is enabled, and there are %1 rules defined.%2"
+msgstr[0] "El cortafuegos está habilitado, y hay 1 regla definida.%2"
+msgstr[1] "El cortafuegos está habilitado, y hay %1 reglas definidas."
+
+#: kcm/kcm.cpp:1081
+msgid "Firewall is currently disabled, and there are no rules defined.%1"
+msgstr "El cortafuegos está deshabilitado, y no hay reglas definidas.%1"
+
+#: kcm/kcm.cpp:1082
+msgid "Firewall is currently disabled, and there is 1 rule defined.%2"
+msgid_plural ""
+"Firewall is currently disabled, and there are %1 rules defined.%2"
+msgstr[0] "El cortafuegos está deshabilitado, y hay 1 regla definida.%2"
+msgstr[1] "El cortafuegos está deshabilitado, y hay %1 reglas definidas."
+
+#: kcm/kcm.cpp:1129
+msgid "No Saved Profiles"
+msgstr "No Hay Perfiles Guardados"
+
+#: kcm/kcm.cpp:1131
+msgid "Save Current Settings..."
+msgstr "Guardar Configuración Actual ..."
+
+#: kcm/kcm.cpp:1132
+msgid "Load Profile"
+msgstr "Cargar Perfil"
+
+#: kcm/kcm.cpp:1133
+msgid "Delete Profile"
+msgstr "Eliminar Perfil"
+
+#: kcm/kcm.cpp:1134
+#, fuzzy
+msgid "Import..."
+msgstr "Importar ..."
+
+#: kcm/kcm.cpp:1135
+#, fuzzy
+msgid "Export..."
+msgstr "Exportar ..."
+
+#: kcm/kcm.cpp:1191
+msgctxt "kernel module name"
+msgid "FTP"
+msgstr "FTP"
+
+#: kcm/kcm.cpp:1192
+msgctxt "kernel module name"
+msgid "IRC"
+msgstr "IRC"
+
+#: kcm/kcm.cpp:1193
+msgctxt "kernel module name"
+msgid "NetBIOS"
+msgstr "NetBIOS"
+
+#: kcm/kcm.cpp:1194
+msgctxt "kernel module name"
+msgid "PPTP"
+msgstr "PPTP"
+
+#: kcm/kcm.cpp:1195
+msgctxt "kernel module name"
+msgid "SANE"
+msgstr "SANE"
+
+#: kcm/kcm.cpp:1196
+msgctxt "kernel module name"
+msgid "SIP"
+msgstr "SIP"
+
+#: kcm/kcm.cpp:1214
+msgid ""
+"<p><i>Connection tracking</i> is the ability to maintain connection state "
+"information (such as source and destination address/port, protocol, etc.)  "
+"in memory.</p><p>Using these modules makes the firewall more secure.</p>"
+msgstr ""
+"<p><i>Seguimiento de conexión</i> es la capacidad de mantener en la memoria "
+"información del estado de la conexión (como la dirección, puerto, protocolo, "
+"etc.,tanto del origen como del destino).</p><p>El uso de dichos módulos hace "
+"el cortafuegos más seguro.</p>"
+
+#: kcm/kcm.cpp:1220
+msgid ""
+"<p><i>NAT (Network Address Translation)</i>. Where any form of NAT (SNAT, "
+"DNAT, Masquerading) on your firewall is involved, some commands and "
+"responses may also need to be modified by the firewall. This is the job of "
+"the NAT modules.</p><p><b>NOTE:</b>If you are using the corresponding "
+"<i>Connection Tracking</i> module, then you should also enable the <i>NAT</"
+"i> module.</p>"
+msgstr ""
+"<p><i>NAT (Network Address Translation)</i>. En cualquier tipo de actividad "
+"NAT (SNAT, DNAT, Enmascaramiento) en la que el cortafuegos se vea "
+"involucrado, algunos comandos y respuestas quizás también necesiten ser "
+"modificados por el cortafuegos. Este es el trabajo de los módulos NAT.</"
+"p><p><b>NOTA:</b> Si usted está usando el correspondiente módulo de "
+"<i>Seguimiento de Conexión</i>, entonces también debería habilitar el módulo "
+"<i>NAT</i>.</p>"
+
+#. i18n: file: kcm/ufw.ui:260
+#. i18n: ectx: property (text), widget (QToolButton, refreshButton)
+#: kcm/logviewer.cpp:191 po/rc.cpp:162 rc.cpp:162
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: kcm/logviewer.cpp:192
+msgid "Display Raw"
+msgstr ""
+
+#: kcm/logviewer.cpp:194
+#, fuzzy
+msgid "Create Rule"
+msgstr "Editar Regla"
+
+#: kcm/logviewer.cpp:204
+msgid "Raw"
+msgstr ""
+
+#: kcm/logviewer.cpp:205
+msgid "Date"
+msgstr ""
+
+#. i18n: file: kcm/ufw.ui:119
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: kcm/logviewer.cpp:206 po/rc.cpp:117 rc.cpp:117
+msgid "Action"
+msgstr "Acción"
+
+#. i18n: file: kcm/ufw.ui:124
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: kcm/logviewer.cpp:207 po/rc.cpp:120 rc.cpp:120
+msgid "From"
+msgstr "Origen"
+
+#. i18n: file: kcm/ufw.ui:129
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: kcm/logviewer.cpp:208 po/rc.cpp:123 rc.cpp:123
+msgid "To"
+msgstr "Destino"
+
+#: kcm/logviewer.cpp:215
+msgid "Log Viewer"
+msgstr ""
+
+#: kcm/rule.cpp:63
+#, fuzzy
+msgctxt "address on interface"
+msgid "%1 on %2"
+msgstr "%1 en %2"
+
+#: kcm/rule.cpp:114 kcm/rule.cpp:190 kcm/rule.cpp:199
+msgid "Anywhere"
+msgstr "Cualquiera"
+
+#: kcm/rule.cpp:135 kcm/rule.cpp:146 kcm/rule.cpp:159
+#, fuzzy
+msgctxt "serice/application name (port numbers)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kcm/rule.cpp:284
+#, fuzzy
+msgctxt "firewallAction incomming"
+msgid "%1 incoming"
+msgstr "%1 entrante"
+
+#: kcm/rule.cpp:285
+#, fuzzy
+msgctxt "firewallAction outgoing"
+msgid "%1 outgoing"
+msgstr "%1 saliente"
+
+#: kcm/rule.cpp:290
+msgid "Yes"
+msgstr "Si"
+
+#: kcm/ruledialog.cpp:69
+msgid "Simple"
+msgstr "Simple"
+
+#: kcm/ruledialog.cpp:70
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: kcm/ruledialog.cpp:81
+msgid "Incoming"
+msgstr "Entrante"
+
+#: kcm/ruledialog.cpp:82
+msgid "Outgoing"
+msgstr "Saliente"
+
+#: kcm/ruledialog.cpp:215
+msgid "Any interface"
+msgstr "Cualquier interfaz"
+
+#: kcm/ruledialog.cpp:222
+msgid ""
+"<p>Enter one or more port numbers (e.g. <i>20,22</i>), a service name (e.g. "
+"<i>ssh</i>), or a port range (e.g. use <i>20:30</i> for ports 20 to 30)</p>"
+msgstr ""
+"<p>Introduzca uno o más números de puerto (por ej. <i>20,22</i>), un nombre "
+"de servicio (por ej. <i>ssh</i>), o un rango de puertos (por ej. <i>20:30</"
+"i> para usar desde el puerto 20 hasta el 30).</p>"
+
+#: kcm/ruledialog.cpp:229
+msgid ""
+"Enter an IP address (e.g. 192.168.1.100), or subnet (e.g. 192.168.1.0/24)"
+msgstr ""
+"Introduzca una dirección IP (por ej. 192.168.1.100), o subred (por ej. "
+"192.168.1.0/24)"
+
+#: kcm/ruledialog.cpp:234
+msgid ""
+"Enter a network interface (e.g. eth0), or leave blank to apply to all "
+"interfaces"
+msgstr ""
+"Introduzca una interfaz de red (por ej. eth0), o deje vacío para aplicar a "
+"todas las interfaces"
+
+#: kcm/ruledialog.cpp:432
+msgid "Edit Rule"
+msgstr "Editar Regla"
+
+#: kcm/ruledialog.cpp:438
+msgid "Add"
+msgstr "Agregar"
+
+#: kcm/ruledialog.cpp:440
+msgid "Add Rule"
+msgstr "Agregar Regla"
+
+#: kcm/ruledialog.cpp:809
+msgid "No port defined."
+msgstr "No se ha definido un puerto."
+
+#: kcm/ruledialog.cpp:811
+msgid "Invalid port."
+msgstr "Puerto inválido."
+
+#: kcm/ruledialog.cpp:813 kcm/ruledialog.cpp:867
+msgid ""
+"Port ranges can only be used when either TCP or UDP are explicitly selected."
+msgstr ""
+"Los rangos de puertos sólo pueden utilizarse cuando TCP o UDP estén "
+"explícitamente seleccionados."
+
+#: kcm/ruledialog.cpp:851
+msgid "You can only use IPv6 addresses, if IPv6 support is enabled."
+msgstr ""
+"Usted sólo puede usar direcciones IPv6 si el soporte para IPv6 está "
+"habilitado."
+
+#: kcm/ruledialog.cpp:851
+msgid "IPv6 Support Disabled"
+msgstr "Soporte para IPv6 Deshabilitado"
+
+#: kcm/ruledialog.cpp:853
+msgid ""
+"Selected pre-defined ports for 'Source' and 'Destination' use different "
+"protocols."
+msgstr ""
+"Los puertos predefinidos seleccionados para 'Origen' y 'Destino' usan "
+"protocolos distintos."
+
+#: kcm/ruledialog.cpp:853
+msgid "Mixed Protocols"
+msgstr "Protocolos Combinados"
+
+#: kcm/ruledialog.cpp:856
+msgid "No hosts or ports defined."
+msgstr "No se han definido equipos o puertos."
+
+#: kcm/ruledialog.cpp:858
+msgid "Invalid 'Source' address."
+msgstr "La dirección de 'Origen' no es válida."
+
+#: kcm/ruledialog.cpp:860
+msgid "Invalid 'Destination' address."
+msgstr "La dirección de 'Destino' no es válida."
+
+#: kcm/ruledialog.cpp:862
+msgid "Invalid 'Source' port."
+msgstr "El puerto de 'Origen' no es válido."
+
+#: kcm/ruledialog.cpp:864
+msgid "Invalid 'Destination' port."
+msgstr "El puerto de 'Destino' no es válido."
+
+#: kcm/ruledialog.cpp:895
+msgid "Rule already exists!"
+msgstr "¡La regla ya existe!"
+
+#: kcm/ruledialog.cpp:917
+msgid "<p>Failed to insert rule.</p><p><i>%1</i></p>"
+msgstr "<p>No se pudo insertar la regla.</p><p><i>%1</i></p>"
+
+#: kcm/strings.cpp:40
+msgid ""
+"<li><i><b>Allow</b></i> accepts access to the specified ports/services.</"
+"li><li><i><b>Deny</b></i> blocks access to the specified ports/services.</"
+"li><li><i><b>Reject</b></i> is similar to <i>Deny</i>, but lets the sender "
+"know when traffic is being denied, rather than simply ignoring it.</li>"
+msgstr ""
+"<li><i><b>Permitir</b></i> acepta acceso a los puertos/servicios "
+"especificados.</li><li><i><b>Denegar</b></i> bloquea el acceso a los puertos/"
+"servicios especificados.</li><li><i><b>Rechazar</b></i> es similar a "
+"<i>Denegar</i>, pero permite al remitente saber que el tráfico está siendo "
+"negado, en vez de simplemente ignorarlo.</li>"
+
+#: kcm/strings.cpp:45
+msgid ""
+"<li><i><b>Limit</b></i> enables connection rate limiting. This is useful for "
+"protecting against brute-force login attacks. The firewall will deny "
+"connections if an IP address has attempted to initiate 6 or more connections "
+"in the last 30 seconds.</li>"
+msgstr ""
+"<li><i><b>Limitar</b></i> permite limitar el margen de conexión. Esto es "
+"útil para proteger contra los ataques de acceso por fuerza bruta. El "
+"cortafuegos rechaza la conexión si la dirección IP ha intentado iniciar 6 o "
+"más conexiones en los últimos 30 segundos.</li></ul></p>"
+
+#: kcm/strings.cpp:54
+msgid ""
+"<p><ul><li><i><b>Off</b></i> disables logging.</li><li><i><b>Low</b></i> "
+"logs all blocked packets not matching the default policy (with rate "
+"limiting), as well as packets matching logged rules.</li><li><i><b>Medium</"
+"b></i> as per <i>Low</i>, plus all allowed packets not matching the default "
+"policy, all <i>invalid</i> packets, and all new connections. All logging is "
+"done with rate limiting.</li><li><i><b>High</b></i> as per <i>Medium</i> "
+"(without rate limiting), plus all packets with rate limiting.</"
+"li><li><i><b>Full</b></i> log everything, without rate limiting.</li></ul></"
+"p><p>Levels above <i>Medium</i> generate a lot of logging output, and may "
+"quickly fill up your disk. <i>Medium</i> may generate a lot of logging "
+"output on a busy system.</p>"
+msgstr ""
+"<p><ul><li><i><b>Apagado</b></i> deshabilita el registro.</"
+"li><li><i><b>Bajo</b></i> registra todos los paquetes bloqueados que no "
+"coincidan con la política predeterminada (el registro tiene un límite), así "
+"como los paquetes con los que las reglas de registro coincidan.</"
+"li><li><i><b>Medio</b></i> es igual a <i>Bajo</i>, más todos los paquetes "
+"permitidos que no coincidan con la política predeterminada, todos los "
+"paquetes <i>inválidos</i> y todas las conexiones nuevas. El registro tiene "
+"un límite. </li><li><i><b>Alto</b></i> es igual a <i>Medio</i>, más todos "
+"los paquetes. El registro no tiene límite.</li><li><i><b>Completo</b></i> "
+"registra todo, el registro no tiene límite.</li></ul></p><p>Los niveles por "
+"encima de <i>Medio</i> guardan muchos datos en el registro y pueden llenar "
+"el disco de manera rápida. <i>Medio</i> puede guardar muchos datos en el "
+"registro en un sistema ocupado.</p>"
+
+#: kcm/strings.cpp:70
+msgid ""
+"<p>Per rule logging.</ul><li><i><b>None</b></i> no logging is performed when "
+"a packet matches a rule.</li><li><i><b>New</b></i> will log all new "
+"connections matching a rule.</li><li><i><b>All</b></i> will log all packets "
+"matching a rule.</li></ul></p>"
+msgstr ""
+"<p>Registro por reglas.</ul><li><i><b>Ninguno</b></i> no se realiza registro "
+"alguno cuando un paquete coincide con una regla. </li><li><i><b>Nuevas</b></"
+"i> registrará todas las conexiones nuevas que coincidan con una regla.</"
+"li><li><i><b>Todos</b></i> registrará todos los paquetes que coincidan con "
+"una regla.</li></ul></p>"
+
+#: kcm/strings.cpp:79
+msgid ""
+"<p>Rule ordering is important and the first match wins. Therefore when "
+"adding rules, add the more specific rules first with more general rules "
+"later.</p>"
+msgstr ""
+"<p>El orden de las reglas es importante y la primera coincidencia gana. De "
+"esta forma cuando se agreguen reglas, primero agregue las reglas más "
+"específicas y luego las reglas más generales.</p>"
+
+#: kcm/types.cpp:38
+msgid "Off"
+msgstr "Apagado"
+
+#: kcm/types.cpp:40
+msgid "Low"
+msgstr "Bajo"
+
+#: kcm/types.cpp:41
+msgid "Medium"
+msgstr "Medio"
+
+#: kcm/types.cpp:42
+msgid "High"
+msgstr "Alto"
+
+#: kcm/types.cpp:43
+msgid "Full"
+msgstr "Completo"
+
+#: kcm/types.cpp:60
+msgid "None"
+msgstr "Ninguno"
+
+#: kcm/types.cpp:61
+msgid "New connections"
+msgstr "Nuevas conexiones"
+
+#: kcm/types.cpp:62
+msgid "All packets"
+msgstr "Todos los paquetes"
+
+#: kcm/types.cpp:71
+msgid "Allow"
+msgstr "Permitir"
+
+#: kcm/types.cpp:72
+msgid "Deny"
+msgstr "Denegar"
+
+#: kcm/types.cpp:73
+msgid "Reject"
+msgstr "Rechazar"
+
+#: kcm/types.cpp:74
+msgid "Limit"
+msgstr "Limitar"
+
+#: kcm/types.cpp:90
+msgid "Amule"
+msgstr "aMule"
+
+#: kcm/types.cpp:91
+msgid "Deluge"
+msgstr "Deluge"
+
+#: kcm/types.cpp:92
+msgid "KTorrent"
+msgstr "KTorrent"
+
+#: kcm/types.cpp:93
+msgid "Nicotine"
+msgstr "Nicotine"
+
+#: kcm/types.cpp:94
+msgid "qBittorrent"
+msgstr "qBittorrent"
+
+#: kcm/types.cpp:95
+msgid "Transmission"
+msgstr "Transmission"
+
+#: kcm/types.cpp:96
+msgid "ICQ"
+msgstr "ICQ"
+
+#: kcm/types.cpp:97
+msgid "Jabber"
+msgstr "Jabber"
+
+#: kcm/types.cpp:98
+msgid "Windows Live Messenger"
+msgstr "Windows Live Messenger"
+
+#: kcm/types.cpp:99
+msgid "Yahoo! Messenger"
+msgstr "Yahoo! Messenger"
+
+#: kcm/types.cpp:100
+msgid "FTP"
+msgstr "FTP"
+
+#: kcm/types.cpp:101
+msgid "HTTP"
+msgstr "HTTP"
+
+#: kcm/types.cpp:102
+msgid "Secure HTTP"
+msgstr "Secure HTTP"
+
+#: kcm/types.cpp:103
+msgid "IMAP"
+msgstr "IMAP"
+
+#: kcm/types.cpp:104
+msgid "Secure IMAP"
+msgstr "Secure IMAP"
+
+#: kcm/types.cpp:105
+msgid "POP3"
+msgstr "POP3"
+
+#: kcm/types.cpp:106
+msgid "Secure POP3"
+msgstr "Secure POP3"
+
+#: kcm/types.cpp:107
+msgid "SMTP"
+msgstr "SMTP"
+
+#: kcm/types.cpp:108
+msgid "NFS"
+msgstr "NFS"
+
+#: kcm/types.cpp:109
+msgid "Samba"
+msgstr "Samba"
+
+#: kcm/types.cpp:110
+msgid "Secure Shell"
+msgstr "Secure Shell"
+
+#: kcm/types.cpp:111
+msgid "VNC"
+msgstr "VNC"
+
+#: kcm/types.cpp:112
+msgid "Zeroconf"
+msgstr "Zeroconf"
+
+#: kcm/types.cpp:113
+msgid "Telnet"
+msgstr "Telnet"
+
+#: kcm/types.cpp:114
+msgid "NTP"
+msgstr "NTP"
+
+#: kcm/types.cpp:115
+msgid "CUPS"
+msgstr "CUPS"
+
+#: kcm/types.cpp:140
+msgid "TCP"
+msgstr "TCP"
+
+#: kcm/types.cpp:141
+msgid "UDP"
+msgstr "UDP"
+
+#: kcm/types.cpp:142
+msgid "Any protocol"
+msgstr "Cualquier protocolo"
+
+#. i18n: file: kcm/rulewidget.ui:27
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: file: kcm/rulewidget.ui:183
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#. i18n: file: kcm/rulewidget.ui:27
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: file: kcm/rulewidget.ui:183
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: po/rc.cpp:3 po/rc.cpp:27 rc.cpp:3 rc.cpp:27
+msgid "Policy:"
+msgstr "Política:"
+
+#. i18n: file: kcm/rulewidget.ui:37
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: file: kcm/rulewidget.ui:193
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: file: kcm/rulewidget.ui:37
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: file: kcm/rulewidget.ui:193
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: po/rc.cpp:6 po/rc.cpp:30 rc.cpp:6 rc.cpp:30
+msgid "Direction:"
+msgstr "Sentido:"
+
+#. i18n: file: kcm/rulewidget.ui:47
+#. i18n: ectx: property (text), widget (QLabel, simpleLoggingLabel)
+#. i18n: file: kcm/rulewidget.ui:538
+#. i18n: ectx: property (text), widget (QLabel, advancedLoggingLabel)
+#. i18n: file: kcm/rulewidget.ui:47
+#. i18n: ectx: property (text), widget (QLabel, simpleLoggingLabel)
+#. i18n: file: kcm/rulewidget.ui:538
+#. i18n: ectx: property (text), widget (QLabel, advancedLoggingLabel)
+#: po/rc.cpp:9 po/rc.cpp:81 rc.cpp:9 rc.cpp:81
+msgid "Logging:"
+msgstr "Registro:"
+
+#. i18n: file: kcm/rulewidget.ui:57
+#. i18n: ectx: property (text), widget (QLabel, simpleDescriptionLabel)
+#. i18n: file: kcm/rulewidget.ui:548
+#. i18n: ectx: property (text), widget (QLabel, advancedDescriptionLabel)
+#. i18n: file: kcm/rulewidget.ui:57
+#. i18n: ectx: property (text), widget (QLabel, simpleDescriptionLabel)
+#. i18n: file: kcm/rulewidget.ui:548
+#. i18n: ectx: property (text), widget (QLabel, advancedDescriptionLabel)
+#: po/rc.cpp:12 po/rc.cpp:84 rc.cpp:12 rc.cpp:84
+msgid "Description:"
+msgstr "Descripción:"
+
+#. i18n: file: kcm/rulewidget.ui:64
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, simpleDescription)
+#. i18n: file: kcm/rulewidget.ui:555
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, advancedDescription)
+#. i18n: file: kcm/rulewidget.ui:64
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, simpleDescription)
+#. i18n: file: kcm/rulewidget.ui:555
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, advancedDescription)
+#: po/rc.cpp:15 po/rc.cpp:87 rc.cpp:15 rc.cpp:87
+msgid "Description of rule"
+msgstr "Descripción de la regla"
+
+#. i18n: file: kcm/rulewidget.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: file: kcm/rulewidget.ui:518
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#. i18n: file: kcm/rulewidget.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: file: kcm/rulewidget.ui:518
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#: po/rc.cpp:18 po/rc.cpp:75 rc.cpp:18 rc.cpp:75
+msgid "Protocol:"
+msgstr "Protocolo:"
+
+#. i18n: file: kcm/rulewidget.ui:130
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, simplePort)
+#. i18n: file: kcm/rulewidget.ui:314
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedSrcPort)
+#. i18n: file: kcm/rulewidget.ui:464
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedDestPort)
+#. i18n: file: kcm/rulewidget.ui:130
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, simplePort)
+#. i18n: file: kcm/rulewidget.ui:314
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedSrcPort)
+#. i18n: file: kcm/rulewidget.ui:464
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedDestPort)
+#: po/rc.cpp:21 po/rc.cpp:51 po/rc.cpp:69 rc.cpp:21 rc.cpp:51 rc.cpp:69
+msgid "Port number"
+msgstr "Número de puerto"
+
+#. i18n: file: kcm/rulewidget.ui:142
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: file: kcm/rulewidget.ui:280
+#. i18n: ectx: property (text), widget (QLabel, label_8x)
+#. i18n: file: kcm/rulewidget.ui:506
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: file: kcm/rulewidget.ui:142
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: file: kcm/rulewidget.ui:280
+#. i18n: ectx: property (text), widget (QLabel, label_8x)
+#. i18n: file: kcm/rulewidget.ui:506
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: po/rc.cpp:24 po/rc.cpp:48 po/rc.cpp:72 rc.cpp:24 rc.cpp:48 rc.cpp:72
+msgid "Port:"
+msgstr "Puerto:"
+
+#. i18n: file: kcm/rulewidget.ui:205
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3x)
+#: po/rc.cpp:33 rc.cpp:33
+msgid "Source"
+msgstr "Origen"
+
+#. i18n: file: kcm/rulewidget.ui:214
+#. i18n: ectx: property (text), widget (QLabel, label_5x)
+#. i18n: file: kcm/rulewidget.ui:371
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: kcm/rulewidget.ui:214
+#. i18n: ectx: property (text), widget (QLabel, label_5x)
+#. i18n: file: kcm/rulewidget.ui:371
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: po/rc.cpp:36 po/rc.cpp:57 rc.cpp:36 rc.cpp:57
+msgid "Address:"
+msgstr "Dirección:"
+
+#. i18n: file: kcm/rulewidget.ui:221
+#. i18n: ectx: property (text), widget (QRadioButton, advancedSrcAnyHostRadio)
+#. i18n: file: kcm/rulewidget.ui:378
+#. i18n: ectx: property (text), widget (QRadioButton, advancedDestAnyHostRadio)
+#. i18n: file: kcm/rulewidget.ui:221
+#. i18n: ectx: property (text), widget (QRadioButton, advancedSrcAnyHostRadio)
+#. i18n: file: kcm/rulewidget.ui:378
+#. i18n: ectx: property (text), widget (QRadioButton, advancedDestAnyHostRadio)
+#: po/rc.cpp:39 po/rc.cpp:60 rc.cpp:39 rc.cpp:60
+msgid "Any address"
+msgstr "Cualquier dirección"
+
+#. i18n: file: kcm/rulewidget.ui:255
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedSrcHost)
+#. i18n: file: kcm/rulewidget.ui:412
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedDestHost)
+#. i18n: file: kcm/rulewidget.ui:255
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedSrcHost)
+#. i18n: file: kcm/rulewidget.ui:412
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedDestHost)
+#: po/rc.cpp:42 po/rc.cpp:63 rc.cpp:42 rc.cpp:63
+msgid "IP address"
+msgstr "Dirección IP"
+
+#. i18n: file: kcm/rulewidget.ui:267
+#. i18n: ectx: property (text), widget (QRadioButton, advancedSrcAnyPortRadio)
+#. i18n: file: kcm/rulewidget.ui:424
+#. i18n: ectx: property (text), widget (QRadioButton, advancedDestAnyPortRadio)
+#. i18n: file: kcm/rulewidget.ui:267
+#. i18n: ectx: property (text), widget (QRadioButton, advancedSrcAnyPortRadio)
+#. i18n: file: kcm/rulewidget.ui:424
+#. i18n: ectx: property (text), widget (QRadioButton, advancedDestAnyPortRadio)
+#: po/rc.cpp:45 po/rc.cpp:66 rc.cpp:45 rc.cpp:66
+msgid "Any port"
+msgstr "Cualquier puerto"
+
+#. i18n: file: kcm/rulewidget.ui:359
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: po/rc.cpp:54 rc.cpp:54
+msgid "Destination"
+msgstr "Destino"
+
+#. i18n: file: kcm/rulewidget.ui:528
+#. i18n: ectx: property (text), widget (QLabel, label_15x)
+#: po/rc.cpp:78 rc.cpp:78
+msgid "Interface:"
+msgstr "Interfaz:"
+
+#. i18n: file: kcm/ufw.ui:17
+#. i18n: ectx: property (title), widget (UFW::StatusBox, configBox)
+#: po/rc.cpp:90 rc.cpp:90
+msgid "Configuration"
+msgstr "Configuración"
+
+#. i18n: file: kcm/ufw.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: po/rc.cpp:93 rc.cpp:93
+msgid "Firewall status:"
+msgstr "Estado del cortafuegos"
+
+#. i18n: file: kcm/ufw.ui:33
+#. i18n: ectx: property (text), widget (QCheckBox, ufwEnabled)
+#. i18n: file: kcm/ufw.ui:47
+#. i18n: ectx: property (text), widget (QCheckBox, ipv6Enabled)
+#. i18n: file: kcm/ufw.ui:33
+#. i18n: ectx: property (text), widget (QCheckBox, ufwEnabled)
+#. i18n: file: kcm/ufw.ui:47
+#. i18n: ectx: property (text), widget (QCheckBox, ipv6Enabled)
+#: po/rc.cpp:96 po/rc.cpp:102 rc.cpp:96 rc.cpp:102
+msgid "Enabled"
+msgstr "Habilitado"
+
+#. i18n: file: kcm/ufw.ui:40
+#. i18n: ectx: property (text), widget (QLabel, ipv6EnabledLabel)
+#: po/rc.cpp:99 rc.cpp:99
+msgid "IPv6 support:"
+msgstr "Soporte para IPv6"
+
+#. i18n: file: kcm/ufw.ui:54
+#. i18n: ectx: property (text), widget (QLabel, defaultOutgoingPolicyLabel)
+#: po/rc.cpp:105 rc.cpp:105
+msgid "Default outgoing policy:"
+msgstr "Política saliente predeterminada"
+
+#. i18n: file: kcm/ufw.ui:64
+#. i18n: ectx: property (text), widget (QLabel, defaultIncomingPolicyLabel)
+#: po/rc.cpp:108 rc.cpp:108
+msgid "Default incoming policy:"
+msgstr "Política entrante predeterminada"
+
+#. i18n: file: kcm/ufw.ui:74
+#. i18n: ectx: property (text), widget (QLabel, ufwLoggingLevelLabel)
+#: po/rc.cpp:111 rc.cpp:111
+msgid "Logging level:"
+msgstr "Nivel del registro"
+
+#. i18n: file: kcm/ufw.ui:97
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: po/rc.cpp:114 rc.cpp:114
+msgid "Rules"
+msgstr "Reglas"
+
+#. i18n: file: kcm/ufw.ui:134
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: po/rc.cpp:126 rc.cpp:126
+msgid "IPv6"
+msgstr "IPv6"
+
+#. i18n: file: kcm/ufw.ui:139
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: po/rc.cpp:129 rc.cpp:129
+msgid "Logging"
+msgstr "Registro"
+
+#. i18n: file: kcm/ufw.ui:144
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: po/rc.cpp:132 rc.cpp:132
+msgid "Description"
+msgstr "Descripción"
+
+#. i18n: file: kcm/ufw.ui:152
+#. i18n: ectx: property (text), widget (KPushButton, addRuleButton)
+#: po/rc.cpp:135 rc.cpp:135
+msgid "Add..."
+msgstr ""
+
+#. i18n: file: kcm/ufw.ui:159
+#. i18n: ectx: property (text), widget (KPushButton, editRuleButton)
+#: po/rc.cpp:138 rc.cpp:138
+#, fuzzy
+msgid "Edit..."
+msgstr "Editar"
+
+#. i18n: file: kcm/ufw.ui:166
+#. i18n: ectx: property (text), widget (KPushButton, removeRuleButton)
+#: po/rc.cpp:141 rc.cpp:141
+msgid "Remove"
+msgstr "Eliminar"
+
+#. i18n: file: kcm/ufw.ui:173
+#. i18n: ectx: property (text), widget (KPushButton, moveRuleUpButton)
+#: po/rc.cpp:144 rc.cpp:144
+msgid "Move Up"
+msgstr "Subir"
+
+#. i18n: file: kcm/ufw.ui:180
+#. i18n: ectx: property (text), widget (KPushButton, moveRuleDownButton)
+#: po/rc.cpp:147 rc.cpp:147
+msgid "Move Down"
+msgstr "Bajar"
+
+#. i18n: file: kcm/ufw.ui:201
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: po/rc.cpp:150 rc.cpp:150
+msgid "Modules"
+msgstr "Módulos"
+
+#. i18n: file: kcm/ufw.ui:229
+#. i18n: ectx: property (text), widget (QTreeWidget, modulesList)
+#: po/rc.cpp:153 rc.cpp:153
+msgid "Protocol"
+msgstr "Protocolo"
+
+#. i18n: file: kcm/ufw.ui:234
+#. i18n: ectx: property (text), widget (QTreeWidget, modulesList)
+#: po/rc.cpp:156 rc.cpp:156
+msgid "Connection Tracking"
+msgstr "Seguimiento de Conexión"
+
+#. i18n: file: kcm/ufw.ui:239
+#. i18n: ectx: property (text), widget (QTreeWidget, modulesList)
+#: po/rc.cpp:159 rc.cpp:159
+msgid "NAT"
+msgstr "NAT"
+
+#. i18n: file: kcm/ufw.ui:273
+#. i18n: ectx: property (text), widget (QToolButton, profilesButton)
+#: po/rc.cpp:165 rc.cpp:165
+msgid "Profiles"
+msgstr "Perfiles"
+
+#. i18n: file: kcm/ufw.ui:286
+#. i18n: ectx: property (text), widget (QToolButton, logButton)
+#: po/rc.cpp:168 rc.cpp:168
+msgid "Show Log..."
+msgstr ""
+
+#: po/rc.cpp:169 rc.cpp:169
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Usuarios de Kubuntu-es.org"
+
+#: po/rc.cpp:170 rc.cpp:170
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "traducciones.kubuntu.es@gmail.com"
+
+#~ msgid "Failed to remove existing profile!"
+#~ msgstr "¡No se pudo eliminar el perfil actual!"
+
+#~ msgid "Failed to save profile file!"
+#~ msgstr "¡No se pudo guardar el archivo del perfil!"
+
+#~ msgid "<p>Failed to copy <i>%1</i> to profile folder!</p>"
+#~ msgstr "<p>¡No se pudo copiar <i>%1</i> a la carpeta del perfil!</p>"
+
+#~ msgid " ("
+#~ msgstr " ("

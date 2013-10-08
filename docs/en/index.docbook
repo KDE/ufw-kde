@@ -1,0 +1,425 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY Craig.Drummond.mail "<email>craig.p.drummond@gmail.com</email>">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+ <articleinfo>
+  <title>The Firewall Handbook</title>
+   <authorgroup>
+    <author>&Craig.Drummond; &Craig.Drummond.mail;</author>
+    <!-- Chapter 'How firewall works' is adapted from the KMyFirewall handbook, copyright Christian Hubinger, 2002-2005, used by permission. -->
+    <!-- TRANS:ROLES_OF_TRANSLATORS -->
+   </authorgroup>
+   <date>2011-06-02</date>
+   <releaseinfo>0.4.0</releaseinfo>
+   <keywordset>
+    <keyword>KDE</keyword>
+    <keyword>KControl</keyword>
+    <keyword>ufw</keyword>
+    <keyword>firewall</keyword>
+   </keywordset>
+   
+   <!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook 
+     and in the FDL itself on how to use it.
+   <legalnotice>&FDLNotice;</legalnotice>
+   -->
+  </articleinfo>
+ <sect1 id="introduction">
+  <title>Introduction</title>
+  <para>This module allows you to control the settings of the 'Uncomplicated FireWall' (UFW), which is a command line frontend to the default Linux firewall (IP-Tables).</para>
+ </sect1>
+ 
+  <sect1 id="howtheywork">
+  <title>How Firewall Works</title>
+  <para>
+  As firewalling is a really complex topic, I'd like to give you a briefly introduction about what firewalls are and how they work.
+  </para>
+  <para>
+  When you think of a firewall most people would say <quote>firewalls just restrict the network traffic</quote>,
+  but a modern firewall has more to do that just restricting the traffic (which is, of course, it's main task).
+  </para>
+  <para>You can filter by having a look at the packet headers that store information about where the packet comes from, which protocol is used etc.
+  </para>
+  <para>
+  The second important feature a firewall has to provide is the possibility to log the network traffic. This is a much more important part of it than you may think. Logfiles are give you a good view about the activities in your network, like who did what and when. 
+  </para>
+  <para>
+  Logs are also really important when the firewall got cracked and you want to know how. In that you would have a much harder life if you hadn't activeted the logging functions so that you can see what has happend and how the configuration could be improved.
+  </para>
+  <para>
+  Most people think about firewalls as just being used to block traffic from the Internet to your host, but you may also configure your firewall to restrict the Internet access. For example you may block some well known porn sites on your Children's PC, or you just want to allow e-mail and Web browsing in your office but you don't want your employees to be able to download files via FTP. </para>
+  <para>
+  All the things described are really easy to implement with UFW once you have understood how it works. 
+  </para>
+</sect1>
+
+ <sect1 id="configuration">   
+  <title>Configuration</title>
+  <sect2 id="policies">
+   <title>Default Policies</title>
+   <para>UFW can be configured as to what the default policy should be for incoming, or outgoing traffic. After you set the default policy, you can provide exceptions for it with custom rules. These default policies may be set to:
+    <orderedlist>
+     <listitem><para><quote>Allow</quote> - accepts connections to or from the computer.</para></listitem>
+     <listitem><para><quote>Deny</quote> - blocks access to or from the computer.</para></listitem>
+     <listitem><para><quote>Reject</quote> - similar to Deny, but lets the sender know when traffic is being denied, rather than simply ignoring it.</para></listitem>
+    </orderedlist>
+   </para>
+  </sect2>
+
+  <sect2 id="ipv6">
+   <title>IPv6 Support</title>
+   <para>To enable support for rules based upon IPv6 addresses, you should enabled the <quote>IPv6 support</quote> setting.</para>
+  </sect2>
+
+  <sect2 id="logging">
+   <title>Logging</title>
+   <para>The general logging of the firewall may be set using the <quote>Logging level</quote> setting. This can be set to one of 
+         the following values:
+    <orderedlist>
+     <!--I have contacted the person who wrote the UFW man page and learned from him that rate limiting here means simply limiting the number of dublicate entries. Corrected the below to make that clear, hope my english is understandable.-->
+     <listitem><para><quote>Off</quote> - disables logging.</para></listitem>
+     <listitem><para><quote>Low</quote> - logs all blocked packets not matching the default policy (limiting the number of dublicate access attempts logged), as well as
+                     packets matching logged rules.</para></listitem>
+     <listitem><para><quote>Medium</quote> - as per <quote>Low</quote>, plus all allowed packets not matching the default policy, all 
+                     invalid packets, and all new connections. All logging is done limiting the number of dublicate access attempts logged.</para></listitem>
+     <listitem><para><quote>High</quote> - as per <quote>Medium</quote> (without limiting), plus all packets with (with limiting).
+               </para></listitem>
+     <listitem><para><quote>Full</quote> - log everything, without limiting.</para></listitem>
+    </orderedlist>
+    NOTE: Levels above <quote>Medium</quote> generate a lot of logging output, and may quickly fill up your disk. Medium  may generate 
+    a lot of logging output on a busy system.
+   </para>
+  </sect2>
+ </sect1>
+
+ <sect1 id="rules">
+  <title>Rules</title>
+  <para>UFW functions by being provided a list of rules as to which ports/services show be allowed or blocked. Rules provide exceptions to the default policies.</para>
+  <para>For example, you may want to configure your computer to not be accessible from the internet in case it connects directly to the world wide web with a public IP address, but you may want the computer to be open to all connections from local intranets and also to allow for ssh connection from anywhere (both local and internet). In such a case you will want to set default policy to 'deny', but then add rules to allow incoming ssh connections and connections from the default local network address spaces. <!--DONATO - šitam reikia pavyzdžio step by step gale!--> </para>
+  <para>Rule ordering is important and the first match wins. Therefore when adding rules, add the more specific rules first with more general rules later. Rules may be re-ordered via the <quote>Move Up / Move Down</quote> buttons, or by drag-n-drop of the entries in the rules list.</para>
+  <sect2 id="add_and_edit_rules">
+   <title>Adding and Editing Rules</title>
+   <para>There are two <quote>modes</quote> to add, and edit, rules:
+    <orderedlist>
+     <listitem><para><quote>Simple</quote> - allows controlling of arbitrary port numbers. These may be set via a list of predefined services/applications, or entered manually.</para></listitem>
+     <listitem><para><quote>Advanced</quote> - allows complete control of source/destination address and port numbers.  Only the fields that you require need to be filled in.</para></listitem>
+    </orderedlist>
+   </para>
+   <para>The following is a list of features that are common to both:
+    <orderedlist>
+     <listitem><para><quote>Policy</quote> controls how connections are handled.</para>
+      <orderedlist>
+       <listitem><para><quote>Allow</quote> - accepts access to the specified ports/services.</para></listitem>
+       <listitem><para><quote>Deny</quote> - blocks access to the specified ports/services.</para></listitem>
+       <listitem><para><quote>Reject</quote> - similar to Deny, but lets the sender know when traffic is being denied, rather than simply 
+                       ignoring it.</para></listitem>
+       <listitem><para><quote>Limit</quote> - enables connection rate limiting. This is useful for protecting against brute-force login 
+                       attacks. The firewall will deny connections if an IP address has attempted to initiate 6 or more connections in 
+                       the last 30 seconds</para></listitem>
+      </orderedlist>
+     </listitem>
+     <listitem><para><quote>Direction</quote> - indicates the direction of the connection.</para></listitem>
+     <listitem><para><quote>Port</quote> - this is used to define the port, or ports, to be controlled. There are two options for this:
+       <orderedlist>
+       <listitem><para>Manually entering a port number. There is a text field that allows you to enter one, or more, port numbers - or a range of port numbers. (Ranges are of the form <quote>from:to</quote>, e.g. <quote>123:456</quote>)</para></listitem>
+       <listitem><para>Below the text field, there is a drop down list containing a set of pre-defined services, applications, and UFW application profile names.</para></listitem>
+      </orderedlist></para>
+     </listitem>
+     <listitem><para><quote>Protocol</quote> - sets the type of port that will be controlled. (This setting is only applicable when the port number is to be entered manually)</para>
+      <orderedlist>
+       <listitem><para><quote>Any</quote></para></listitem>
+       <listitem><para><quote>TCP</quote></para></listitem>
+       <listitem><para><quote>UDP</quote></para></listitem>
+      </orderedlist>
+     </listitem>
+     <listitem><para><quote>Logging</quote> - controls per-rule logging</para>
+      <orderedlist>
+       <listitem><para><quote>None</quote> - no logging is performed when a packet matches a rule.</para></listitem>
+       <listitem><para><quote>New</quote> - will log all new connections matching a rule.</para></listitem>
+       <listitem><para><quote>All</quote> - will log all packets matching a rule.</para></listitem>
+      </orderedlist>
+     </listitem>
+     <listitem><para><quote>Description</quote> - a textual description of the rule.</para></listitem>
+    </orderedlist>
+   </para>
+   <para>The <quote>Advanced</quote> mode will allow you to specify any combination of; source address, source port, destination address, and destination port - as well as specifying the network interface (e.g. wlan0, eth0, etc.) to apply the rule on. Addresses my be either; an IP address (e.g. 192.168.1.100), or subnet (e.g. 192.168.1.0/24).</para>
+  </sect2>
+  <sect2 id="ipv6_rules">
+   <title>IPv6 Rules</title>
+   <para>When IPv6 support is enabled, there are in effect two firewalls - one for IPv4 connections, and one for IPv6 connections.
+       This may cause some unexpected behaviour.
+   </para>
+   <sect3 id="ipv6_rules_editing">
+    <title>Editing</title>
+    <para>
+       Each time you create a rule the firewall may create a corresponding IPv6 rule. 
+       e.g. If you create a rule to block port 22 (and dont specify an IPv4 address), the firewall will create two rules -
+       one for IPv4 connections, and one for IPv6 connections. If you now edit the IPv4 version of this rule, and change its
+       port number, then the IPv4 rule will be updated, a new IPv6 rule will be created, and the old IPv6 rule will still exist.
+       Therefore, after editing the IPv4 rule you would need to delete the old IPv6 rule.
+    </para>
+   </sect3>
+   <sect3 id="ipv6_rules_order">
+    <title>Ordering</title>
+    <para>
+       In the list of rules, IPv6 rules are always grouped after the IPv4 rules, and it is not possible to re-order an IPv6 rule to
+       be before an IPv4 rule. This is because the IPv6 rules are only applied to IPv6 connections, and therefore, Intermingling them
+       with IPv4 rules makes no sense.
+    </para>
+   </sect3>
+  </sect2>
+ </sect1>
+
+ <sect1 id="modules">
+  <title>Modules</title>
+  <para>UFW supports loading of IP-Tables kernel modules to improve its functionality. The currently supported modules on your system 
+        will be listed in the <quote>Modules</quote> section. Each enabled module is indicated with a checkmark.</para>
+  <para>There are two types of modules:
+   <orderedlist>
+    <listitem><para><quote>Connection tracking</quote> - is the ability to maintain connection state information (such as source and 
+                    destination address/port, protocol, etc.) in memory. Using these modules makes the firewall more secure.
+              </para></listitem>
+    <listitem><para><quote>NAT (Network Address Translation)</quote> - Where any form of NAT (SNAT, DNAT, Masquerading) on your firewall 
+                    is involved, some commands and responses may also need to be modified by the firewall. This is the job of the NAT 
+                    modules. NOTE: If you are using the corresponding Connection Tracking module, then you should also enable the 
+                    module.</para></listitem>
+   </orderedlist>
+  </para>
+ </sect1>
+
+ 
+ <sect1 id="profiles">
+  <title>Profiles</title>
+  <para>The current configuration of your filewall maybe saved in a <quote>profile.</quote> These will contain your rules,
+        the default settings, and the list of active IP-Tables modules. Using profiles allows you to easily switch between firewall settings.</para>
+  <para>The profile fucntions can be accessed via the menu button in the lower-right of the main window.</para>
+ </sect1>
+ 
+ <sect1 id="logviewer">
+  <title>Log Viewer</title>
+  <para>If you have enabled logging, then the firewall will log any connections to the system log file. To view these entries,
+        a simple log viewer is included.</para>
+  <para>The log viewer is activated via the menu button in the lower-right of the main window.</para>
+ </sect1>
+
+<sect1 id="example">
+<title>Example: configuring a firewall for your computer</title>
+
+<sect2 id="description">
+<title>Describing the situation</title>
+
+<para>Let us imagine you have a workstation computer at home that is connected into a closed network with your neighbours, maybe 15 computers in all. You do not know if what neighbours are using as their primary OS'es, you also are not sure that their computers are well attended, virus and spyware free. So, though your network is behind a rooter with a firewall, you do not trust your network too much. You do not run any server or anything like that on your workstation, but sometimes you send and get files via bittorrent network using KTorrent. To make that process efficient, you have forwarded the router ports 6881/TCP and 4444/UDP to your workstation. You also connect to your workstation from outside using ssh, and to make that possible, the router is forwarding to your workstation the port 22. To make the forwarding possible, the router reserves to your workstation IP address 192.168.1.122.</para>
+
+<para>You also have a laptop that you connect to this network once in a while, but you also connect to other networks and to broadband at your mother's house. So it needs to be flexible about network configuration possibilities and secure at the same time. When you are connected to the home network, the router gives your notebook a reserved address 192.168.1.111.</para>
+
+<para>You use Dropbox on your workstation and your laptop to sync files. You also share files using Samba (windows networking). You want both your computers to have samba shares open to your friend, whose computer has a static IP address 192.168.1.133. </para>
+ </sect2>
+
+<sect2 id="configuring">
+<title>Configuring</title>
+
+ <sect3 id="general">
+<title>Setting general policies</title>
+
+<para>So, how do you go about figuring your firewall, if you need to stay secure, but still be able to use KTorrent, Dropbox, ssh, and Samba? </para>
+
+<para>First of all, you will need to set a default policy preventing other hosts access to any services on your computers. </para>
+
+<para>This is common to both of your computers, so let us do it now: </para>
+
+<literallayout>- tick the tickbox "Firewall status" to enable firewall;
+- set "Default outgoing policy" to "Allow";
+- set "Default incoming policy" to "Deny";
+- set "Logging level", "Low", unless you know why you need a different level.</literallayout>
+
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-1-general.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>General configuration settings</phrase>
+</textobject>
+</mediaobject>
+
+
+<para>After setting the general policy, you will need to make some exceptions to this policy. To enable access to Samba and ssh services on your computers, you will need ssh and Samba ports to be opened. In order to use Dropbox and KTorrent you generally do not need any ports to be opened, but it can help a great deal, if you are using lansync on Dropbox (and you will, since you syncronize files between the workstation and laptop, and it is much quicker using lansync), and if you want better rating on bittorrent network while sharing files with KTorrent. </para>
+
+<para>Let us start with your workstation. </para>
+
+<para>On the workstation we need to open access to ssh, Dropbox lansync, Samba, and KTorrent.</para>
+
+ </sect3>
+
+ <sect3 id="ssh">
+
+ <title>Ssh</title>
+
+ <para>Click button "Add", select rule type "Simple", and then fill in: </para>
+  
+  <literallayout>Policy: Allow;
+Direction: Incoming;
+Port: Secure Shell.
+  </literallayout>
+  
+  <para>As for the logging, you can choose to log "New Connections". The "Description" field is optional, and useful only when you enter some rule including port numbers and IP addresses that you can forget the meaning of. </para>
+    
+    <para>Once you have done all of this, click "Add". Now you have the first rule in place! The dialog remains open so you can start filling the next rule right away.</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-2-ssh.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>Adding SSH rule</phrase>
+</textobject>
+</mediaobject>
+
+ </sect3>
+
+ <sect3 id="dropbox">
+
+ <title>Dropbox</title>
+
+
+<para>To add Dropbox LAN sync service to the list, look at the list of pre-defined services in the dialog. It is not there. So you will have to find out yourself which port needs to be opened for Dropbox to function properly. Just google for "Dropbox LAN sync port", and you will find that it is 17500 TCP/UDP ports that need to be opened. Alternatively, you can get the ports needed for a program by starting the program and then running </para>
+
+
+<screen width="200">
+<prompt>$</prompt> <command>sudo netstat -ap | grep dropbox | grep "*:*" | grep -iE "(TCP|UDP)"</command>
+</screen>
+
+
+<para>in the Konsole window (change dropbox to the program you are investigating).</para>
+
+<para>To open Dropbox LAN sync ports, click the button "Add", select the type "Simple", and fill in: </para>
+
+<literallayout>Policy: Allow;
+Direction: Incoming;
+Protocol: Any;
+Port: 17500. </literallayout>
+
+<para>Then select the desired logging level, enter a description that will help you recognize the rule in the future, like "Dropbox LAN sync" and add the rule.</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-3-dropbox1.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>Adding Dropbox LAN sync rule</phrase>
+</textobject>
+</mediaobject>
+
+<para>Now, you can also get extra security by restricting the access to the Dropbox LAN sync port to only your laptop, which, remember, is constantly given the same IP address 192.168.1.111 by the router. So, You can choose to limit access to that particular IP address. In that case, choose the rule type "Advanced", and fill in:</para> 
+
+<literallayout>Policy: Allow; 
+Direction: Incoming;
+Protocol: Any;
+Source: [Address] 192.168.1.111: [Port] 17500;
+Description: "Dropbox LAN sync / one address"</literallayout>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-4-dropbox2.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>Adding more secure Dropbox LAN sync rule</phrase>
+</textobject>
+</mediaobject>
+
+ </sect3>
+
+ <sect3 id="samba">
+
+ <title>Samba</title>
+
+
+<para>To add Samba, go the same route as with ssh. Make a new rule of type "Simple" and fill in:</para>
+
+<literallayout>Policy: Allow; 
+Direction: Incoming;
+Port: Samba;</literallayout>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-5-samba.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>Adding Samba rule</phrase>
+</textobject>
+</mediaobject>
+
+<para>Now, Samba is a service that likes to open quite random ports on each connection, so you will probably need to enable advanced functionality in the firewall – i.e. the NetBIOS (which is a subset of Samba) kernel module. To do so, click the "Modules" tab and check the checkbox "Connection Tracking" for NetBIOS. For an explanation of what a module does, see the "Modules" section of this handbook.</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-5-samba-module.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>Enabling the NetBios kernel module (for Samba file sharing)</phrase>
+</textobject>
+</mediaobject>
+
+
+ <para>You can also further modify the rules that were added for Samba, to make your Samba shares only possible to access from your notebook computer. In order to do that, you need to open the two rules that were created by the previous action (separate rules were created for TCP and for the UDP ports), change the rule type to "Advanced", and enter the IP address of your laptop (192.168.1.111) to the "Source [Address]" field (just like we did with Dropbox LAN sync rule, only here we have to modify two rules).</para>
+
+ </sect3>
+
+ <sect3 id="ktorrent">
+
+ <title>KTorrent</title>
+
+<para>To have KTorrent operational, you will have to add a new rule of type "Simple" and fill in: </para>
+
+<literallayout>Policy: Allow;
+Direction: Incoming;
+Port: KTorrent;
+</literallayout>
+
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-6-ktorrent.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>Adding ktorrent rule</phrase>
+</textobject>
+</mediaobject>
+
+<para>
+Two rules for TCP and UDP ports will be added as the result.</para>
+
+ <para>As an end result, we will have 6 rules in the firewall:</para>
+ 
+ 
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-7-all-rules.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>The final configuration</phrase>
+</textobject>
+</mediaobject>
+
+  </sect3>
+ </sect2>
+ 
+ <sect2 id="notebook">
+
+ <title>Notebook case</title>
+ 
+<para>When configuring the notebook, you will need to mirror the configuration you have created, changing just minor details – the IP addresses in the Dropbox and Samba rules from 192.168.1.111 to 192.168.1.122. So, to make things simple, you can export the rules from workstation to a file (use the "Profiles" menu), and then import the rules to the notebook and edit the above mentioned IP addresses.</para>
+
+<para>Now you have a configuration for your home network. What about the other locations, like the network at your workplace, or the broadband connection you have when you visit your mother? If you, for example, want a very different configuration at a different place, do you have to manually delete and add rules each time?</para>
+
+<para>That would be tedious, so you have an option to save the home configuration into a profile (lets call it "Home") and then create another configuration for "Work" and still another for "Mum's home". You can also create profiles for different activities you might engage in, like gaming (opening selected ports for games). To create and switch profiles, you can use the options available under the "Profiles" menu. That makes switching profiles when moving around or changing activities quite easy.</para> 
+  </sect2>
+ </sect1>
+ 
+ 
+ <sect1 id="further">
+
+ <title>Further reading</title>
+ 
+ <para>For more details on using UFW please see <ulink url="man:/usr/share/man/man8/ufw.8.gz">man ufw</ulink>.
+ </para>
+ <para>For more details on using IP-Tables based firewalls please see <ulink url="man:/usr/share/man/man8/iptables.8.gz">man iptables</ulink>.
+ </para>
+</sect1>
+</article>

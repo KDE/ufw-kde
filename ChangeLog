@@ -1,0 +1,125 @@
+0.4.3
+-----
+1. Actually get this to work with Kubuntu 12.04!!!
+
+0.4.2
+-----
+1. Add support for UFW 0.31 - thanks to ufw-frontends author Darwin Baustista
+   for very kindly supplying a patch.
+
+0.4.1
+-----
+1. Fix loading of profiles.
+
+0.4.0
+-----
+ 1. Add a simple log file viewer.
+ 2. Save profiles into /etc/kcm_ufw - this way they are system-wide.
+ 3. Store rule descriptions in /etc/kcm_ufw, as they are part of this
+    kcm, not ufw itself.
+ 4. Block further actions, until current one is complete.
+ 5. Set size of policy combos in simple and advanced pages to the
+    same size - to mimimize flicker. (Not sure why they have
+    different sizes.)
+ 6. Make text field of simple port the same size as the combo.
+ 7. Change column order of rules list to "Action, From, To, ..."
+ 8. Make 'Add Rule' dialog non-modal, so that 'Log Viewer' and
+    'Add Rule' can be used concurrently.
+ 9. Shorten IPv6 address - if possible.
+10. Fix selection of host radio when editing rules.
+11. Fix installation of JPEG files for Spanish documentation.
+12. Default to installing all translations.
+
+0.3.0
+-----
+ 1. Add support for UFW application profiles.
+ 2. Remove Service and Application sections from "Add Rule" dialog.
+    Merge the entries with UFW application profiles.
+ 3. Add more documentation, thanks to Donatas Glodenis.
+ 4. Clear all rules before resetting firewall.
+ 5. Use QDebug and not KDebug in helper.
+ 6. Show IPv6 in a separate column. Hide column if IPv6 support
+    is disabled.
+ 7. Warn when disabling IPv6 support, and there are some V6 rules
+    defined, that these will be removed.
+ 8. Can only define one interface per rule - not seperate source
+    and destination.
+ 9. Double click rule to edit.
+10. Add a semi-transparent icons to kcm (to better indicate current
+    firewall status), and as a background pixmap in add/edit dialog.
+11. Only set rules list column sizes after first non-empty list.
+12. Add a cmake option UFW_TRANSLATIONS, used to specify which
+    translations should be built and installed. e.g.
+        -DUFW_TRANSLATIONS="es;fr;lt"
+
+0.2.1
+-----
+1. Fix updating of rule log level.
+2. Fix setting of firewall defaults when firewall is enabled.
+3. Fix toggling of IPv6 disabling firewall.
+
+0.2.0
+-----
+1. Add support for saving/loading of profiles.
+2. Fix 'Move Up' and 'Move Down' Lithuanian translation.
+3. Add French translation. Thanks to Sergio Guibert
+4. Allow all settings to be changed, even when firewall is enabled.
+   For certain settings the backend will disable the firewall, set
+   the options, and then re-enable the firewall.
+5. Save order of rules columns, so that these are restored when the kcm
+   is reloaded.
+6. Move module into "Network and Connectivty" top level category.
+7. Better matching of rule port number to application/service name.
+
+0.1.1
+-----
+1. Fix bug when checking to/from address validity.
+2. Add Lithuanian translation. Thanks to Donatas Glodenis
+
+0.1.0
+-----
+ 1. Fix installation of Spanish translation.
+ 2. Add Up/Down buttons to allow rule moving via keyboard.
+ 3. Indicate, in tooltips, that netbios_ns kernel module is
+    for Samba, and pptp modules are for VPN
+ 4. Build list of installed netfilter modules, by scanning
+     /lib/modules/`uname -r`/kernel/net/netfilter/nf_conntrack_*.ko
+     /lib/modules/`uname -r`/kernel/net/ipv4/netfilter/nf_nat_*.ko
+ 5. Adjust size of application/service combo when changed.
+ 6. Added option to give each rule a description.
+ 7. Fix setting of 'outgoing' rules.
+ 8. Reset contents of 'Add Rule' dialog before it is shown.
+ 9. Install a config file listing the default settings to be
+    for; policies, logging, ipv6, and ipt modules.
+10. Provide some simple documentation.
+11. Move module into "Network Settings" category.
+
+0.0.4
+-----
+1. Fix kcm_ufw.pot to contain translatable strings from UI
+   files.
+2. Fix duplicate 'Allow' label in default incoming policy
+   combo.
+3. Fix setting of default outgoing policy.
+4. 'Limit' is not applicable to default incoming/outgoing
+   policies.
+5. Add Spanish translation - thanks to "Kubuntu-es.org
+   forum users"
+
+0.0.3
+-----
+1. Add install instructions.
+2. Add import/export of rules.
+3. Add ability to set some IP tables modules.
+
+0.0.2
+-----
+1. Don't call 'ufw' executable, use its Python API instead.
+2. Allow editing of rules.
+3. Allow rules to be re-ordered via drag'n'drop.
+
+0.0.1
+-----
+1. Initial version - tested against UFW on Kubuntu 10.10
+   Uses 'ufw' executable in the background, and parses its
+   output.

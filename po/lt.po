@@ -1,0 +1,1158 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Donatas G. <dgvirtual@akl.lt>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-26 21:09+0100\n"
+"PO-Revision-Date: 2011-06-20 21:22+0300\n"
+"Last-Translator: Donatas G. <dgvirtual@akl.lt>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10==1 && n%100!=11 ? 1 : n"
+"%10>=2 && (n%100<10 || n%100>=20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: kcm/kcm.cpp:131
+msgctxt "kernel module name"
+msgid "Amanda"
+msgstr "Amanda"
+
+#: kcm/kcm.cpp:132
+msgctxt "kernel module name"
+msgid "H.323"
+msgstr "H.323"
+
+#: kcm/kcm.cpp:133
+msgctxt "kernel module name"
+msgid "NetLink"
+msgstr "NetLink"
+
+#: kcm/kcm.cpp:134
+msgctxt "kernel module name"
+msgid "Proto DCCP"
+msgstr "Proto DCCP"
+
+#: kcm/kcm.cpp:135
+msgctxt "kernel module name"
+msgid "Proto GRE"
+msgstr "Proto GRE"
+
+#: kcm/kcm.cpp:136
+msgctxt "kernel module name"
+msgid "Proto SCTP"
+msgstr "Proto SCTP"
+
+#: kcm/kcm.cpp:137
+msgctxt "kernel module name"
+msgid "Proto UDP Lite"
+msgstr "Proto UDP Lite"
+
+#: kcm/kcm.cpp:138
+msgctxt "kernel module name"
+msgid "SLP"
+msgstr "SIP"
+
+#: kcm/kcm.cpp:139
+msgctxt "kernel module name"
+msgid "SNMP Basic"
+msgstr "SNMP Basic"
+
+#: kcm/kcm.cpp:140
+msgctxt "kernel module name"
+msgid "TFTP"
+msgstr "TFTP"
+
+#: kcm/kcm.cpp:157
+msgid "<p>Enables the <b>%1</b> kernel module</p>"
+msgstr "<p>Įgalina <b>%1</b> branduolio modulį</p>"
+
+#: kcm/kcm.cpp:158
+msgid "<p>Enables the <b>%1</b> kernel module (for %2)</p>"
+msgstr "<p>Įgalina <b>%1</b> branduolio modulį</p>"
+
+#: kcm/kcm.cpp:198
+msgid "UFW Settings"
+msgstr "UFW nustatymai"
+
+#: kcm/kcm.cpp:198
+msgid "GUI front-end for Uncomplicated FireWall"
+msgstr "Grafinė sąsaja „Uncomplicated FireWall“ programai"
+
+#: kcm/kcm.cpp:199
+msgid "(C) Craig Drummond, 2011"
+msgstr "(C) Craig Drummond, 2011"
+
+#: kcm/kcm.cpp:201
+msgid "Craig Drummond"
+msgstr "Craig Drummond"
+
+#: kcm/kcm.cpp:201
+msgid "Developer and maintainer"
+msgstr "Programuotojas ir palaikytojas"
+
+#: kcm/kcm.cpp:234
+msgid "Adding rules..."
+msgstr "Pridedamos taisyklės..."
+
+#: kcm/kcm.cpp:234
+msgid "Adding rule..."
+msgstr "Pridedama taisyklė..."
+
+#: kcm/kcm.cpp:262 kcm/kcm.cpp:275
+msgid "Updating rule..."
+msgstr "Atnaujinama taisyklė..."
+
+#: kcm/kcm.cpp:283
+msgid "Reset firewall to the default settings?"
+msgstr "Atkurti numatytuosius ugniasienės nustatymus?"
+
+#: kcm/kcm.cpp:283
+msgid "Reset"
+msgstr "Atkurti"
+
+#: kcm/kcm.cpp:288
+msgid "Resetting to system default settings..."
+msgstr "Atkuriami sistemos numatytieji nustatymai..."
+
+#: kcm/kcm.cpp:300
+msgid "Querying firewall status..."
+msgstr "Užklausiama ugniasienės būsenos..."
+
+#: kcm/kcm.cpp:311
+msgid "Enabling the firewall..."
+msgstr "Ugniasienė įjungiama..."
+
+#: kcm/kcm.cpp:311
+msgid "Disabling the firewall..."
+msgstr "Ugniasienė išjungiama..."
+
+#: kcm/kcm.cpp:327
+msgid ""
+"Disabling IPv6 support will remove any IPv6 rules.\n"
+"Proceed?"
+msgstr ""
+"Išjungus IPv6 palaikymą bus pašalintos visos IPv6 taisyklės.\n"
+"Ar norite tęsti?"
+
+#: kcm/kcm.cpp:328
+msgid "Disable IPv6 Support"
+msgstr "Išjungti IPv6 palaikymą"
+
+#: kcm/kcm.cpp:342
+msgid "Setting firewall IPv6 support..."
+msgstr "Įjungiamas IPv6 palaikymas ugniasienėje..."
+
+#: kcm/kcm.cpp:384
+msgid "Removing rule from firewall..."
+msgstr "Šalinama ugniasienės taisyklė..."
+
+#: kcm/kcm.cpp:417
+msgid "Setting firewall log level..."
+msgstr "Nustatomas ugniasienės žurnalizavimo lygmuo..."
+
+#: kcm/kcm.cpp:428
+msgid "Setting firewall default incomming policy..."
+msgstr "Nustatoma ugniasienės numatytoji įeinančių prisijungimų politika..."
+
+#: kcm/kcm.cpp:439
+msgid "Setting firewall default outgoing policy..."
+msgstr "Nustatoma ugniasienės numatytoji išeinančių prisijungimų politika..."
+
+#: kcm/kcm.cpp:489
+msgid "<p>Failed to remove rule.</p><p><i>%1</i></p>"
+msgstr "<p>Nepavyko pašalinti taisyklės.</p><p><i>%1</i></p>"
+
+#: kcm/kcm.cpp:492
+msgid "<p>Failed to save profile.</p><p><i>%1</i></p>"
+msgstr "<p>Nepavyko įrašyti profilio.</p><p><i>%1</i></p>"
+
+#: kcm/kcm.cpp:495
+msgid "<p>Failed to delete profile.</p><p><i>%1</i></p>"
+msgstr "<p>Nepavyko pašalinti profilio.</p><p><i>%1</i></p>"
+
+#: kcm/kcm.cpp:564
+msgid "Setting firewall modules..."
+msgstr "Nustatomi ugniasienės moduliai..."
+
+#: kcm/kcm.cpp:628
+msgid "Activating firewall profile %1..."
+msgstr "Aktyvuojamas ugniasienės profilis %1..."
+
+#: kcm/kcm.cpp:640
+msgid "<p>Remove <i>%1</i>?</p>"
+msgstr "<p>Pašalinti <i>%1</i>?</p>"
+
+#: kcm/kcm.cpp:640
+msgid "Remove Profile"
+msgstr "Šalinti profilį"
+
+#: kcm/kcm.cpp:667
+msgid "<p>Failed to remove <i>%1</i></p>"
+msgstr "<p>Nepavyko pašalinti <i>%1</i>"
+
+#: kcm/kcm.cpp:673 kcm/kcm.cpp:702
+msgid "*.ufw|Firewall Settings"
+msgstr "*.ufw|Ugniasienės nustatymai"
+
+#: kcm/kcm.cpp:692
+msgid "<p><i>%1</i> is not a valid Firewall Settings file</p>"
+msgstr "<p><i>%1</i> nėra teisingas ugniasienės nustatymų failas</p>"
+
+#: kcm/kcm.cpp:725
+msgid "Failed to create temporary file."
+msgstr "Nepavyko sukurti laikinojo failo."
+
+#: kcm/kcm.cpp:758
+msgid "Profile Name"
+msgstr "Profilio pavadinimas"
+
+#: kcm/kcm.cpp:758
+msgid "Please enter a name for the profile:"
+msgstr "Įrašykite profilio pavadinimą:"
+
+#: kcm/kcm.cpp:771
+msgid "<p>A profile named <i>%1</i> already exists.</p><p>Overwrite?</p>"
+msgstr "<p>Profilis <i>%1</i> jau yra.</p><p>Perrašyti?</p>"
+
+#: kcm/kcm.cpp:772
+msgid "Overwrite Profile"
+msgstr "Perrašyti profilį"
+
+#: kcm/kcm.cpp:863
+msgid "Saving firewall profile %1..."
+msgstr "Įrašomas ugniasienės profilis %1..."
+
+#: kcm/kcm.cpp:1054
+msgid "Moving rule in firewall..."
+msgstr "Perkeliama ugniasienės taisyklė..."
+
+#: kcm/kcm.cpp:1075
+msgid "Firewall is enabled, and there are no rules defined.%1"
+msgstr "Ugniasienė įjungta, tačiau jos neaprašo nei viena taisyklė. %1"
+
+#: kcm/kcm.cpp:1076
+msgid "Firewall is enabled, and there is 1 rule defined.%2"
+msgid_plural "Firewall is enabled, and there are %1 rules defined.%2"
+msgstr[0] "Ugniasienė yra įjungta, ją aprašo viena taisyklė. %2"
+msgstr[1] "Ugniasienė yra įjungta, ją aprašo %1 taisyklė. %2"
+msgstr[2] "Ugniasienė yra įjungta, ją aprašo %1 taisyklės. %2"
+msgstr[3] "Ugniasienė yra įjungta, ją aprašo %1 taisyklių. %2"
+
+#: kcm/kcm.cpp:1081
+msgid "Firewall is currently disabled, and there are no rules defined.%1"
+msgstr "Ugniasienė yra išjungta, nėra nei vienos taisyklės.  %1"
+
+#: kcm/kcm.cpp:1082
+msgid "Firewall is currently disabled, and there is 1 rule defined.%2"
+msgid_plural ""
+"Firewall is currently disabled, and there are %1 rules defined.%2"
+msgstr[0] "Ugniasienė yra išjungta, ją aprašo viena taisyklė."
+msgstr[1] "Ugniasienė yra išjungta, ją aprašo %1 taisyklė."
+msgstr[2] "Ugniasienė yra išjungta, ją aprašo %1 taisyklės."
+msgstr[3] "Ugniasienė yra išjungta, ją aprašo %1 taisyklių."
+
+#: kcm/kcm.cpp:1129
+msgid "No Saved Profiles"
+msgstr "Nėra įrašytų profilių."
+
+#: kcm/kcm.cpp:1131
+msgid "Save Current Settings..."
+msgstr "Įrašyti dabartinius nustatymus..."
+
+#: kcm/kcm.cpp:1132
+msgid "Load Profile"
+msgstr "Įkelti profilį"
+
+#: kcm/kcm.cpp:1133
+msgid "Delete Profile"
+msgstr "Trinti profilį"
+
+#: kcm/kcm.cpp:1134
+msgid "Import..."
+msgstr "Importuoti..."
+
+#: kcm/kcm.cpp:1135
+msgid "Export..."
+msgstr "Eksportuoti..."
+
+#: kcm/kcm.cpp:1191
+msgctxt "kernel module name"
+msgid "FTP"
+msgstr "FTP"
+
+#: kcm/kcm.cpp:1192
+msgctxt "kernel module name"
+msgid "IRC"
+msgstr "IRC"
+
+#: kcm/kcm.cpp:1193
+msgctxt "kernel module name"
+msgid "NetBIOS"
+msgstr "NetBIOS"
+
+#: kcm/kcm.cpp:1194
+msgctxt "kernel module name"
+msgid "PPTP"
+msgstr "PPTP"
+
+#: kcm/kcm.cpp:1195
+msgctxt "kernel module name"
+msgid "SANE"
+msgstr "SANE"
+
+#: kcm/kcm.cpp:1196
+msgctxt "kernel module name"
+msgid "SIP"
+msgstr "SIP"
+
+#: kcm/kcm.cpp:1214
+msgid ""
+"<p><i>Connection tracking</i> is the ability to maintain connection state "
+"information (such as source and destination address/port, protocol, etc.)  "
+"in memory.</p><p>Using these modules makes the firewall more secure.</p>"
+msgstr ""
+"<p><i>Prisijungimo sekimas</i> yra galimybė laikyti prisijungimo būklės "
+"informaciją (pvz., prisijungimo šaltinio ar tikslo adresas/prievadas, "
+"protokolas ir pan.)  atmintyje.</p><p>Naudojant šiuos modulius ugniasienė "
+"bus saugesnė.</p>"
+
+#: kcm/kcm.cpp:1220
+msgid ""
+"<p><i>NAT (Network Address Translation)</i>. Where any form of NAT (SNAT, "
+"DNAT, Masquerading) on your firewall is involved, some commands and "
+"responses may also need to be modified by the firewall. This is the job of "
+"the NAT modules.</p><p><b>NOTE:</b>If you are using the corresponding "
+"<i>Connection Tracking</i> module, then you should also enable the <i>NAT</"
+"i> module.</p>"
+msgstr ""
+"<p><i>NAT („tinklo adresų vertimas“ (angl. Network Address Translation)</i>. "
+"Jūsų ugniasienėje naudojant kokią nors NAT formą (SNAT, DNAT, Masquerading) "
+"kai kurios komandos ir atsakymai taip pat turės būti keičiami ugniasienės. "
+"Tai – NAT modulių darbas.</p><p><b>PASTABA:</b> Jei naudojate "
+"atitinkamą<i>Prisijungimo sekimo</i> modulį, taip pat turite įjungti ir "
+"<i>NAT</i> modulį.</p>"
+
+#. i18n: file: kcm/ufw.ui:260
+#. i18n: ectx: property (text), widget (QToolButton, refreshButton)
+#: kcm/logviewer.cpp:191 po/rc.cpp:162 rc.cpp:162
+msgid "Refresh"
+msgstr "Atnaujinti"
+
+#: kcm/logviewer.cpp:192
+msgid "Display Raw"
+msgstr "Rodyti neformatuotą"
+
+#: kcm/logviewer.cpp:194
+msgid "Create Rule"
+msgstr "Sukurti taisyklę"
+
+#: kcm/logviewer.cpp:204
+msgid "Raw"
+msgstr "Neformatuotas"
+
+#: kcm/logviewer.cpp:205
+msgid "Date"
+msgstr "Data"
+
+#. i18n: file: kcm/ufw.ui:119
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: kcm/logviewer.cpp:206 po/rc.cpp:117 rc.cpp:117
+msgid "Action"
+msgstr "Veiksmas"
+
+#. i18n: file: kcm/ufw.ui:124
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: kcm/logviewer.cpp:207 po/rc.cpp:120 rc.cpp:120
+msgid "From"
+msgstr "Iš"
+
+#. i18n: file: kcm/ufw.ui:129
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: kcm/logviewer.cpp:208 po/rc.cpp:123 rc.cpp:123
+msgid "To"
+msgstr "Į"
+
+#: kcm/logviewer.cpp:215
+msgid "Log Viewer"
+msgstr "Žurnalo žiūryklė"
+
+#: kcm/rule.cpp:63
+msgctxt "address on interface"
+msgid "%1 on %2"
+msgstr "%1 ant %2"
+
+#: kcm/rule.cpp:114 kcm/rule.cpp:190 kcm/rule.cpp:199
+msgid "Anywhere"
+msgstr "Bet kur"
+
+#: kcm/rule.cpp:135 kcm/rule.cpp:146 kcm/rule.cpp:159
+msgctxt "serice/application name (port numbers)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kcm/rule.cpp:284
+msgctxt "firewallAction incomming"
+msgid "%1 incoming"
+msgstr "%1 įeinančius"
+
+#: kcm/rule.cpp:285
+msgctxt "firewallAction outgoing"
+msgid "%1 outgoing"
+msgstr "%1 išeinančius"
+
+#: kcm/rule.cpp:290
+msgid "Yes"
+msgstr "Taip"
+
+#: kcm/ruledialog.cpp:69
+msgid "Simple"
+msgstr "Paprasta"
+
+#: kcm/ruledialog.cpp:70
+msgid "Advanced"
+msgstr "Sudėtingesnė"
+
+#: kcm/ruledialog.cpp:81
+msgid "Incoming"
+msgstr "Įeinantis"
+
+#: kcm/ruledialog.cpp:82
+msgid "Outgoing"
+msgstr "Išeinantis"
+
+#: kcm/ruledialog.cpp:215
+msgid "Any interface"
+msgstr "Bet kuri sąsaja"
+
+#: kcm/ruledialog.cpp:222
+msgid ""
+"<p>Enter one or more port numbers (e.g. <i>20,22</i>), a service name (e.g. "
+"<i>ssh</i>), or a port range (e.g. use <i>20:30</i> for ports 20 to 30)</p>"
+msgstr ""
+"<p>Įrašykite vieną ar daugiau prievadų numerių (pvz., <i>20,22</i>), "
+"tarnybos vardą (pvz.,  <i>ssh</i>), ar prievardų ruožą (pvz., naudokite "
+"<i>20:30</i> prievadų ruožui nuo 20 iki 30)</p>"
+
+#: kcm/ruledialog.cpp:229
+msgid ""
+"Enter an IP address (e.g. 192.168.1.100), or subnet (e.g. 192.168.1.0/24)"
+msgstr ""
+"Įrašykie IP adresą (pvz., 192.168.1.100), arba potinklį (e.g. 192.168.1.0/24)"
+
+#: kcm/ruledialog.cpp:234
+msgid ""
+"Enter a network interface (e.g. eth0), or leave blank to apply to all "
+"interfaces"
+msgstr ""
+"Įrašykite tinklo sąsają (pvz., eth0), arba palikite tuščią, jei norite, kad "
+"parinktis būtų taikoma visoms sąsajoms"
+
+#: kcm/ruledialog.cpp:432
+msgid "Edit Rule"
+msgstr "Keisti taisyklę"
+
+#: kcm/ruledialog.cpp:438
+msgid "Add"
+msgstr "Pridėti"
+
+#: kcm/ruledialog.cpp:440
+msgid "Add Rule"
+msgstr "Pridėti taisyklę"
+
+#: kcm/ruledialog.cpp:809
+msgid "No port defined."
+msgstr "Nenurodyti prievadai."
+
+#: kcm/ruledialog.cpp:811
+msgid "Invalid port."
+msgstr "Neteisingas prievadas."
+
+#: kcm/ruledialog.cpp:813 kcm/ruledialog.cpp:867
+msgid ""
+"Port ranges can only be used when either TCP or UDP are explicitly selected."
+msgstr ""
+"Prievadų sekos gali būti nurodomos tik kartu nurodant TCP arba UDP protokolą."
+
+#: kcm/ruledialog.cpp:851
+msgid "You can only use IPv6 addresses, if IPv6 support is enabled."
+msgstr "Jei įjungtas IPv6 palaikymas, galite naudoti tik IPv6 adresus."
+
+#: kcm/ruledialog.cpp:851
+msgid "IPv6 Support Disabled"
+msgstr "IPv6 palaikymas išjungtas"
+
+#: kcm/ruledialog.cpp:853
+msgid ""
+"Selected pre-defined ports for 'Source' and 'Destination' use different "
+"protocols."
+msgstr ""
+"Pasirinkti išanksto numatyti šaltinio ir tikslo prievadai naudoja skirtingus "
+"protokolus."
+
+#: kcm/ruledialog.cpp:853
+msgid "Mixed Protocols"
+msgstr "Įvairūs protokolai"
+
+#: kcm/ruledialog.cpp:856
+msgid "No hosts or ports defined."
+msgstr "Nenurodyti mazgai arba prievadai."
+
+#: kcm/ruledialog.cpp:858
+msgid "Invalid 'Source' address."
+msgstr "Neteisingas adresas „Iš“."
+
+#: kcm/ruledialog.cpp:860
+msgid "Invalid 'Destination' address."
+msgstr "Neteisingas adresas „Į“."
+
+#: kcm/ruledialog.cpp:862
+msgid "Invalid 'Source' port."
+msgstr "Neteisingas „Iš“ prievadas."
+
+#: kcm/ruledialog.cpp:864
+msgid "Invalid 'Destination' port."
+msgstr "Neteisingas „Į“ prievadas."
+
+#: kcm/ruledialog.cpp:895
+msgid "Rule already exists!"
+msgstr "Tokia taisyklė jau yra!"
+
+#: kcm/ruledialog.cpp:917
+msgid "<p>Failed to insert rule.</p><p><i>%1</i></p>"
+msgstr "<p>Nepavyko įterpti taisyklės.</p><p><i>%1</i></p>"
+
+#: kcm/strings.cpp:40
+msgid ""
+"<li><i><b>Allow</b></i> accepts access to the specified ports/services.</"
+"li><li><i><b>Deny</b></i> blocks access to the specified ports/services.</"
+"li><li><i><b>Reject</b></i> is similar to <i>Deny</i>, but lets the sender "
+"know when traffic is being denied, rather than simply ignoring it.</li>"
+msgstr ""
+"<li><i><b>Leisti</b></i> leidžia prieigą prie nurodytų prievadų/tarnybų.</"
+"li><li><i><b>Neleisti</b></i> blokuoja prieigą prie nurodytų prievadų/"
+"tarnybų.</li><li><i><b>Atmesti</b></i> panašu į <i>neleisti</i>, tačiau "
+"leidžia siuntėjui žinoti, kad srautas neleidžiamas, užuot tiesiog jį "
+"ignoruojant.</li>"
+
+#: kcm/strings.cpp:45
+msgid ""
+"<li><i><b>Limit</b></i> enables connection rate limiting. This is useful for "
+"protecting against brute-force login attacks. The firewall will deny "
+"connections if an IP address has attempted to initiate 6 or more connections "
+"in the last 30 seconds.</li>"
+msgstr ""
+"<li><i><b>Riboti</b></i> įjungia prisijungimų bandymų ribojimą. Ši parinktis "
+"naudinga „brute-force“ prisijungimų atakų prevencijai. Ugniasienė nebeleis "
+"jungtis jei iš IP adreso per pastarąsias 30 sekundžių bus bandoma jungtis 6 "
+"ar daugiau kartų. </li>"
+
+#: kcm/strings.cpp:54
+msgid ""
+"<p><ul><li><i><b>Off</b></i> disables logging.</li><li><i><b>Low</b></i> "
+"logs all blocked packets not matching the default policy (with rate "
+"limiting), as well as packets matching logged rules.</li><li><i><b>Medium</"
+"b></i> as per <i>Low</i>, plus all allowed packets not matching the default "
+"policy, all <i>invalid</i> packets, and all new connections. All logging is "
+"done with rate limiting.</li><li><i><b>High</b></i> as per <i>Medium</i> "
+"(without rate limiting), plus all packets with rate limiting.</"
+"li><li><i><b>Full</b></i> log everything, without rate limiting.</li></ul></"
+"p><p>Levels above <i>Medium</i> generate a lot of logging output, and may "
+"quickly fill up your disk. <i>Medium</i> may generate a lot of logging "
+"output on a busy system.</p>"
+msgstr ""
+"<p><ul><li><i><b>Išjungta</b></i> visiškai nerašoma į žurnalą.</"
+"li><li><i><b>Mažai</b></i> įrašo į žurnalą informaciją apie visus "
+"užblokuotus paketus, neatitinkančius numatytosios politikos (nefiksuojant "
+"bandymų ribojimo atvejų), bei visus paketus, atitikusius taisykles, kurioms "
+"numatytas rašymas į žurnalą.</li><li><i><b>Vidutiniškai</b></i> kaip ir "
+"<i>Mažai</i> atveju, bet pridedant visus leidžiamus paketus kurie neatitinka "
+"numatytosios politikos, visus <i>neteisingus</i> paketus, ir visus naujus "
+"prisijungimus. Rašant į žurnalą nefiksuojami atvejai, kuriuos atitinka "
+"taisyklės su bandymų ribojimu.</li><li><i><b>Daug</b></i> kaip ir "
+"<i>Vidutiniškai</i> atveju (kuriame nefiksuojami bandymų ribojimo taisykles "
+"atitikę paketai), bet čia fiksuojami ir bandymų ribojimo taisykles atitikę "
+"paketai.</li><li><i><b>Viskas</b></i> rašo į žurnalą viską.</li></ul></"
+"p><p>Lygiai virš <i>Vidutiniškai</i> generuoja labai daug išvesties ir gali "
+"greitai užpildyti diską. <i>Vidutiniškai</i> daug naudojamoje sistemoje taip "
+"pat gali labai daug rašyti į žurnalą.</p>"
+
+#: kcm/strings.cpp:70
+msgid ""
+"<p>Per rule logging.</ul><li><i><b>None</b></i> no logging is performed when "
+"a packet matches a rule.</li><li><i><b>New</b></i> will log all new "
+"connections matching a rule.</li><li><i><b>All</b></i> will log all packets "
+"matching a rule.</li></ul></p>"
+msgstr ""
+"<p>Rašymas į žurnalą priklausomai nuo taisyklės.</ul><li><i><b>Nieko</b></i> "
+"– paketui atitikus taisyklę nieko nerašoma į žurnalą.</li><li><i><b>Nauji</"
+"b></i>  – rašys į žurnalą visus naujus prisijungimus, atitikusius taisyklę.</"
+"li><li><i><b>Visi</b></i> – fiksuos visus paketus, atitikusius taisyklę.</"
+"li></ul></p>"
+
+#: kcm/strings.cpp:79
+msgid ""
+"<p>Rule ordering is important and the first match wins. Therefore when "
+"adding rules, add the more specific rules first with more general rules "
+"later.</p>"
+msgstr ""
+"<p>Taisyklių išdėstymas yra svarbus, nugali ta, kuri yra pirmiau sąraše. "
+"taigi, pridėdami taisykles, pridėkite specifiškesnes taisykles pirma, o "
+"bendras taisykles – toliau.</p>"
+
+#: kcm/types.cpp:38
+msgid "Off"
+msgstr "Išjungta"
+
+#: kcm/types.cpp:40
+msgid "Low"
+msgstr "Mažai"
+
+#: kcm/types.cpp:41
+msgid "Medium"
+msgstr "Vidutiniškai"
+
+#: kcm/types.cpp:42
+msgid "High"
+msgstr "Daug"
+
+#: kcm/types.cpp:43
+msgid "Full"
+msgstr "Viskas"
+
+#: kcm/types.cpp:60
+msgid "None"
+msgstr "Nieko"
+
+#: kcm/types.cpp:61
+msgid "New connections"
+msgstr "Nauji prisijungimai"
+
+#: kcm/types.cpp:62
+msgid "All packets"
+msgstr "Visi paketai"
+
+#: kcm/types.cpp:71
+msgid "Allow"
+msgstr "Leisti"
+
+#: kcm/types.cpp:72
+msgid "Deny"
+msgstr "Neleisti"
+
+#: kcm/types.cpp:73
+msgid "Reject"
+msgstr "Atmesti"
+
+#: kcm/types.cpp:74
+msgid "Limit"
+msgstr "Riboti"
+
+#: kcm/types.cpp:90
+msgid "Amule"
+msgstr "Amule"
+
+#: kcm/types.cpp:91
+msgid "Deluge"
+msgstr "Deluge"
+
+#: kcm/types.cpp:92
+msgid "KTorrent"
+msgstr "KTorrent"
+
+#: kcm/types.cpp:93
+msgid "Nicotine"
+msgstr "Nicotine"
+
+#: kcm/types.cpp:94
+msgid "qBittorrent"
+msgstr "qBittorrent"
+
+#: kcm/types.cpp:95
+msgid "Transmission"
+msgstr "Transmission"
+
+#: kcm/types.cpp:96
+msgid "ICQ"
+msgstr "ICQ"
+
+#: kcm/types.cpp:97
+msgid "Jabber"
+msgstr "Jabber"
+
+#: kcm/types.cpp:98
+msgid "Windows Live Messenger"
+msgstr "Windows Live Messenger"
+
+#: kcm/types.cpp:99
+msgid "Yahoo! Messenger"
+msgstr "Yahoo! Messenger"
+
+#: kcm/types.cpp:100
+msgid "FTP"
+msgstr "FTP"
+
+#: kcm/types.cpp:101
+msgid "HTTP"
+msgstr "HTTP"
+
+#: kcm/types.cpp:102
+msgid "Secure HTTP"
+msgstr "Secure HTTP"
+
+#: kcm/types.cpp:103
+msgid "IMAP"
+msgstr "IMAP"
+
+#: kcm/types.cpp:104
+msgid "Secure IMAP"
+msgstr "Secure IMAP"
+
+#: kcm/types.cpp:105
+msgid "POP3"
+msgstr "POP3"
+
+#: kcm/types.cpp:106
+msgid "Secure POP3"
+msgstr "Secure POP3"
+
+#: kcm/types.cpp:107
+msgid "SMTP"
+msgstr "SMTP"
+
+#: kcm/types.cpp:108
+msgid "NFS"
+msgstr "NFS"
+
+#: kcm/types.cpp:109
+msgid "Samba"
+msgstr "Samba"
+
+#: kcm/types.cpp:110
+msgid "Secure Shell"
+msgstr "Saugus apvalkalas"
+
+#: kcm/types.cpp:111
+msgid "VNC"
+msgstr "VNC"
+
+#: kcm/types.cpp:112
+msgid "Zeroconf"
+msgstr "Zeroconf"
+
+#: kcm/types.cpp:113
+msgid "Telnet"
+msgstr "Telnet"
+
+#: kcm/types.cpp:114
+msgid "NTP"
+msgstr "NTP"
+
+#: kcm/types.cpp:115
+msgid "CUPS"
+msgstr "CUPS"
+
+#: kcm/types.cpp:140
+msgid "TCP"
+msgstr "TCP"
+
+#: kcm/types.cpp:141
+msgid "UDP"
+msgstr "UDP"
+
+#: kcm/types.cpp:142
+msgid "Any protocol"
+msgstr "Abu protokolai"
+
+#. i18n: file: kcm/rulewidget.ui:27
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: file: kcm/rulewidget.ui:183
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#. i18n: file: kcm/rulewidget.ui:27
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: file: kcm/rulewidget.ui:183
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: po/rc.cpp:3 po/rc.cpp:27 rc.cpp:3 rc.cpp:27
+msgid "Policy:"
+msgstr "Politika:"
+
+#. i18n: file: kcm/rulewidget.ui:37
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: file: kcm/rulewidget.ui:193
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: file: kcm/rulewidget.ui:37
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: file: kcm/rulewidget.ui:193
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: po/rc.cpp:6 po/rc.cpp:30 rc.cpp:6 rc.cpp:30
+msgid "Direction:"
+msgstr "Kryptis:"
+
+#. i18n: file: kcm/rulewidget.ui:47
+#. i18n: ectx: property (text), widget (QLabel, simpleLoggingLabel)
+#. i18n: file: kcm/rulewidget.ui:538
+#. i18n: ectx: property (text), widget (QLabel, advancedLoggingLabel)
+#. i18n: file: kcm/rulewidget.ui:47
+#. i18n: ectx: property (text), widget (QLabel, simpleLoggingLabel)
+#. i18n: file: kcm/rulewidget.ui:538
+#. i18n: ectx: property (text), widget (QLabel, advancedLoggingLabel)
+#: po/rc.cpp:9 po/rc.cpp:81 rc.cpp:9 rc.cpp:81
+msgid "Logging:"
+msgstr "Rašymas į žurnalą:"
+
+#. i18n: file: kcm/rulewidget.ui:57
+#. i18n: ectx: property (text), widget (QLabel, simpleDescriptionLabel)
+#. i18n: file: kcm/rulewidget.ui:548
+#. i18n: ectx: property (text), widget (QLabel, advancedDescriptionLabel)
+#. i18n: file: kcm/rulewidget.ui:57
+#. i18n: ectx: property (text), widget (QLabel, simpleDescriptionLabel)
+#. i18n: file: kcm/rulewidget.ui:548
+#. i18n: ectx: property (text), widget (QLabel, advancedDescriptionLabel)
+#: po/rc.cpp:12 po/rc.cpp:84 rc.cpp:12 rc.cpp:84
+msgid "Description:"
+msgstr "Aprašymas:"
+
+#. i18n: file: kcm/rulewidget.ui:64
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, simpleDescription)
+#. i18n: file: kcm/rulewidget.ui:555
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, advancedDescription)
+#. i18n: file: kcm/rulewidget.ui:64
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, simpleDescription)
+#. i18n: file: kcm/rulewidget.ui:555
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, advancedDescription)
+#: po/rc.cpp:15 po/rc.cpp:87 rc.cpp:15 rc.cpp:87
+msgid "Description of rule"
+msgstr "Taisyklės aprašymas"
+
+#. i18n: file: kcm/rulewidget.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: file: kcm/rulewidget.ui:518
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#. i18n: file: kcm/rulewidget.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: file: kcm/rulewidget.ui:518
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#: po/rc.cpp:18 po/rc.cpp:75 rc.cpp:18 rc.cpp:75
+msgid "Protocol:"
+msgstr "Protokolas:"
+
+#. i18n: file: kcm/rulewidget.ui:130
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, simplePort)
+#. i18n: file: kcm/rulewidget.ui:314
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedSrcPort)
+#. i18n: file: kcm/rulewidget.ui:464
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedDestPort)
+#. i18n: file: kcm/rulewidget.ui:130
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, simplePort)
+#. i18n: file: kcm/rulewidget.ui:314
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedSrcPort)
+#. i18n: file: kcm/rulewidget.ui:464
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedDestPort)
+#: po/rc.cpp:21 po/rc.cpp:51 po/rc.cpp:69 rc.cpp:21 rc.cpp:51 rc.cpp:69
+msgid "Port number"
+msgstr "Prievado numeris"
+
+#. i18n: file: kcm/rulewidget.ui:142
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: file: kcm/rulewidget.ui:280
+#. i18n: ectx: property (text), widget (QLabel, label_8x)
+#. i18n: file: kcm/rulewidget.ui:506
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: file: kcm/rulewidget.ui:142
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: file: kcm/rulewidget.ui:280
+#. i18n: ectx: property (text), widget (QLabel, label_8x)
+#. i18n: file: kcm/rulewidget.ui:506
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: po/rc.cpp:24 po/rc.cpp:48 po/rc.cpp:72 rc.cpp:24 rc.cpp:48 rc.cpp:72
+msgid "Port:"
+msgstr "Prievadas:"
+
+#. i18n: file: kcm/rulewidget.ui:205
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3x)
+#: po/rc.cpp:33 rc.cpp:33
+msgid "Source"
+msgstr "Šaltinis"
+
+#. i18n: file: kcm/rulewidget.ui:214
+#. i18n: ectx: property (text), widget (QLabel, label_5x)
+#. i18n: file: kcm/rulewidget.ui:371
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: kcm/rulewidget.ui:214
+#. i18n: ectx: property (text), widget (QLabel, label_5x)
+#. i18n: file: kcm/rulewidget.ui:371
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: po/rc.cpp:36 po/rc.cpp:57 rc.cpp:36 rc.cpp:57
+msgid "Address:"
+msgstr "Adresas:"
+
+#. i18n: file: kcm/rulewidget.ui:221
+#. i18n: ectx: property (text), widget (QRadioButton, advancedSrcAnyHostRadio)
+#. i18n: file: kcm/rulewidget.ui:378
+#. i18n: ectx: property (text), widget (QRadioButton, advancedDestAnyHostRadio)
+#. i18n: file: kcm/rulewidget.ui:221
+#. i18n: ectx: property (text), widget (QRadioButton, advancedSrcAnyHostRadio)
+#. i18n: file: kcm/rulewidget.ui:378
+#. i18n: ectx: property (text), widget (QRadioButton, advancedDestAnyHostRadio)
+#: po/rc.cpp:39 po/rc.cpp:60 rc.cpp:39 rc.cpp:60
+msgid "Any address"
+msgstr "Bet kuris adresas"
+
+#. i18n: file: kcm/rulewidget.ui:255
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedSrcHost)
+#. i18n: file: kcm/rulewidget.ui:412
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedDestHost)
+#. i18n: file: kcm/rulewidget.ui:255
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedSrcHost)
+#. i18n: file: kcm/rulewidget.ui:412
+#. i18n: ectx: property (clickMessage), widget (UFW::LineEdit, advancedDestHost)
+#: po/rc.cpp:42 po/rc.cpp:63 rc.cpp:42 rc.cpp:63
+msgid "IP address"
+msgstr "IP adresas"
+
+#. i18n: file: kcm/rulewidget.ui:267
+#. i18n: ectx: property (text), widget (QRadioButton, advancedSrcAnyPortRadio)
+#. i18n: file: kcm/rulewidget.ui:424
+#. i18n: ectx: property (text), widget (QRadioButton, advancedDestAnyPortRadio)
+#. i18n: file: kcm/rulewidget.ui:267
+#. i18n: ectx: property (text), widget (QRadioButton, advancedSrcAnyPortRadio)
+#. i18n: file: kcm/rulewidget.ui:424
+#. i18n: ectx: property (text), widget (QRadioButton, advancedDestAnyPortRadio)
+#: po/rc.cpp:45 po/rc.cpp:66 rc.cpp:45 rc.cpp:66
+msgid "Any port"
+msgstr "Bet kuris prievadas"
+
+#. i18n: file: kcm/rulewidget.ui:359
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: po/rc.cpp:54 rc.cpp:54
+msgid "Destination"
+msgstr "Tikslas"
+
+#. i18n: file: kcm/rulewidget.ui:528
+#. i18n: ectx: property (text), widget (QLabel, label_15x)
+#: po/rc.cpp:78 rc.cpp:78
+msgid "Interface:"
+msgstr "Sąsaja:"
+
+#. i18n: file: kcm/ufw.ui:17
+#. i18n: ectx: property (title), widget (UFW::StatusBox, configBox)
+#: po/rc.cpp:90 rc.cpp:90
+msgid "Configuration"
+msgstr "Konfigūracija"
+
+#. i18n: file: kcm/ufw.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: po/rc.cpp:93 rc.cpp:93
+msgid "Firewall status:"
+msgstr "Ugniasienės būsena:"
+
+#. i18n: file: kcm/ufw.ui:33
+#. i18n: ectx: property (text), widget (QCheckBox, ufwEnabled)
+#. i18n: file: kcm/ufw.ui:47
+#. i18n: ectx: property (text), widget (QCheckBox, ipv6Enabled)
+#. i18n: file: kcm/ufw.ui:33
+#. i18n: ectx: property (text), widget (QCheckBox, ufwEnabled)
+#. i18n: file: kcm/ufw.ui:47
+#. i18n: ectx: property (text), widget (QCheckBox, ipv6Enabled)
+#: po/rc.cpp:96 po/rc.cpp:102 rc.cpp:96 rc.cpp:102
+msgid "Enabled"
+msgstr "Įjungta"
+
+#. i18n: file: kcm/ufw.ui:40
+#. i18n: ectx: property (text), widget (QLabel, ipv6EnabledLabel)
+#: po/rc.cpp:99 rc.cpp:99
+msgid "IPv6 support:"
+msgstr "IPv6 įgalinimas:"
+
+#. i18n: file: kcm/ufw.ui:54
+#. i18n: ectx: property (text), widget (QLabel, defaultOutgoingPolicyLabel)
+#: po/rc.cpp:105 rc.cpp:105
+msgid "Default outgoing policy:"
+msgstr "Numatytoji politika išeinantiems prisijungimams:"
+
+#. i18n: file: kcm/ufw.ui:64
+#. i18n: ectx: property (text), widget (QLabel, defaultIncomingPolicyLabel)
+#: po/rc.cpp:108 rc.cpp:108
+msgid "Default incoming policy:"
+msgstr "Numatytoji politika įeinantiems priesijungimams:"
+
+#. i18n: file: kcm/ufw.ui:74
+#. i18n: ectx: property (text), widget (QLabel, ufwLoggingLevelLabel)
+#: po/rc.cpp:111 rc.cpp:111
+msgid "Logging level:"
+msgstr "Rašymo į žurnalą lygmuo:"
+
+#. i18n: file: kcm/ufw.ui:97
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: po/rc.cpp:114 rc.cpp:114
+msgid "Rules"
+msgstr "Taisyklės"
+
+#. i18n: file: kcm/ufw.ui:134
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: po/rc.cpp:126 rc.cpp:126
+msgid "IPv6"
+msgstr "IPv6"
+
+#. i18n: file: kcm/ufw.ui:139
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: po/rc.cpp:129 rc.cpp:129
+msgid "Logging"
+msgstr "Į žurnalą"
+
+#. i18n: file: kcm/ufw.ui:144
+#. i18n: ectx: property (text), widget (UFW::RulesList, ruleList)
+#: po/rc.cpp:132 rc.cpp:132
+msgid "Description"
+msgstr "Aprašymas"
+
+#. i18n: file: kcm/ufw.ui:152
+#. i18n: ectx: property (text), widget (KPushButton, addRuleButton)
+#: po/rc.cpp:135 rc.cpp:135
+msgid "Add..."
+msgstr "Pridėti..."
+
+#. i18n: file: kcm/ufw.ui:159
+#. i18n: ectx: property (text), widget (KPushButton, editRuleButton)
+#: po/rc.cpp:138 rc.cpp:138
+msgid "Edit..."
+msgstr "Keisti..."
+
+#. i18n: file: kcm/ufw.ui:166
+#. i18n: ectx: property (text), widget (KPushButton, removeRuleButton)
+#: po/rc.cpp:141 rc.cpp:141
+msgid "Remove"
+msgstr "Šalinti"
+
+#. i18n: file: kcm/ufw.ui:173
+#. i18n: ectx: property (text), widget (KPushButton, moveRuleUpButton)
+#: po/rc.cpp:144 rc.cpp:144
+msgid "Move Up"
+msgstr "Aukštyn"
+
+#. i18n: file: kcm/ufw.ui:180
+#. i18n: ectx: property (text), widget (KPushButton, moveRuleDownButton)
+#: po/rc.cpp:147 rc.cpp:147
+msgid "Move Down"
+msgstr "Žemyn"
+
+#. i18n: file: kcm/ufw.ui:201
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: po/rc.cpp:150 rc.cpp:150
+msgid "Modules"
+msgstr "Moduliai"
+
+#. i18n: file: kcm/ufw.ui:229
+#. i18n: ectx: property (text), widget (QTreeWidget, modulesList)
+#: po/rc.cpp:153 rc.cpp:153
+msgid "Protocol"
+msgstr "Protokolas"
+
+#. i18n: file: kcm/ufw.ui:234
+#. i18n: ectx: property (text), widget (QTreeWidget, modulesList)
+#: po/rc.cpp:156 rc.cpp:156
+msgid "Connection Tracking"
+msgstr "Ryšio sekimas"
+
+#. i18n: file: kcm/ufw.ui:239
+#. i18n: ectx: property (text), widget (QTreeWidget, modulesList)
+#: po/rc.cpp:159 rc.cpp:159
+msgid "NAT"
+msgstr "NAT"
+
+#. i18n: file: kcm/ufw.ui:273
+#. i18n: ectx: property (text), widget (QToolButton, profilesButton)
+#: po/rc.cpp:165 rc.cpp:165
+msgid "Profiles"
+msgstr "Profiliai"
+
+#. i18n: file: kcm/ufw.ui:286
+#. i18n: ectx: property (text), widget (QToolButton, logButton)
+#: po/rc.cpp:168 rc.cpp:168
+msgid "Show Log..."
+msgstr "Rodyti žurnalą..."
+
+#: po/rc.cpp:169 rc.cpp:169
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Donatas Glodenis"
+
+#: po/rc.cpp:170 rc.cpp:170
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "dgvirtual@akl.lt"
+
+#~ msgid "Failed to remove existing profile!"
+#~ msgstr "Nepavyko pašalinti egzistuojančio profilio!"
+
+#~ msgid "Failed to save profile file!"
+#~ msgstr "Nepavyko įrašyti profilio failo!"
+
+#~ msgid "<p>Failed to copy <i>%1</i> to profile folder!</p>"
+#~ msgstr "<p>Nepavyko nukopijuoti <i>%1</i> į profilių aplanką!</p>"
+
+#, fuzzy
+#~ msgctxt "serviceName (portNumber)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#, fuzzy
+#~ msgctxt "ufwApplicationProfile (portNumbers)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid " ("
+#~ msgstr " ("
+
+#~ msgid "Enter an IP address"
+#~ msgstr "Įrašykite IP adresą"
+
+#~ msgid "Port number, or profile name, required."
+#~ msgstr "Prievado numeris arba profilio pavadinimas, būtina."
+
+#~ msgid "Any"
+#~ msgstr "Abu"
+
+#~ msgid "Port"
+#~ msgstr "Prievadas"
+
+#~ msgid "Application"
+#~ msgstr "Programa"
+
+#~ msgid "Service"
+#~ msgstr "Tarnyba"
+
+#~ msgid "Advanced (Address and port)"
+#~ msgstr "Sudėtingesnė (adresas ir prievadas)"
+
+#~ msgid "Invalid 'From' address."
+#~ msgstr "Neteisingas adresas „Iš“."
+
+#~ msgid "Invalid 'From' port."
+#~ msgstr "Neteisingas „Iš“ prievadas."
+
+#~ msgid "Application:"
+#~ msgstr "Programa:"
+
+#~ msgid "Service:"
+#~ msgstr "Tarnyba:"
+
+#~ msgid "TCP & UDP"
+#~ msgstr "TCP ir UDP"
+
+#~ msgid "Type:"
+#~ msgstr "Tipas:"
+
+#~ msgid "Settings"
+#~ msgstr "Nustatymai"
+
+#~ msgid "From:"
+#~ msgstr "Iš:"
+
+#~ msgid "To:"
+#~ msgstr "Į:"

@@ -1,0 +1,18 @@
+[Domain]
+Name=Uncomplicated Firewall
+Icon=security-high
+[org.kde.ufw.query]
+Name=Query Firewall
+Description=Query firewall status
+Policy=yes
+Persistence=session
+[org.kde.ufw.viewlog]
+Name=View Firewall Logs
+Description=View firewall logs
+Policy=yes
+Persistence=session
+[org.kde.ufw.modify]
+Name=Modify Firewall
+Description=Modify firewall settings
+Policy=auth_admin
+Persistence=session

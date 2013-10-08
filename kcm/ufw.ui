@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ufw</class>
+ <widget class="QWidget" name="Ufw">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>614</width>
+    <height>569</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="4">
+    <widget class="UFW::StatusBox" name="configBox">
+     <property name="title">
+      <string>Configuration</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Firewall status:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="ufwEnabled">
+        <property name="text">
+         <string>Enabled</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="ipv6EnabledLabel">
+        <property name="text">
+         <string>IPv6 support:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="ipv6Enabled">
+        <property name="text">
+         <string>Enabled</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="defaultOutgoingPolicyLabel">
+        <property name="text">
+         <string>Default outgoing policy:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="defaultOutgoingPolicy"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="defaultIncomingPolicyLabel">
+        <property name="text">
+         <string>Default incoming policy:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="defaultIncomingPolicy"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="ufwLoggingLevelLabel">
+        <property name="text">
+         <string>Logging level:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QComboBox" name="ufwLoggingLevel"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="4">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Rules</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0" rowspan="7">
+        <widget class="UFW::RulesList" name="ruleList">
+         <property name="rootIsDecorated">
+          <bool>false</bool>
+         </property>
+         <property name="uniformRowHeights">
+          <bool>true</bool>
+         </property>
+         <property name="itemsExpandable">
+          <bool>false</bool>
+         </property>
+         <property name="allColumnsShowFocus">
+          <bool>true</bool>
+         </property>
+         <property name="expandsOnDoubleClick">
+          <bool>false</bool>
+         </property>
+         <column>
+          <property name="text">
+           <string>Action</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>From</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>To</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>IPv6</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Logging</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Description</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="KPushButton" name="addRuleButton">
+         <property name="text">
+          <string>Add...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KPushButton" name="editRuleButton">
+         <property name="text">
+          <string>Edit...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="KPushButton" name="removeRuleButton">
+         <property name="text">
+          <string>Remove</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="KPushButton" name="moveRuleUpButton">
+         <property name="text">
+          <string>Move Up</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="KPushButton" name="moveRuleDownButton">
+         <property name="text">
+          <string>Move Down</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>73</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Modules</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTreeWidget" name="modulesList">
+         <property name="rootIsDecorated">
+          <bool>false</bool>
+         </property>
+         <property name="uniformRowHeights">
+          <bool>true</bool>
+         </property>
+         <property name="itemsExpandable">
+          <bool>false</bool>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="allColumnsShowFocus">
+          <bool>true</bool>
+         </property>
+         <property name="expandsOnDoubleClick">
+          <bool>false</bool>
+         </property>
+         <attribute name="headerDefaultSectionSize">
+          <number>64</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Protocol</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Connection Tracking</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>NAT</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="KSqueezedTextLabel" name="statusLabel">
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QToolButton" name="refreshButton">
+     <property name="text">
+      <string>Refresh</string>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QToolButton" name="profilesButton">
+     <property name="text">
+      <string>Profiles</string>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QToolButton" name="logButton">
+     <property name="text">
+      <string>Show Log...</string>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KSqueezedTextLabel</class>
+   <extends>QLabel</extends>
+   <header>ksqueezedtextlabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>UFW::RulesList</class>
+   <extends>QTreeWidget</extends>
+   <header>ruleslist.h</header>
+  </customwidget>
+  <customwidget>
+   <class>UFW::StatusBox</class>
+   <extends>QGroupBox</extends>
+   <header>statusbox.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>ufwEnabled</tabstop>
+  <tabstop>ipv6Enabled</tabstop>
+  <tabstop>defaultOutgoingPolicy</tabstop>
+  <tabstop>defaultIncomingPolicy</tabstop>
+  <tabstop>ufwLoggingLevel</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>ruleList</tabstop>
+  <tabstop>addRuleButton</tabstop>
+  <tabstop>editRuleButton</tabstop>
+  <tabstop>removeRuleButton</tabstop>
+  <tabstop>moveRuleUpButton</tabstop>
+  <tabstop>moveRuleDownButton</tabstop>
+  <tabstop>modulesList</tabstop>
+  <tabstop>refreshButton</tabstop>
+  <tabstop>profilesButton</tabstop>
+  <tabstop>logButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

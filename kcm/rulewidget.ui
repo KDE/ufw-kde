@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RuleWidget</class>
+ <widget class="QWidget" name="RuleWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>499</width>
+    <height>420</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QComboBox" name="ruleType"/>
+   </item>
+   <item>
+    <widget class="UFW::StackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_2">
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Policy:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="simplePolicy"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Direction:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="simpleDirection"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="simpleLoggingLabel">
+         <property name="text">
+          <string>Logging:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QComboBox" name="simpleLogging"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="simpleDescriptionLabel">
+         <property name="text">
+          <string>Description:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="KLineEdit" name="simpleDescription">
+         <property name="clickMessage">
+          <string>Description of rule</string>
+         </property>
+         <property name="showClearButton" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="simpleProtocol"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Protocol:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_3x">
+         <property name="spacing">
+          <number>-1</number>
+         </property>
+         <item>
+          <widget class="QRadioButton" name="simplePortRadio">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="UFW::LineEdit" name="simplePort">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>64</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="clickMessage">
+            <string>Port number</string>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Port:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_5x">
+         <item>
+          <widget class="QRadioButton" name="simpleProfileRadio">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="UFW::ComboBox" name="simpleProfile">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QComboBox::AdjustToContents</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Policy:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="advancedPolicy"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Direction:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="advancedDirection"/>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QGroupBox" name="groupBox_3x">
+           <property name="title">
+            <string>Source</string>
+           </property>
+           <layout class="QFormLayout" name="formLayout_4x">
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_5x">
+              <property name="text">
+               <string>Address:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QRadioButton" name="advancedSrcAnyHostRadio">
+              <property name="text">
+               <string>Any address</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_6xa">
+              <item>
+               <widget class="QRadioButton" name="advancedSrcHostRadio">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="autoExclusive">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="UFW::LineEdit" name="advancedSrcHost">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="clickMessage">
+                 <string>IP address</string>
+                </property>
+                <property name="showClearButton" stdset="0">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="1">
+             <widget class="QRadioButton" name="advancedSrcAnyPortRadio">
+              <property name="text">
+               <string>Any port</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_8x">
+              <property name="text">
+               <string>Port:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_4x">
+              <item>
+               <widget class="QRadioButton" name="advancedSrcPortRadio">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="autoExclusive">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="UFW::LineEdit" name="advancedSrcPort">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>64</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="clickMessage">
+                 <string>Port number</string>
+                </property>
+                <property name="showClearButton" stdset="0">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="4" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_6x">
+              <item>
+               <widget class="QRadioButton" name="advancedSrcProfileRadio">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="autoExclusive">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="UFW::ComboBox" name="advancedSrcProfile">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizeAdjustPolicy">
+                 <enum>QComboBox::AdjustToContents</enum>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="title">
+            <string>Destination</string>
+           </property>
+           <layout class="QFormLayout" name="formLayout_4">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::ExpandingFieldsGrow</enum>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Address:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QRadioButton" name="advancedDestAnyHostRadio">
+              <property name="text">
+               <string>Any address</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_6xb">
+              <item>
+               <widget class="QRadioButton" name="advancedDestHostRadio">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="autoExclusive">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="UFW::LineEdit" name="advancedDestHost">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="clickMessage">
+                 <string>IP address</string>
+                </property>
+                <property name="showClearButton" stdset="0">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="1">
+             <widget class="QRadioButton" name="advancedDestAnyPortRadio">
+              <property name="text">
+               <string>Any port</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QRadioButton" name="advancedDestPortRadio">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="autoExclusive">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="UFW::LineEdit" name="advancedDestPort">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>64</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="clickMessage">
+                 <string>Port number</string>
+                </property>
+                <property name="showClearButton" stdset="0">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="4" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QRadioButton" name="advancedDestProfileRadio">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="autoExclusive">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="UFW::ComboBox" name="advancedDestProfile">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizeAdjustPolicy">
+                 <enum>QComboBox::AdjustToContents</enum>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Port:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Protocol:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="advancedProtocol"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_15x">
+         <property name="text">
+          <string>Interface:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="advancedInterface"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="advancedLoggingLabel">
+         <property name="text">
+          <string>Logging:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="advancedLogging"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="advancedDescriptionLabel">
+         <property name="text">
+          <string>Description:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="KLineEdit" name="advancedDescription">
+         <property name="clickMessage">
+          <string>Description of rule</string>
+         </property>
+         <property name="showClearButton" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>87</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="KSqueezedTextLabel" name="statusLabel">
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KSqueezedTextLabel</class>
+   <extends>QLabel</extends>
+   <header>ksqueezedtextlabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>UFW::ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UFW::LineEdit</class>
+   <extends>KLineEdit</extends>
+   <header>lineedit.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UFW::StackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header>stackedwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>ruleType</tabstop>
+  <tabstop>simplePolicy</tabstop>
+  <tabstop>simpleDirection</tabstop>
+  <tabstop>simplePortRadio</tabstop>
+  <tabstop>simplePort</tabstop>
+  <tabstop>simpleProfileRadio</tabstop>
+  <tabstop>simpleProfile</tabstop>
+  <tabstop>simpleProtocol</tabstop>
+  <tabstop>simpleLogging</tabstop>
+  <tabstop>simpleDescription</tabstop>
+  <tabstop>advancedPolicy</tabstop>
+  <tabstop>advancedDirection</tabstop>
+  <tabstop>advancedSrcAnyHostRadio</tabstop>
+  <tabstop>advancedSrcHostRadio</tabstop>
+  <tabstop>advancedSrcHost</tabstop>
+  <tabstop>advancedSrcAnyPortRadio</tabstop>
+  <tabstop>advancedSrcPortRadio</tabstop>
+  <tabstop>advancedSrcPort</tabstop>
+  <tabstop>advancedSrcProfileRadio</tabstop>
+  <tabstop>advancedSrcProfile</tabstop>
+  <tabstop>advancedDestAnyHostRadio</tabstop>
+  <tabstop>advancedDestHostRadio</tabstop>
+  <tabstop>advancedDestHost</tabstop>
+  <tabstop>advancedDestAnyPortRadio</tabstop>
+  <tabstop>advancedDestPortRadio</tabstop>
+  <tabstop>advancedDestPort</tabstop>
+  <tabstop>advancedDestProfileRadio</tabstop>
+  <tabstop>advancedDestProfile</tabstop>
+  <tabstop>advancedProtocol</tabstop>
+  <tabstop>advancedInterface</tabstop>
+  <tabstop>advancedLogging</tabstop>
+  <tabstop>advancedDescription</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>simplePortRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>simplePort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>simpleProfileRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>simpleProfile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>135</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>advancedSrcHostRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>advancedSrcHost</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>advancedSrcPortRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>advancedSrcPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>222</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>120</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>advancedSrcProfileRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>advancedSrcProfile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>advancedDestHostRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>advancedDestHost</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>advancedDestPortRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>advancedDestPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>332</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>375</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>advancedDestProfileRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>advancedDestProfile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>331</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

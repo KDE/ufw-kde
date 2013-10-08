@@ -1,0 +1,49 @@
+Introduction
+============
+
+This is a KDE control center module to configure and control the Uncomplicated
+Firewall, as shipped with Kubuntu 11.04. The following features are supported:
+
+1. Enable/disable firewall
+2. Configure firewall default settings
+3. Add, edit, and remove rules
+4. Re-order rules via drag'n'drop
+5. Creation, and basic manipulation, of firewall profiles
+6. Import/export of firewall profiles
+7. Setting of some IP tables modules
+
+Components
+==========
+
+The code is split into 3 main parts:
+
+1. GUI - this is the main control module
+2. KAuth helper - kcm_ufw_helper. This a simpe C++ application that receives
+   instructions (via KAuth) from the control module - it then invokes the
+   appropriate commands on the python helper.
+3. UFW interface - kcm_ufw_helper.py. This performs all the actions upon UFW.
+   Its written in Python to take advantage of UFW's python API.
+
+It should be possible to merge both helpers into a single KDE4 based python
+helper.
+
+
+Installation
+============
+
+To build and install:
+
+1. mkdir build
+2. cd build
+3. cmake .. -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix`
+4. make
+5. sudo make install
+
+
+The following options may be passed to CMake:
+
+    -DUFW_TRANSLATIONS=<list of translations to install>
+        Builds and installs the selected translations. Supported values are
+        en, es, fr, lt, and all. Entries should be separated with a semicolon
+        (";") e.g. -DUFW_TRANSLATIONS="es;fr;lt"
+        Default: all

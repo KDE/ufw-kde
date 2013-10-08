@@ -1,0 +1,6 @@
+* KAuth calls should be asynch - KAuth seems to be broken!
+* Allow multiple item selection
+  - Allow multiple move and delete
+* Rule editing with ipv6 enabled
+* Better, more descriptive, error messages for add/edit dialog?
+

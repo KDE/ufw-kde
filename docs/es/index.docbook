@@ -1,0 +1,420 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY Craig.Drummond.mail "<email>craig.p.drummond@gmail.com</email>">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Spanish "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+ <articleinfo>
+  <title>El Manual del Cortafuegos</title>
+   <authorgroup>
+    <author>&Craig.Drummond; &Craig.Drummond.mail;</author>
+    <!-- Chapter 'How firewall works' is adapted from the KMyFirewall handbook, copyright Christian Hubinger, 2002-2005, used by permission. -->
+    <!-- TRANS:ROLES_OF_TRANSLATORS -->
+   </authorgroup>
+   <date>2011-06-02</date>
+   <releaseinfo>0.4.0</releaseinfo>
+   <keywordset>
+    <keyword>KDE</keyword>
+    <keyword>KControl</keyword>
+    <keyword>ufw</keyword>
+    <keyword>firewall</keyword>
+   </keywordset>
+   
+   <!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook 
+     and in the FDL itself on how to use it.
+   <legalnotice>&FDLNotice;</legalnotice>
+   -->
+  </articleinfo>
+ <sect1 id="introduction">
+  <title>Introducción</title>
+  <para>Este módulo le permite controlar las configuraciones de 'Uncomplicated FireWall' (UFW), que es una interfaz en línea de comandos para el servidor de seguridad por defecto de Linux (IP-Tablas).</para>
+ </sect1>
+ 
+  <sect1 id="howtheywork">
+  <title>¿Cómo funciona un Cortafuegos?</title>
+  <para>
+  El funcionamiento de un cortafuegos es un tema muy complejo. Me gustaría dar una breve introducción sobre lo que es un cortafuegos y como funciona.
+  </para>
+  <para>
+  Cuando usted pregunta sobre cortafuegos, la mayoría de las personas responden: <quote>el cortafuegos solo restringe el tráfico en la red</quote>,
+  pero un cortafuegos moderno realiza más tareas que solo restringir el tráfico (que es, por supuesto, su principal tarea).
+  </para>
+  <para>Usted puede filtrar tráfico según las cabeceras de los paquetes, que contienen información sobre de donde los paquetes provienen, que protocolo utilizan, etc.
+  </para>
+  <para>
+  La segunda característica importante que un cortafuegos debe ofrecer, es la posibilidad de registrar la actividad en el tráfico de red. Esto es algo mucho más importante de lo que usted pueda imaginar. Los archivos de registro (Log files) le darán a usted un buen panorama sobre la actividad en su red, como quién hizo tal o cual cosa y cuándo. 
+  </para>
+  <para>
+  El registro es realmente importante cuando existe una fisura en el cortafuegos y usted quiere saber cómo repararla. En efecto si esto sucede, usted podría tener una difícil tarea intentando descubrir las causas de la fisura si no ha activado antes el registro para poder analizar la situación y así poder mejorar la configuración.
+  </para>
+  <para>
+  La mayoría de las personas piensan acerca del cortafuegos que solo puede ser usado para bloquear el tráfico desde Internet a su equipo, pero usted también puede configurar su cortafuegos para restringir el acceso a Internet. Por ejemplo usted puede bloquear sitios porno conocidos en las PC's de sus hijos, o usted puede solo desear permitir los correos electrónicos y la navegación en su oficina, pero no quiere que sus empleados puedan descargar archivos vía FTP. </para>
+  <para>
+  Todas estas cuestiones son realmente simples de implementar con UFW una vez que usted haya entendido como funciona. 
+  </para>
+</sect1>
+
+ <sect1 id="configuration">   
+  <title>Configuración</title>
+  <sect2 id="policies">
+   <title>Políticas Predeterminadas</title>
+   <para>UFW puede configurarse en cuanto a política predeterminada, según el tráfico sea entrante o saliente. Después de que haya configurado la política predeterminada, usted puede proveerle a esta de excepciones con reglas personalizadas. Esa política predeterminada puede establecerse en:
+    <orderedlist>
+     <listitem><para><quote>Permitir</quote> - acepta acceso a los puertos/servicios especificados.</para></listitem>
+     <listitem><para><quote>Denegar</quote> - bloquea el acceso a los puertos/servicios especificados.</para></listitem>
+     <listitem><para><quote>Rechazar</quote> - es similar a Denegar, pero permite al remitente saber que el tráfico está siendo negado, en vez de simplemente ignorarlo.</para></listitem>
+    </orderedlist>
+   </para>
+  </sect2>
+
+  <sect2 id="ipv6">
+   <title>Soporte para IPv6</title>
+   <para>Para permitir la compatibilidad de reglas basadas en direcciones IPv6, usted debe habilitar el <quote>Soporte para IPv6</quote>.</para>
+  </sect2>
+
+  <sect2 id="logging">
+   <title>Registro</title>
+   <para>El registro general del cortafuegos puede ser configurado desde <quote>Nivel del registro</quote>. Este se puede establecer en alguno de los siguientes       valores:
+    <orderedlist>
+     <!--I have contacted the person who wrote the UFW man page and learned from him that rate limiting here means simply limiting the number of dublicate entries. Corrected the below to make that clear, hope my english is understandable.-->
+     <listitem><para><quote>Apagado</quote> - deshabilita el registro.</para></listitem>
+     <listitem><para><quote>Bajo</quote> - registra todos los paquetes bloqueados que no coincidan con la política predeterminada (el 
+        registro tiene un límite), así como los paquetes con los que las reglas de registro coincidan.</para></listitem>
+     <listitem><para><quote>Medio</quote> - es igual a <quote>Bajo</quote>, más todos los paquetes permitidos que no coincidan con la 
+        política predeterminada, todos los paquetes inválidos y todas las conexiones nuevas. El registro tiene un límite.</para></listitem>
+     <listitem><para><quote>Alto</quote> - es igual a <quote>Medio</quote>, más todos los paquetes. El registro no tiene límite.
+               </para></listitem>
+     <listitem><para><quote>Completo</quote> - registra todo, el registro no tiene límite.</para></listitem>
+    </orderedlist>
+    NOTA: Los niveles por encima de <quote>Medio</quote> guardan muchos datos en el registro y pueden llenar el disco de manera rápida. 
+    Medio puede guardar muchos datos en el registro en un sistema ocupado.
+   </para>
+  </sect2>
+ </sect1>
+
+ <sect1 id="rules">
+  <title>Reglas</title>
+  <para>UFW trabaja al ser provisto por una lista de reglas con puertos/servicios a ser permitidos o bloqueados. Las reglas proporcionan excepciones a la política por defecto.</para>
+  <para>Por ejemplo, usted puede querer configurar el equipo para que no sea accesible desde Internet en caso de que se conecte directamente a la web con una dirección IP pública, pero que el ordenador esté abierto a toda conexión de redes intranet locales, y también permitir conexiones ssh desde cualquier lugar (ambas, local y de internet). En cuyo caso usted querrá seleccionar 'Denegar' como política predeterminada, pero luego agregar reglas para permitir conexiones ssh entrantes y conexiones desde las direcciones locales de red por defecto. <!--DONATO - šitam reikia pavyzdžio step by step gale!--> </para>
+  <para>El orden de las reglas es importante y la primera coincidencia gana. De esta forma cuando se agreguen reglas, primero agregue las reglas más específicas y luego las reglas más generales. Las reglas pueden reordenarse por medio de los botones <quote>Subir/Bajar</quote> o arrastrando y soltando con el ratón las entradas en la lista de reglas.</para>
+  <sect2 id="add_and_edit_rules">
+   <title>Agregar y Editar Reglas</title>
+   <para>Hay dos <quote>modos</quote> para agregar y editar reglas:
+    <orderedlist>
+     <listitem><para><quote>Simple</quote> - permite controlar números arbitrarios de puertos. Ellos pueden ser seleccionados desde una lista de servicios/aplicaciones predefinidos, o ingresados manualmente.</para></listitem>
+     <listitem><para><quote>Avanzado</quote> - permite un completo control de las direcciones y puertos tanto del origen como del destino. Necesita ser completado solo el campo que usted requiera.</para></listitem>
+    </orderedlist>
+   </para>
+   <para>La siguiente es una lista de características comunes a ambas:
+    <orderedlist>
+     <listitem><para><quote>Política</quote> - controla cómo se manejan las conexiones.</para>
+     <orderedlist>
+      <listitem><para><quote>Permitir</quote> - acepta acceso a los puertos/servicios especificados.</para></listitem>
+      <listitem><para><quote>Denegar</quote> - bloquea el acceso a los puertos/servicios especificados.</para></listitem>
+      <listitem><para><quote>Rechazar</quote> - es similar a Denegar, pero permite al remitente saber que el tráfico está siendo negado, 
+                      en vez de simplemente ignorarlo.</para></listitem>
+      <listitem><para><quote>Limitar</quote> - permite limitar el margen de conexión. Esto es útil para proteger contra los ataques de 
+                      acceso por fuerza bruta. El cortafuegos rechaza la conexión si la dirección IP ha intentado iniciar 6 o más 
+                      conexiones en los últimos 30 segundos.</para></listitem>
+      </orderedlist>
+     </listitem>
+     <listitem><para><quote>Sentido</quote> - indica el sentido de la conexión.</para></listitem>
+     <listitem><para><quote>Puerto</quote> - este es usado para definir el puerto o puertos a ser controlados. Puede seleccionarse de dos formas:
+       <orderedlist>
+       <listitem><para>Ingresando manualmente un numero de puerto. Existe un campo de texto que le permite ingresar uno o más números de puerto o un rango de números de puertos. (Los Rangos tienen el formato <quote>origen:destino</quote>, ej. <quote>123:456</quote>)</para></listitem>
+       <listitem><para>Bajo el campo de texto, hay una lista desplegable de servicios y aplicaciones predefinidas, y nombres de perfiles para aplicaciones de UFW.</para></listitem>
+      </orderedlist></para>
+     </listitem>
+     <listitem><para><quote>Protocolo</quote> - establece el tipo de protocolo a ser controlado. (Esta configuración es solo aplicable cuando el número de puerto va a ser ingresado manualmente)</para>
+      <orderedlist>
+       <listitem><para><quote>Cualquier</quote></para></listitem>
+       <listitem><para><quote>TCP</quote></para></listitem>
+       <listitem><para><quote>UDP</quote></para></listitem>
+      </orderedlist>
+     </listitem>
+     <listitem><para><quote>Registro</quote> - controla el registro por reglas.</para>
+      <orderedlist>
+       <listitem><para><quote>Ninguno</quote> -  no se realiza registro alguno cuando un paquete coincide con una regla.</para></listitem>
+       <listitem><para><quote>Nuevas</quote> - registrará todas las conexiones nuevas que coincidan con una regla.</para></listitem>
+       <listitem><para><quote>Todos</quote> - registrará todos los paquetes que coincidan con una regla.</para></listitem>
+      </orderedlist>
+     </listitem>
+     <listitem><para><quote>Descripción</quote> - Usted puede ingresar una descripción textual de la regla.</para></listitem>
+    </orderedlist>
+   </para>
+   <para>El modo <quote>Avanzado</quote> le permite especificar cualquier combinación de: dirección de origen, puerto de origen, dirección de destino y puerto de destino, así como la especificación de la interfaz de red (ej. wlan0, eth0, etc.) a ser aplicados a la regla. Las direcciones pueden ser: una dirección de IP (ej. 192.168.1.100), o subred (ej. 192.168.1.0/24).</para>
+  </sect2>
+  <sect2 id="ipv6_rules">
+   <title>Reglas IPv6</title>
+   <para>Cuando el soporte para IPv6 está habilitado, hay en efecto dos cortafuegos en simultaneo - uno para conexiones IPv4 y otro para conexiones IPv6.
+       Esto puede provocar comportamientos inesperados.
+   </para>
+   <sect3 id="ipv6_rules_editing">
+    <title>Editando</title>
+    <para>
+       Cada vez que usted crea una regla, el cortafuegos puede generar la regla IPv6 correspondiente. 
+       Ej. Si usted crea una regla para bloquear el puerto 22 (y no especifica una dirección IPv4), el cortafuegos creará dos reglas -
+       una para conexiones IPv4, y otra para conexiones IPv6. Si usted ahora edita la versión IPv4 de esta regla y cambia su número de puerto, entonces la regla IPv4 será actualizada, se creará una nueva regla IPv6, y la antigua regla IPv6 seguirá existiendo.
+       Por lo tanto, después de editar la regla IPv4, usted necesitará eliminar la antigua regla IPv6.
+    </para>
+   </sect3>
+   <sect3 id="ipv6_rules_order">
+    <title>Ordenando</title>
+    <para>
+       En la lista de reglas, las IPv6 son siempre agrupadas después de las IPv4, y no es posible reordenar una regla IPv6 para ser anterior a una regla IPv4. Esto es porque la regla IPv6 se aplica solo a conexiones IPv6, por lo que entremezclarlas con reglas IPv4 no tiene sentido.
+    </para>
+   </sect3>
+  </sect2>  
+ </sect1>
+
+ <sect1 id="modules">
+  <title>Módulos</title>
+  <para>UFW soporta la carga al kernel de módulos IP-Tables para mejorar su funcionalidad. Los módulos actualmente soportados en su 
+        sistema serán listados en la sección <quote>Módulos</quote>. Cada módulo habilitado es mostrado con una marca de verificación.</para>
+  <para>Hay dos tipos de módulos:
+   <orderedlist>
+    <listitem><para><quote>Seguimiento de Conexión</quote> - es la capacidad de mantener en la memoria información del estado de la 
+                    conexión (como la dirección, puerto, protocolo, etc., tanto del origen como del destino). El uso de dichos módulos 
+                    hace el cortafuegos más seguro.</para></listitem>
+    <listitem><para><quote>NAT (Network Address Translation)</quote> - En cualquier tipo de actividad NAT (SNAT, DNAT, Enmascaramiento) 
+                    en la que el cortafuegos se vea involucrado, algunos comandos y respuestas quizás también necesiten ser modificados 
+                    por el cortafuegos. Este es el trabajo de los módulos NAT. NOTA: Si usted está usando el correspondiente módulo de 
+                    Seguimiento de Conexión entonces también debería habilitar el módulo NAT.</para></listitem>
+   </orderedlist>
+  </para>
+ </sect1>
+
+
+ <sect1 id="profiles">
+  <title>Perfiles</title>
+  <para>La configuración actual de su cortafuegos puede ser guardada en un <quote>perfil.</quote> Este contendrá sus reglas, las configuraciones predeterminadas, y la lista de módulos activos IP-Tables. El uso de perfiles le permite cambiar fácilmente entre diferentes configuraciones.</para>
+  <para>Las opciones de perfiles son accesibles desde el botón de menú ubicado en la parte inferior derecha de la ventana principal.</para>
+ </sect1> 
+ 
+  <sect1 id="logviewer">
+  <title>Visor del Registro</title>
+  <para>Si ha habilitado el registro, entonces el cortafuegos registrará toda conexión en el archivo de registro del sistema. Para ver esas entradas,
+        un simple visor del registro es incluido.</para>
+  <para>El visor del registro se abre desde el botón de menú ubicado en la parte inferior derecha de la ventana principal.</para>
+ </sect1>
+ 
+<sect1 id="example">
+<title>Ejemplo: configurando el cortafuegos en su ordenador</title>
+
+<sect2 id="description">
+<title>Describiendo la situación</title>
+
+<para>Imaginemos que usted tiene en su casa una estación de trabajo (workstation) conectada con sus vecinos en una red cerrada, tal vez 15 equipos en total. Usted no sabe que SO utilizan sus vecinos como sistema principal, tampoco sabe si ellos le dan correcto mantenimiento a sus ordenadores, respecto a si están libres de virus y programas espías. Así que aunque su red se encuentra detrás de un router con cortafuegos, usted no confía mucho en la red. Usted no corre un servidor ni nada parecido en su estación de trabajo, pero aveces envía y recibe archivos a través de la red bittorrent utilizando KTorrent. Para hacer que el proceso sea eficiente, usted a redirigido los puertos 6881/TCP y 4444/UDP del router a su estación de trabajo. También se conecta a su estación desde afuera usando ssh, y para hacer eso posible, el router está redirigiendo a su estación de trabajo el puerto 22. Para lograr esta redirección de puertos (port forwarding), el router reserva para su estación la dirección IP 192.168.1.122.</para>
+
+<para>Usted también tiene un ordenador portátil (Notebook) que conecta a esa red de vez en cuando, pero también la conecta a otras redes y a la banda ancha de la casa de su madre. Por lo tanto, debe ser flexible sobre las posibilidades de configuración de red y seguridad al mismo tiempo. Cuando está conectada a la red doméstica, el router le otorga a su notebook la dirección reservada 192.168.1.111.</para>
+
+<para>Usted utiliza Dropbox en su estación de trabajo y su ordenador portátil para sincronizar archivos. También comparte archivos mediante Samba (redes Windows). Usted quiere que sus equipos tengan la compartición por samba abierta a un amigo, cuyo equipo tiene una dirección IP estática 192.168.1.133. </para>
+ </sect2>
+
+<sect2 id="configuring">
+<title>Configuración</title>
+
+ <sect3 id="general">
+<title>Eligiendo las políticas generales</title>
+
+<para>Entonces, ¿Cómo configurar su cortafuegos, si usted necesita estar seguro, pero aún así siendo capaz de utilizar KTorrent, Dropbox, ssh, and Samba? </para>
+
+<para>En primer lugar, usted tendrá que establecer una política por defecto que impida a otros equipos acceder a cualquier servicio en sus ordenadores. </para>
+
+<para>Esto es común a sus dos ordenadores, así que vamos a hacerlo ahora: </para>
+
+<literallayout>- marque la casilla "Estado del cortafuegos" para habilitar el cortafuegos;
+- en "Política saliente predeterminada" seleccione "Permitir";
+- en "Política entrante predeterminada" seleccione "Denegar";
+- en "Nivel del registro", "Bajo", a menos que necesite un nivel de registro diferente.</literallayout>
+
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-1-general.jpg" format="JPEG"/>
+</imageobject>
+<textobject><phrase>Configuración general</phrase>
+</textobject>
+</mediaobject>
+
+
+<para>Después de configurar la política general, necesitará hacer algunas excepciones a esa política. Para permitir el acceso a Samba y ssh en sus ordenadores, deberá abrir los puertos usados por ssh y Samba. Para usar Dropbox y KTorrent generalmente no es necesario abrir ningún puerto, pero puede ser de mucha ayuda abrirlos si usted está usando LAN Sync en Dropbox (la sincronización de archivos entre su estación de trabajo y la notebook es mucho mas rápida usando lansync), y si usted quiere un mejor ratio de compartición en la red bittorrent mientras comparte archivos con KTorrent. </para>
+
+<para>Comencemos por la estación de trabajo. </para>
+
+<para>En la estación necesitamos abrir el acceso a ssh, Dropbox lansync, Samba, and KTorrent.</para>
+
+ </sect3>
+
+ <sect3 id="ssh">
+
+ <title>Ssh</title>
+
+ <para>Pulse el botón "Agregar" y seleccione "Simple" como tipo de regla, y luego complete en: </para>
+  
+  <literallayout>Política: Permitir;
+Sentido: Entrante;
+Puerto: Secure Shell.
+  </literallayout>
+  
+  <para>En cuanto al registro, puede elegir registrar "Nuevas Conexiones". El campo "Descripción" es opcional, y útil sólo cuando se introduce alguna regla con los números de puerto y direcciones IP donde usted pueda olvidar su significado en un futuro. </para>
+    
+    <para>Una vez hecho todo esto, haga clic en "Agregar". Ahora usted tiene la primer regla en su lugar! El diálogo permanece abierto para que usted pueda comenzar a llenar la siguiente regla de inmediato.</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-2-ssh.jpg" format="JPEG"/>
+</imageobject>
+<textobject><phrase>Agregando la regla SSH</phrase>
+</textobject>
+</mediaobject>
+
+ </sect3>
+
+ <sect3 id="dropbox">
+
+ <title>Dropbox</title>
+
+
+<para>Para agregar el servicio LAN sync de Dropbox a la lista, observe la lista de servicios predefinidos en el diálogo. Pues no se encuentra allí. Entonces usted tendrá que buscar por su cuenta cual puerto es necesario abrir para Dropbox para su correcto funcionamiento. Simplemente busque en Google "Dropbox LAN sync port", y usted encontrará que los puerto 17500 TCP/UDP son los que deben ser abiertos. Otra alternativa para conocer el puerto usado, es iniciar la aplicación y ejecutar: </para>
+
+
+<screen width="200">
+<prompt>$</prompt> <command>sudo netstat -ap | grep dropbox | grep "*:*" | grep -iE "(TCP|UDP)" </command>
+</screen>
+
+
+<para>en la ventana de Konsole (puede cambiar "dropbox" por cualquier otra aplicación de la que usted quiera conocer el puerto usado).</para>
+
+<para>Para abrir los puertos de LAN sync, pulse el botón "Agregar", seleccione el tipo "Simple", y complete con: </para>
+
+<literallayout>Política: Permitir;
+Sentido: Entrante;
+Protocolo: Cualquier protocolo;
+Puerto: 17500. </literallayout>
+
+<para>A continuación, seleccione el nivel deseado de registro. Escriba una descripción que le ayudará a reconocer la regla en el futuro, como "Dropbox LAN sync". Añadir la regla.</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-3-dropbox1.jpg" format="JPEG"/>
+</imageobject>
+<textobject><phrase>Agregando la regla para Dropbox LAN sync</phrase>
+</textobject>
+</mediaobject>
+
+<para>Ahora, usted puede también conseguir una mayor seguridad al restringir el acceso al puerto de LAN sync de Dropbox sólo a su ordenador portátil, que recordemos, el router le otorga constantemente la dirección IP 192.168.1.111. Entonces, usted puede elegir limitar el acceso a esa dirección IP en particular. En ese caso, seleccione la regla de tipo "Avanzado", y complete con:</para> 
+
+<literallayout>Política: Permitir; 
+Sentido: Entrante;
+Protocolo: Cualquier protocolo;
+Origen: [Dirección] 192.168.1.111: [Puerto] 17500;
+Descripción: "Dropbox LAN sync / una dirección"</literallayout>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-4-dropbox2.jpg" format="JPEG"/>
+</imageobject>
+<textobject><phrase>Agregando una regla más segura para Dropbox LAN sync</phrase>
+</textobject>
+</mediaobject>
+
+ </sect3>
+
+ <sect3 id="samba">
+
+ <title>Samba</title>
+
+
+<para>Para agregar Samba, siga similares pasos que con ssh. Crear una nueva regla tipo "Simple" y complete con:</para>
+
+<literallayout>Política: Permitir; 
+Sentido: Entrante;
+Puerto: Samba;</literallayout>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-5-samba.jpg" format="JPEG"/>
+</imageobject>
+<textobject><phrase>Agregando regla para Samba</phrase>
+</textobject>
+</mediaobject>
+
+<para>Ahora bien, Samba es un servicio al que le gusta abrir los puertos bastante al azar en cada conexión, así que probablemente usted necesitará habilitar una funcionalidad avanzada en el cortafuegos – es decir, el módulo del kernel para NetBIOS (que es un subgrupo de Samba). Para ello, pulse en la pestaña "Módulos" y marque la casilla NetBIOS en "Seguimiento de Conexión". Para una explicación sobre lo que un Módulo hace, vea la sección "Módulos" en este manual.</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-5-samba-module.jpg" format="JPEG"/>
+</imageobject>
+<textobject><phrase>Habilitando el módulo del kernel NetBIOS (para la compartición de archivos con Samba)</phrase>
+</textobject>
+</mediaobject>
+
+
+ <para>Usted puede modificar aún más las reglas que se agregaron para Samba, para que su compartición con Samba solo sea accesible desde su Notebook. Para hacer eso, necesita abrir las dos reglas creadas previamente (reglas separadas fueron creadas para puertos TCP y UDP), cambie el tipo de regla a "Avanzado", e introduzca la dirección IP de su Notebook (192.168.1.111) en el campo "Origen [Dirección]" (tal como hicimos con la regla para Dropbox LAN sync, solo que aquí debemos modificar dos reglas).</para>
+
+ </sect3>
+
+ <sect3 id="ktorrent">
+
+ <title>KTorrent</title>
+
+<para>Para que KTorrent funcione, tendrá que agregar una nueva regla tipo "Simple" y completar con: </para>
+
+<literallayout>Política: Permitir;
+Sentido: Entrante;
+Puerto: KTorrent;
+</literallayout>
+
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-6-ktorrent.jpg" format="JPEG"/>
+</imageobject>
+<textobject><phrase>Agregando regla para KTorrent</phrase>
+</textobject>
+</mediaobject>
+
+<para>
+Dos reglas para los puertos TCP y UDP serán agregadas.</para>
+
+ <para>Como resultado final, nosotros tendremos 6 reglas en el cortafuegos:</para>
+ 
+ 
+<mediaobject>
+<imageobject>
+<imagedata fileref="example-7-all-rules.jpg" format="JPEG"/>
+</imageobject>
+<textobject><phrase>La configuración final</phrase>
+</textobject>
+</mediaobject>
+
+  </sect3>
+ </sect2>
+ 
+ <sect2 id="notebook">
+
+ <title>En la Notebook</title>
+ 
+<para>Cuando configure la notebook, usted tendrá que replicar la configuración creada, cambiando solo algunos detalles – la dirección IP en las reglas para Dropbox y Samba cambiando 192.168.1.111 por 192.168.1.122. Entonces para hacerlo de forma simple, usted puede exportar a un archivo las reglas creadas en la estación de trabajo (use el menú "Perfiles"), y luego importe las reglas a la notebook y edite la mencionada dirección IP.</para>
+
+<para>Ahora usted ya tiene configurada su red de su casa. ¿Qué hay sobre las otras locaciones, como la red en su lugar de trabajo, o la conexión de banda ancha a la que se conecta cuando visita a su madre? Si usted quisiera por ejemplo una muy diferente configuración en cada sitio ¿tendrá que eliminar y agregar reglas manualmente todo el tiempo?</para>
+
+<para>Eso sería tedioso, así que usted tiene la opción de guardar la configuración de su casa en un Perfil (llamémosle "Casa") y luego crear otra configuración para el "Trabajo" e incluso otra para la "Casa de Mamá". También se pueden crear perfiles para las diferentes actividades que usted pueda desarrollar, como cuando juega en el ordenador (abriendo los puertos utilizados por el juego). Para crear y cambiar de perfiles, puede usar las opciones disponibles en el menú "Perfiles". Eso hace que cambiar de perfiles cuando se mueve de locación o cambia de actividad, muy fácil.</para> 
+  </sect2>
+ </sect1>
+ 
+ 
+ <sect1 id="further">
+
+ <title>Lecturas recomendadas</title>
+ 
+ <para>Para más detalles en el uso de UWF, por favor lea <ulink url="man:/usr/share/man/man8/ufw.8.gz">man ufw</ulink>.
+ </para>
+ <para>Para más detalles en el uso de cortafuegos basados en IP-Tables, por favor lea <ulink url="man:/usr/share/man/man8/iptables.8.gz">man iptables</ulink>.
+ </para>
+</sect1>
+</article>

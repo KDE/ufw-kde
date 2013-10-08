@@ -1,0 +1,19 @@
+[Desktop Entry]
+Exec=kcmshell4 ufw
+Icon=security-high
+Type=Service
+X-KDE-ServiceTypes=KCModule
+X-DocPath=kcontrol/ufw/index.html
+X-KDE-Library=kcm_ufw
+X-KDE-ParentApp=kcontrol
+Name=Firewall
+Name[lt]=Ugniasienė
+Name[es]=Cortafuegos
+Name[fr]=Parefeu
+Comment=Firewall settings
+Comment[lt]=Ugniasienės nustatymai
+Comment[es]=Preferencias del Cortafuegos
+Comment[fr]=Configuration du Parefeu
+X-KDE-Keywords=ufw,firewall
+Categories=Qt;KDE;X-KDE-settings-system;
+X-KDE-System-Settings-Parent-Category=network-and-connectivity

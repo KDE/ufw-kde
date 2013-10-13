@@ -97,7 +97,7 @@ static void addProtocols(QComboBox *combo)
 static void addPredefinedPorts(QComboBox *combo, QList<PredefinedPort> &sortedPp, QMap<int, int> &map, bool splitMulti)
 {
     map.clear();
-    QList<PredefinedPort>::ConstIterator it(sortedPp.constBegin()), 
+    QList<PredefinedPort>::ConstIterator it(sortedPp.constBegin()),
                                          end(sortedPp.constEnd());
 
     for(int index=combo->count(); it!=end; ++it)
@@ -106,13 +106,13 @@ static void addPredefinedPorts(QComboBox *combo, QList<PredefinedPort> &sortedPp
         {
             QString ports=Types::toString((*it).val, false);
             bool    isMulti=ports.contains(" ");
-            
+
             if(isMulti && splitMulti)
             {
                 QStringList                split(ports.split(" "));
                 QStringList::ConstIterator sIt(split.constBegin()),
                                            sEnd(split.constEnd());
-                                           
+
                 for(int part=1; sIt!=sEnd; ++sIt, ++part)
                 {
                     combo->insertItem(index, (*it).str+QLatin1String(" (")+(*sIt)+QChar(')'));
@@ -182,7 +182,7 @@ static QString getProfilesPorts(const QString &text)
     return -1==start || -1==end ? text : text.mid(start+1, (end-(start+1)));
 }
 
-static void setRulePort(const QString &port, Types::Protocol prot, QRadioButton *portRadio, QRadioButton *profileRadio, 
+static void setRulePort(const QString &port, Types::Protocol prot, QRadioButton *portRadio, QRadioButton *profileRadio,
                         QRadioButton *anyRadio, QComboBox *profileCombo)
 {
     if(anyRadio && port.isEmpty())
@@ -192,7 +192,7 @@ static void setRulePort(const QString &port, Types::Protocol prot, QRadioButton 
 
     if(port.isEmpty())
         return;
-    
+
     QString portAndProt=port+Rule::protocolSuffix(prot);
     int     index=0,
             numItems=profileCombo->count();
@@ -413,7 +413,7 @@ static void setProfileIndex(QComboBox *combo, const QString &str)
         }
         else if(combo->itemText(index).isEmpty())
             haveSep=true;
-        
+
     if(!haveSep)
         combo->insertSeparator(index++);
     combo->insertItem(index, str);
@@ -478,7 +478,7 @@ RuleDialog::RuleDialog(Kcm *parent, bool isEditDlg)
     }
 
     QList<PredefinedPort> sortedPorts;
-    
+
     for(int i=0; i<Types::PP_COUNT; ++i)
         sortedPorts.append(PredefinedPort((Types::PredefinedPort)i));
     qSort(sortedPorts);
@@ -486,7 +486,7 @@ RuleDialog::RuleDialog(Kcm *parent, bool isEditDlg)
     addPredefinedPorts(simpleProfile, sortedPorts, simpleIndexToPredefinedPort, isEdit);
     addPredefinedPorts(advancedDestProfile, sortedPorts, advancedIndexToPredefinedPort, true);
     addPredefinedPorts(advancedSrcProfile, sortedPorts, advancedIndexToPredefinedPort, true);
-    
+
     simpleProtocol->setCurrentIndex(Types::PROTO_BOTH);
     advancedProtocol->setCurrentIndex(Types::PROTO_BOTH);
 
@@ -535,13 +535,13 @@ RuleDialog::RuleDialog(Kcm *parent, bool isEditDlg)
                  *advancedSrcPortGroup=new QButtonGroup(this),
                  *advancedDestHostGroup=new QButtonGroup(this),
                  *advancedDestPortGroup=new QButtonGroup(this);
-                 
+
     advancedSrcHostGroup->addButton(advancedSrcHostRadio);
     advancedSrcHostGroup->addButton(advancedSrcAnyHostRadio);
     advancedSrcPortGroup->addButton(advancedSrcPortRadio);
     advancedSrcPortGroup->addButton(advancedSrcProfileRadio);
     advancedSrcPortGroup->addButton(advancedSrcAnyPortRadio);
-    
+
     advancedDestHostGroup->addButton(advancedDestHostRadio);
     advancedDestHostGroup->addButton(advancedDestAnyHostRadio);
     advancedDestPortGroup->addButton(advancedDestPortRadio);
@@ -557,9 +557,9 @@ RuleDialog::RuleDialog(Kcm *parent, bool isEditDlg)
     connect(simpleLogging, SIGNAL(currentIndexChanged(int)), advancedLogging, SLOT(setCurrentIndex(int)));
     connect(advancedLogging, SIGNAL(currentIndexChanged(int)), simpleLogging, SLOT(setCurrentIndex(int)));
 
-    connect(simpleDescription, SIGNAL(textEdited(const QString &)), advancedDescription, SLOT(setText(const QString &)));
-    connect(advancedDescription, SIGNAL(textEdited(const QString &)), simpleDescription, SLOT(setText(const QString &)));
-    
+//     connect(simpleDescription, SIGNAL(textEdited(const QString &)), advancedDescription, SLOT(setText(const QString &)));
+//     connect(advancedDescription, SIGNAL(textEdited(const QString &)), simpleDescription, SLOT(setText(const QString &)));
+
     connect(simpleProfileRadio, SIGNAL(toggled(bool)), SLOT(controlSimpleProtocol()));
     connect(advancedSrcAnyPortRadio, SIGNAL(toggled(bool)), SLOT(controlAdvancedProtocol()));
     connect(advancedDestAnyPortRadio, SIGNAL(toggled(bool)), SLOT(controlAdvancedProtocol()));
@@ -591,7 +591,7 @@ RuleDialog::RuleDialog(Kcm *parent, bool isEditDlg)
     simplePolicy->setMaximumWidth(width);
     advancedPolicy->setMinimumWidth(width);
     advancedPolicy->setMaximumWidth(width);
-    
+
     simpleProfile->adjustSize();
     simplePort->setMinimumWidth(simpleProfile->size().width());
 }
@@ -606,9 +606,9 @@ RuleDialog::~RuleDialog()
 
 void RuleDialog::reset()
 {
-    simpleDescription->setText(QString());
-    advancedDescription->setText(QString());
-    simpleDescription->setText(QString());
+//     simpleDescription->setText(QString());
+//     advancedDescription->setText(QString());
+//     simpleDescription->setText(QString());
     simplePolicy->setCurrentIndex(Types::POLICY_DENY);
     simpleDirection->setCurrentIndex(DIR_IN);
     simplePort->setText(QString());
@@ -630,7 +630,7 @@ void RuleDialog::reset()
     advancedDestAnyHostRadio->setChecked(true);
     controlSimpleProtocol();
     controlAdvancedProtocol();
-    
+
     if(RT_SIMPLE==ruleType->currentIndex())
         simplePolicy->setFocus();
     else
@@ -640,9 +640,9 @@ void RuleDialog::reset()
 void RuleDialog::setRule(const Rule &rule)
 {
     editingRule=rule;
-    simpleDescription->setText(rule.getDescription());
-    advancedDescription->setText(rule.getDescription());
-    simpleDescription->setText(rule.getDescription());
+//     simpleDescription->setText(rule.getDescription());
+//     advancedDescription->setText(rule.getDescription());
+//     simpleDescription->setText(rule.getDescription());
     simplePolicy->setCurrentIndex(rule.getAction());
     simpleDirection->setCurrentIndex(rule.getIncoming() ? DIR_IN : DIR_OUT);
     simplePort->setText(rule.getDestPort());
@@ -657,7 +657,7 @@ void RuleDialog::setRule(const Rule &rule)
     advancedDestPort->setText(rule.getDestPort());
     advancedProtocol->setCurrentIndex(rule.getProtocol());
     advancedLogging->setCurrentIndex(rule.getLogging());
-    
+
     QString iface(rule.getIncoming() ? rule.getInterfaceIn() : rule.getInterfaceOut());
     advancedInterface->setEditText(iface.isEmpty() ? advancedInterface->itemText(0) : iface);
 
@@ -690,7 +690,7 @@ void RuleDialog::setRule(const Rule &rule)
                               !rule.getSourceApplication().isEmpty() ||
                               !rule.getSourcePort().isEmpty() || !rule.getInterfaceIn().isEmpty() ||
                               !rule.getInterfaceOut().isEmpty() ? RT_ADVANCED : RT_SIMPLE);
-    
+
     simpleProfileRadio->setVisible(simpleProfile->count());
     simpleProfile->setVisible(simpleProfile->count());
     simplePortRadio->setVisible(simpleProfile->count());
@@ -700,7 +700,7 @@ void RuleDialog::setRule(const Rule &rule)
     advancedDestProfileRadio->setVisible(advancedDestProfile->count());
     advancedDestProfile->setVisible(advancedDestProfile->count());
     advancedDestPortRadio->setVisible(advancedDestProfile->count());
-    
+
     advancedSrcAnyHostRadio->setChecked(rule.getSourceAddress().isEmpty());
     advancedDestAnyHostRadio->setChecked(rule.getDestAddress().isEmpty());
     advancedSrcHostRadio->setChecked(!rule.getSourceAddress().isEmpty());
@@ -708,9 +708,9 @@ void RuleDialog::setRule(const Rule &rule)
 
     controlAdvancedProtocol();
     controlSimpleProtocol();
-        
+
     setRuleType();
-    
+
     if(RT_SIMPLE==ruleType->currentIndex())
         simplePolicy->setFocus();
     else
@@ -743,7 +743,7 @@ void RuleDialog::update()
         // For some reason, the Validator seems to stop working occasionaly!!! So, just check the contents here, and
         // remove invalid characters...
         QString iface(advancedInterface->currentText());
-        
+
         for(int i=0; i<iface.length(); ++i)
             if(!iface[i].isLetterOrNumber())
                 iface[i]=' ';
@@ -767,7 +767,7 @@ void RuleDialog::update()
                     rules.append(Rule((Types::Policy)simplePolicy->currentIndex(),
                                       DIR_IN==simpleDirection->currentIndex(),
                                       (Types::Logging)simpleLogging->currentIndex(),
-                                      protocol, simpleDescription->text(), editingRule.getHash(),
+                                      protocol, // simpleDescription->text(), editingRule.getHash(),
                                       QString(), QString(), QString(), port));
                 }
                 else
@@ -795,7 +795,7 @@ void RuleDialog::update()
                         rules.append(Rule((Types::Policy)simplePolicy->currentIndex(),
                                         DIR_IN==simpleDirection->currentIndex(),
                                         (Types::Logging)simpleLogging->currentIndex(),
-                                        protocol, simpleDescription->text(), editingRule.getHash(),
+                                        protocol, // simpleDescription->text(), editingRule.getHash(),
                                         QString(), QString(), QString(), port));
                     }
                 }
@@ -816,16 +816,16 @@ void RuleDialog::update()
                                     DIR_IN==simpleDirection->currentIndex(),
                                     (Types::Logging)simpleLogging->currentIndex(),
                                     (Types::Protocol)simpleProtocol->currentIndex(),
-                                    simpleDescription->text(), editingRule.getHash(),
+                                    // simpleDescription->text(), editingRule.getHash(),
                                     QString(), QString(), QString(), port,
                                     QString(), QString(), QString(), app));
             }
             break;
         case RT_ADVANCED:
         {
-            bool    srcIsPreDefined=advancedSrcProfileRadio->isChecked() && 
+            bool    srcIsPreDefined=advancedSrcProfileRadio->isChecked() &&
                                         advancedIndexToPredefinedPort.contains(advancedSrcProfile->currentIndex()),
-                    destIsPreDefined=advancedDestProfileRadio->isChecked() && 
+                    destIsPreDefined=advancedDestProfileRadio->isChecked() &&
                                         advancedIndexToPredefinedPort.contains(advancedDestProfile->currentIndex());
             QString srcApp=!srcIsPreDefined && advancedSrcProfileRadio->isChecked() ? getProfileName(advancedSrcProfile->currentText()) : QString(),
                     destApp=!destIsPreDefined && advancedDestProfileRadio->isChecked() ? getProfileName(advancedDestProfile->currentText()) : QString(),
@@ -870,12 +870,12 @@ void RuleDialog::update()
                                   DIR_IN==advancedDirection->currentIndex(),
                                   (Types::Logging)advancedLogging->currentIndex(),
                                   prot,
-                                  advancedDescription->text(), editingRule.getHash(),
+                                  // advancedDescription->text(), editingRule.getHash(),
                                   srcHost, srcPort, destHost, destPort,
-                                  DIR_IN==advancedDirection->currentIndex() && 
+                                  DIR_IN==advancedDirection->currentIndex() &&
                                   advancedInterface->currentText()!=advancedInterface->itemText(0)
                                         ? advancedInterface->currentText() : QString(),
-                                  DIR_IN!=advancedDirection->currentIndex() && 
+                                  DIR_IN!=advancedDirection->currentIndex() &&
                                   advancedInterface->currentText()!=advancedInterface->itemText(0)
                                         ? advancedInterface->currentText() : QString(),
                                   srcApp, destApp));
@@ -886,9 +886,9 @@ void RuleDialog::update()
     {
         if(isEdit)
         {
-            if(rules.first().onlyDescrChanged(editingRule))
+            /*if(rules.first().onlyDescrChanged(editingRule))
                 kcm->editRuleDescr(rules.first());
-            else if(rules.first().different(editingRule))
+            else*/ if(rules.first().different(editingRule))
                 kcm->editRule(rules.first());
         }
         else if(!kcm->addRules(rules))
@@ -920,7 +920,7 @@ void RuleDialog::showError(const QString &err)
 void RuleDialog::controlSimpleProtocol()
 {
     bool fixedProto=simpleProfileRadio->isChecked();
-    
+
     simpleProtocol->setEnabled(!fixedProto);
     if(fixedProto)
         simpleProtocol->setCurrentIndex(Types::PROTO_BOTH);
@@ -930,7 +930,7 @@ void RuleDialog::controlAdvancedProtocol()
 {
     bool selectableProto=(advancedSrcPortRadio->isChecked() || advancedDestPortRadio->isChecked()) &&
                          !(advancedSrcProfileRadio->isChecked() || advancedDestProfileRadio->isChecked());
-    
+
     advancedProtocol->setEnabled(selectableProto);
     if(!selectableProto)
         advancedProtocol->setCurrentIndex(Types::PROTO_BOTH);

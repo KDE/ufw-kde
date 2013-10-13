@@ -70,13 +70,13 @@ class Helper : public QObject
     ActionReply removeRule(const QVariantMap &args, const QString &cmd);
     ActionReply moveRule(const QVariantMap &args, const QString &cmd);
     ActionReply editRule(const QVariantMap &args, const QString &cmd);
-    ActionReply editRuleDescr(const QVariantMap &args, const QString &cmd);
+//     ActionReply editRuleDescr(const QVariantMap &args, const QString &cmd);
     ActionReply reset(const QString &cmd);
     ActionReply run(const QStringList &args, const QString &cmd);
     ActionReply run(const QStringList &args, const QStringList &second, const QString &cmd);
-    
+
     private:
-    
+
     LogLister *lister;
 };
 

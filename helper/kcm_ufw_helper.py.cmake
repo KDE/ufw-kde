@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #
 # UFW KControl Module
@@ -36,7 +36,7 @@ import gettext
 import getopt
 import shutil
 import hashlib
-import StringIO
+import io
 
 from xml.etree import ElementTree as etree
 from copy import deepcopy
@@ -85,63 +85,63 @@ def localizeUfw():
     gettext.install(ufw.common.programName)
 
 #define looad descriptions file
-descrsChanged=False
-def moveOldDescrFile():
-    try:
-        if os.path.exists(OLD_DESCR_FILE) and os.path.isfile(OLD_DESCR_FILE):
-            shutil.move(OLD_DESCR_FILE, DESCR_FILE)
-    except Exception, e:
-        return # Old file does not exist, or is not a file!...
-
-def loadDescriptions():
-    moveOldDescrFile();
-    try:
-        global descrs
-        descrs={"a":"b"}
-        descrData=open(DESCR_FILE).read()
-        descrs=eval(descrData)
-    except Exception, e:
-        return
-
-def removeDescriptions():
-    try:
-        os.remove(DESCR_FILE)
-        descrsChanged=False
-    except Exception, e:
-        return
-
-def saveDescriptions():
-    global descrsChanged
-    if descrsChanged:
-        try:
-            if descrs.has_key("a"):
-                del descrs["a"]
-            if len(descrs)>0:
-                descrFile = open(DESCR_FILE, 'w')
-                descrFile.write(repr(descrs))
-                descrsChanged=False
-            else:
-                removeDescriptions()
-        except Exception, e:
-            return
-
-def getDescription(hashStr):
-    if descrs.has_key(hashStr):
-        return descrs[hashStr]
-    return ''
-
-def removeDescription(hashStr):
-    if descrs.has_key(hashStr):
-        del descrs[hashStr]
-        global descrsChanged
-        descrsChanged=True
-
-def updateDescription(hashStr, descrStr):
-    if (descrs.has_key(hashStr)==False) or (descrs[hashStr]!=descrStr):
-        removeDescription(hashStr)
-        descrs[hashStr]=descrStr
-        global descrsChanged
-        descrsChanged=True
+# descrsChanged=False
+# def moveOldDescrFile():
+#     try:
+#         if os.path.exists(OLD_DESCR_FILE) and os.path.isfile(OLD_DESCR_FILE):
+#             shutil.move(OLD_DESCR_FILE, DESCR_FILE)
+#     except Exception as e:
+#         return # Old file does not exist, or is not a file!...
+#
+# def loadDescriptions():
+#     moveOldDescrFile();
+#     try:
+#         global descrs
+#         descrs={"a":"b"}
+#         descrData=open(DESCR_FILE).read()
+#         descrs=eval(descrData)
+#     except Exception as e:
+#         return
+#
+# def removeDescriptions():
+#     try:
+#         os.remove(DESCR_FILE)
+#         descrsChanged=False
+#     except Exception as e:
+#         return
+#
+# def saveDescriptions():
+#     global descrsChanged
+#     if descrsChanged:
+#         try:
+#             if ("a" in descrs):
+#                 del descrs["a"]
+#             if len(descrs)>0:
+#                 descrFile = open(DESCR_FILE, 'w')
+#                 descrFile.write(repr(descrs))
+#                 descrsChanged=False
+#             else:
+#                 removeDescriptions()
+#         except Exception as e:
+#             return
+#
+# def getDescription(hashStr):
+#     if (hashStr in descrs):
+#         return descrs[hashStr]
+#     return ''
+#
+# def removeDescription(hashStr):
+#     if (hashStr in descrs):
+#         del descrs[hashStr]
+#         global descrsChanged
+#         descrsChanged=True
+#
+# def updateDescription(hashStr, descrStr):
+#     if ((hashStr in descrs)==False) or (descrs[hashStr]!=descrStr):
+#         removeDescription(hashStr)
+#         descrs[hashStr]=descrStr
+#         global descrsChanged
+#         descrsChanged=True
 
 def loadDefaultSettings(ufw):
     try:
@@ -163,7 +163,7 @@ def loadDefaultSettings(ufw):
                     ufw.backend.set_default(ufw.backend.files['defaults'], 'IPV6', value.lower())
                 elif parts[0] == 'modules':
                     ufw.backend.set_default(ufw.backend.files['defaults'], 'IPT_MODULES', '"' + value + '"')
-    except Exception, e:
+    except Exception as e:
         return
 
 # Localise UFW, and init the 'frontend'
@@ -238,7 +238,7 @@ def encodeText(str):
     return str
 
 def ruleDetails(rule):
-    xmlStr = StringIO.StringIO()
+    xmlStr = io.StringIO()
     xmlStr.write("action=\"")
     xmlStr.write(rule.action.lower())
     xmlStr.write("\" direction=\"")
@@ -262,28 +262,31 @@ def ruleDetails(rule):
     xmlStr.write("\" interface_out=\"")
     xmlStr.write(rule.interface_out)
     xmlStr.write("\" v6=\"")
-    xmlStr.write(`rule.v6`)
+    if rule.v6:
+        xmlStr.write('True')
+    else:
+        xmlStr.write('False')
     return xmlStr.getvalue()
 
-def detailsHash(details):
-    ruleHash = hashlib.md5()
-    ruleHash.update(details)
-    return ruleHash.hexdigest()
+# def detailsHash(details):
+#     ruleHash = hashlib.md5()
+#     ruleHash.update(details.encode('utf-8'))
+#     return ruleHash.hexdigest()
 
 # Convert a rule to an XML string...
 def toXml(rule, xmlStr):
     xmlStr.write("<rule position=\"")
-    xmlStr.write(`rule.position`)
+    xmlStr.write(str(rule.position))
     xmlStr.write("\" ")
     details=ruleDetails(rule)
     xmlStr.write(details)
-    hashStr=detailsHash(details)
-    descr=getDescription(hashStr)
-    if descr != '':
-        xmlStr.write("\" descr=\"")
-        xmlStr.write(encodeText(descr).encode('utf-8'))
-        xmlStr.write("\" hash=\"")
-        xmlStr.write(hashStr)
+#     hashStr=detailsHash(details)
+#     descr=getDescription(hashStr)
+#     if descr != '':
+#         xmlStr.write("\" descr=\"")
+#         xmlStr.write(encodeText(descr))
+#         xmlStr.write("\" hash=\"")
+#         xmlStr.write(hashStr)
     xmlStr.write("\" logtype=\"")
     xmlStr.write(rule.logtype)
     xmlStr.write("\" />")
@@ -375,25 +378,25 @@ def getRules(ufw, xmlStr):
         toXml(rule.dup_rule(), xmlStr)
     xmlStr.write("</rules>")
 
-def updateRuleDescription(rule, xml):
-    elem=etree.XML(xml)
-    descr=elem.get('descr', '')
-    oldHashCode=elem.get('hash', '')
-    if descr != '':
-        details=ruleDetails(rule)
-        hashStr=detailsHash(details)
-        # For an update, we should be passed old hash code - if so, remove old entry...
-        if oldHashCode!= '':
-            removeDescription(oldHashCode)
-        updateDescription(hashStr, descr)
-    else:
-        if oldHashCode!= '':
-            removeDescription(oldHashCode)
+# def updateRuleDescription(rule, xml):
+#     elem=etree.XML(xml)
+#     descr=elem.get('descr', '')
+#     oldHashCode=elem.get('hash', '')
+#     if descr != '':
+#         details=ruleDetails(rule)
+#         hashStr=detailsHash(details)
+#         # For an update, we should be passed old hash code - if so, remove old entry...
+#         if oldHashCode!= '':
+#             removeDescription(oldHashCode)
+#         updateDescription(hashStr, descr)
+#     else:
+#         if oldHashCode!= '':
+#             removeDescription(oldHashCode)
 
 def addRule(ufw, xml):
     rule=fromXml(xml)
     inserted=insertRule(ufw, rule)
-    updateRuleDescription(inserted, xml)
+#     updateRuleDescription(inserted, xml)
 
 def updateRule(ufw, xml):
     rule=fromXml(xml)
@@ -404,16 +407,16 @@ def updateRule(ufw, xml):
         deleted=True
         inserted=insertRule(ufw, rule)
         deleted=False
-        updateRuleDescription(inserted, xml)
-    except Exception, e:
+#         updateRuleDescription(inserted, xml)
+    except Exception as e:
         if deleted:
             insertRule(ufw, prev)
 
-def updateRuleDescr(ufw, xml):
-    rule=fromXml(xml)
-    details=ruleDetails(rule)
-    hashStr=detailsHash(details)
-    updateRuleDescription(rule, xml)
+# def updateRuleDescr(ufw, xml):
+#     rule=fromXml(xml)
+#     details=ruleDetails(rule)
+#     hashStr=detailsHash(details)
+#     updateRuleDescription(rule, xml)
 
 # Remove a rule. Index is either; just the index, or <index>:<hashcode>
 def removeRule(ufw, index):
@@ -425,14 +428,14 @@ def removeRule(ufw, index):
             idx=int(index)
         if idx<1 or idx>(ufw.backend.get_rules_count(False)+ufw.backend.get_rules_count(True)):
             error("ERROR: Invalid index", ERROR_INVALID_INDEX)
-        if 2==len(parts):
-            removeDescription(parts[1])
-        else:
-            rule=ufw.backend.get_rule_by_number(index)
-            if rule:
-                details=ruleDetails(rule)
-                hashStr=detailsHash(details)
-                removeDescription(hashStr)
+#         if 2==len(parts):
+#             removeDescription(parts[1])
+#         else:
+#             rule=ufw.backend.get_rule_by_number(index)
+#             if rule:
+#                 details=ruleDetails(rule)
+#                 hashStr=detailsHash(details)
+#                 removeDescription(hashStr)
         ufw.delete_rule(idx, True)
     #except ufw.common.UFWError as e:
         #error("ERROR: UFW error", e.value)
@@ -461,7 +464,7 @@ def reset(ufw):
         ufw.set_enabled(True)
 
 def clearRules(ufw):
-    removeDescriptions()
+#     removeDescriptions()
     count=ufw.backend.get_rules_count(False)+ufw.backend.get_rules_count(True)
     for num in range(0, count):
         try:
@@ -503,17 +506,20 @@ def error(str, rv):
 
 def main():
     try:
+#         opts, args = getopt.getopt(sys.argv[1:], "hse:df:la:u:U:r:m:tiI:x",
+#                                    ["help", "status", "setEnabled=", "defaults", "setDefaults=", "list", "add=",
+#                                     "update=", "updateDescr=", "remove=", "move=", "reset", "modules", "setModules=", "clearRules"])
         opts, args = getopt.getopt(sys.argv[1:], "hse:df:la:u:U:r:m:tiI:x",
                                    ["help", "status", "setEnabled=", "defaults", "setDefaults=", "list", "add=",
-                                    "update=", "updateDescr=", "remove=", "move=", "reset", "modules", "setModules=", "clearRules"])
-    except getopt.GetoptError, err:
+                                    "update=", "remove=", "move=", "reset", "modules", "setModules=", "clearRules"])
+    except getopt.GetoptError as err:
         # print help information and exit:
         print >> sys.stderr, str(err) # will print something like "option -a not recognized"
         usage()
         sys.exit(1)
-    loadDescriptions()
+#     loadDescriptions()
     returnXml = False
-    xmlOut = StringIO.StringIO()
+    xmlOut = io.StringIO()
     xmlOut.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?><ufw>")
     for o, a in opts:
         if o in ("-h", "--help"):
@@ -536,8 +542,8 @@ def main():
             addRule(ufw, a)
         elif o in ("-u", "--update"):
             updateRule(ufw, a)
-        elif o in ("-U", "--updateDescr"):
-            updateRuleDescr(ufw, a)
+#         elif o in ("-U", "--updateDescr"):
+#             updateRuleDescr(ufw, a)
         elif o in ("-r", "--remove"):
             removeRule(ufw, a)
         elif o in ("-m", "--move"):
@@ -553,32 +559,32 @@ def main():
             clearRules(ufw)
         else:
             usage()
-    saveDescriptions()
+#     saveDescriptions()
     if returnXml:
         xmlOut.write("</ufw>")
-        print xmlOut.getvalue()
+        print (xmlOut.getvalue())
 
 def usage():
-    print "Python helper for UFW KCM"
-    print ""
-    print "(C) Craig Drummond, 2011"
-    print ""
-    print "Usage:"
-    print "    "+sys.argv[0]+" --status"
-    print "    "+sys.argv[0]+" --setEnabled <true/false>"
-    print "    "+sys.argv[0]+" --defaults"
-    print "    "+sys.argv[0]+" --setDefaults <xml>"
-    print "    "+sys.argv[0]+" --list"
-    print "    "+sys.argv[0]+" --add <xml>"
-    print "    "+sys.argv[0]+" --update <xml>"
-    print "    "+sys.argv[0]+" --updateDescr <xml>"
-    print "    "+sys.argv[0]+" --remove <index>"
-    print "    "+sys.argv[0]+" --remove <index:hash>"
-    print "    "+sys.argv[0]+" --move <from:to>"
-    print "    "+sys.argv[0]+" --reset"
-    print "    "+sys.argv[0]+" --modules"
-    print "    "+sys.argv[0]+" --setModules <xml>"
-    print "    "+sys.argv[0]+" --clearRules"
+    print ("Python helper for UFW KCM")
+    print ("")
+    print ("(C) Craig Drummond, 2011")
+    print ("")
+    print ("Usage:")
+    print ("    "+sys.argv[0]+" --status")
+    print ("    "+sys.argv[0]+" --setEnabled <true/false>")
+    print ("    "+sys.argv[0]+" --defaults")
+    print ("    "+sys.argv[0]+" --setDefaults <xml>")
+    print ("    "+sys.argv[0]+" --list")
+    print ("    "+sys.argv[0]+" --add <xml>")
+    print ("    "+sys.argv[0]+" --update <xml>")
+#     print ("    "+sys.argv[0]+" --updateDescr <xml>")
+    print ("    "+sys.argv[0]+" --remove <index>")
+    print ("    "+sys.argv[0]+" --remove <index:hash>")
+    print ("    "+sys.argv[0]+" --move <from:to>")
+    print ("    "+sys.argv[0]+" --reset")
+    print ("    "+sys.argv[0]+" --modules")
+    print ("    "+sys.argv[0]+" --setModules <xml>")
+    print ("    "+sys.argv[0]+" --clearRules")
 
 if __name__ == "__main__":
     main()

@@ -59,7 +59,7 @@ class Kcm : public KCModule, public Ui::Ufw
     bool          addRules(const QList<Rule> &rules);
     void          createRule(const Rule &rule);
     void          editRule(Rule rule);
-    void          editRuleDescr(const Rule &rule);
+//     void          editRuleDescr(const Rule &rule);
     bool          ipV6Enabled() { return ipv6Enabled->isChecked(); }
     bool          isActive()    { return blocker->isActive(); }
 

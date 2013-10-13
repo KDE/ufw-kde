@@ -1,3 +1,9 @@
+0.5.0
+-----
+1. Convert to Python3, for compatability with Ubuntu 12.10
+2. Remove support for descriptions, seems to be a bit fiddly with Ubuntu 12.10
+   ufw, and was a bit hacky anyway!
+
 0.4.3
 -----
 1. Actually get this to work with Kubuntu 12.04!!!

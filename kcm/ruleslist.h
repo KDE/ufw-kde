@@ -44,10 +44,10 @@ class RulesList : public QTreeWidget
         COL_FROM,
         COL_TO,
         COL_IPV6,
-        COL_LOGGING,
-        COL_DESCR
+        COL_LOGGING
+//         COL_DESCR
     };
-    
+
     RulesList(QWidget *parent);
     virtual ~RulesList();
 
@@ -56,15 +56,15 @@ class RulesList : public QTreeWidget
     void              dropEvent(QDropEvent *event);
 
     public Q_SLOTS:
-    
+
     void restoreState();
 
     Q_SIGNALS:
 
     void dropped(const QTreeWidgetItem *item);
-    
+
     private:
-    
+
     bool headerSizesSet;
 };
 

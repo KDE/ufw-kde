@@ -52,23 +52,6 @@
         <widget class="QComboBox" name="simpleLogging"/>
        </item>
        <item row="7" column="0">
-        <widget class="QLabel" name="simpleDescriptionLabel">
-         <property name="text">
-          <string>Description:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="KLineEdit" name="simpleDescription">
-         <property name="clickMessage">
-          <string>Description of rule</string>
-         </property>
-         <property name="showClearButton" stdset="0">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
         <spacer name="verticalSpacer_2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -542,23 +525,6 @@
        <item row="5" column="1">
         <widget class="QComboBox" name="advancedLogging"/>
        </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="advancedDescriptionLabel">
-         <property name="text">
-          <string>Description:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="KLineEdit" name="advancedDescription">
-         <property name="clickMessage">
-          <string>Description of rule</string>
-         </property>
-         <property name="showClearButton" stdset="0">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </widget>
@@ -627,7 +593,6 @@
   <tabstop>simpleProfile</tabstop>
   <tabstop>simpleProtocol</tabstop>
   <tabstop>simpleLogging</tabstop>
-  <tabstop>simpleDescription</tabstop>
   <tabstop>advancedPolicy</tabstop>
   <tabstop>advancedDirection</tabstop>
   <tabstop>advancedSrcAnyHostRadio</tabstop>
@@ -649,7 +614,6 @@
   <tabstop>advancedProtocol</tabstop>
   <tabstop>advancedInterface</tabstop>
   <tabstop>advancedLogging</tabstop>
-  <tabstop>advancedDescription</tabstop>
  </tabstops>
  <resources/>
  <connections>

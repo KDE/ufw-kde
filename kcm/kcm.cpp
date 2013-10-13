@@ -266,17 +266,17 @@ void Kcm::editRule(Rule rule)
     }
 }
 
-void Kcm::editRuleDescr(const Rule &rule)
-{
-    QVariantMap args;
-    args["cmd"]="editRuleDescr";
-    args["xml"]=rule.toXml();
-    modifyAction.setArguments(args);
-    statusLabel->setText(i18n("Updating rule..."));
-    emit status(statusLabel->fullText());
-    blocker->setActive(true);
-    modifyAction.execute();
-}
+// void Kcm::editRuleDescr(const Rule &rule)
+// {
+//     QVariantMap args;
+//     args["cmd"]="editRuleDescr";
+//     args["xml"]=rule.toXml();
+//     modifyAction.setArguments(args);
+//     statusLabel->setText(i18n("Updating rule..."));
+//     emit status(statusLabel->fullText());
+//     blocker->setActive(true);
+//     modifyAction.execute();
+// }
 
 void Kcm::defaults()
 {
@@ -377,9 +377,9 @@ void Kcm::removeRule()
     {
         QVariantMap args;
         args["cmd"]="removeRule";
-        args["index"]=QString().setNum((unsigned int)item->data(0, Qt::UserRole).toUInt())+
+        args["index"]=QString().setNum((unsigned int)item->data(0, Qt::UserRole).toUInt())/*+
                       QChar(':')+
-                      currentRules.at((unsigned int)item->data(0, Qt::UserRole).toUInt()-1).getHash();
+                      currentRules.at((unsigned int)item->data(0, Qt::UserRole).toUInt()-1).getHash()*/;
         modifyAction.setArguments(args);
         statusLabel->setText(i18n("Removing rule from firewall..."));
         blocker->setActive(true);

@@ -44,8 +44,8 @@ class Rule
     Rule();
     Rule(QDomElement &elem);
     Rule(Types::Policy pol, bool in, Types::Logging log, Types::Protocol prot,
-         const QString &descr=QString(), const QString &hsh=QString(), 
-         const QString &srcHost=QString(), const QString &srcPort=QString(), 
+//          const QString &descr=QString(), const QString &hsh=QString(),
+         const QString &srcHost=QString(), const QString &srcPort=QString(),
          const QString &destHost=QString(), const QString &destPort=QString(),
          const QString &ifaceIn=QString(), const QString &ifaceOut=QString(),
          const QString &srcApp=QString(), const QString &destApp=QString(),
@@ -53,7 +53,7 @@ class Rule
         : position(i), action(pol), incoming(in), v6(false), protocol(prot), logtype(log),
           destApplication(destApp), sourceApplication(srcApp),
           destAddress(destHost), sourceAddress(srcHost), destPort(destPort), sourcePort(srcPort),
-          interfaceIn(ifaceIn), interfaceOut(ifaceOut), description(descr), hash(hsh)
+          interfaceIn(ifaceIn), interfaceOut(ifaceOut) // , description(descr), hash(hsh)
           { }
 
 
@@ -78,8 +78,8 @@ class Rule
     const QString & getInterfaceOut() const      { return interfaceOut; }
     Types::Protocol getProtocol() const          { return protocol; }
     Types::Logging  getLogging() const           { return logtype; }
-    const QString & getDescription() const       { return description; }
-    const QString & getHash() const              { return hash; }
+//     const QString & getDescription() const       { return description; }
+//     const QString & getHash() const              { return hash; }
 
     void setPosition(unsigned int v)            { position=v; }
     void setAction(Types::Policy v)             { action=v; }
@@ -95,19 +95,19 @@ class Rule
     void setInterfaceOut(const QString &v)      { interfaceOut=v; }
     void setProtocol(Types::Protocol v)         { protocol=v; }
     void setLogging(Types::Logging v)           { logtype=v; }
-    void setDescription(const QString &v)       { description=v; }
-    void setHash(const QString &v)              { hash=v; }
+//     void setDescription(const QString &v)       { description=v; }
+//     void setHash(const QString &v)              { hash=v; }
 
     // 'different' is used in the EditRule dialog to know whether the rule has actually changed...
     bool different(const Rule &o) const
     {
-        return logtype!=o.logtype || description!=o.description || !(*this==o);
+        return logtype!=o.logtype /*|| description!=o.description*/ || !(*this==o);
     }
-    
-    bool onlyDescrChanged(const Rule &o) const
-    {
-        return (*this==o) && logtype==o.logtype && description!=o.description;
-    }
+
+//     bool onlyDescrChanged(const Rule &o) const
+//     {
+//         return (*this==o) && logtype==o.logtype && description!=o.description;
+//     }
 
     bool operator==(const Rule &o) const
     {
@@ -141,9 +141,9 @@ class Rule
                     destPort,
                     sourcePort,
                     interfaceIn,
-                    interfaceOut,
-                    description,
-                    hash;
+                    interfaceOut;
+//                     description,
+//                     hash;
 };
 
 }

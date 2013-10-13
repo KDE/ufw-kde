@@ -58,8 +58,8 @@ QTreeWidgetItem * RulesList::insert(const Rule &rule)
                                                    << rule.fromStr()+pad
                                                    << rule.toStr()+pad
                                                    << rule.ipV6Str()+pad
-                                                   << rule.loggingStr()+pad
-                                                   << rule.getDescription()+pad);
+                                                   << rule.loggingStr()+pad/*
+                                                   << rule.getDescription()+pad*/);
 }
 
 void RulesList::resizeToContents()

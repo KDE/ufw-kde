@@ -183,7 +183,7 @@ QString Rule::protocolSuffix(Types::Protocol prot, const QString &sep)
     return Types::PROTO_BOTH==prot ? "" : (sep+Types::toString(prot));
 }
 
-QString Rule::modify(const QString &address, const QString &port, const QString &application, const QString iface, 
+QString Rule::modify(const QString &address, const QString &port, const QString &application, const QString iface,
                      const Types::Protocol &protocol, bool matchPortNoProto)
 {
     if((port==ANY_PORT || port.isEmpty()) && (address.isEmpty() || ANY_ADDR==address || ANY_ADDR_V6==address))
@@ -265,8 +265,8 @@ Rule::Rule(QDomElement &elem)
         destPort=QString();
     if(ANY_PORT==sourcePort)
         sourcePort=QString();
-    description=elem.attribute("descr");
-    hash=elem.attribute("hash");
+//     description=elem.attribute("descr");
+//     hash=elem.attribute("hash");
 }
 
 QString Rule::fromStr() const
@@ -323,10 +323,10 @@ QString Rule::toXml() const
     if(!interfaceOut.isEmpty())
         elem.setAttribute("interface_out", interfaceOut);
     elem.setAttribute("logtype", Types::toString(logtype));
-    if(!description.isEmpty())
-        elem.setAttribute("descr", description);
-    if(!hash.isEmpty())
-        elem.setAttribute("hash", hash);
+//     if(!description.isEmpty())
+//         elem.setAttribute("descr", description);
+//     if(!hash.isEmpty())
+//         elem.setAttribute("hash", hash);
     elem.setAttribute("v6", v6 ? "True" : "False");
     doc.appendChild(elem);
     return doc.toString();

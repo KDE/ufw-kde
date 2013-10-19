@@ -43,6 +43,6 @@ foreach(trans ${UFW_TRANSLATIONS})
     endif (trans STREQUAL "all")
 endforeach(trans ${UFW_TRANSLATIONS})
 
-add_subdirectory( docs )
+add_subdirectory(doc)
 
 #kde4_install_icons( ${ICON_INSTALL_DIR} )

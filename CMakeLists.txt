@@ -44,6 +44,5 @@ foreach(trans ${UFW_TRANSLATIONS})
 endforeach(trans ${UFW_TRANSLATIONS})
 
 add_subdirectory( docs )
-add_subdirectory( po )
 
 #kde4_install_icons( ${ICON_INSTALL_DIR} )

@@ -154,7 +154,7 @@
     <title>Editing</title>
     <para>
        Each time you create a rule the firewall may create a corresponding IPv6 rule. 
-       e.g. If you create a rule to block port 22 (and do not specify an IPv4 address), the firewall will create two rules -
+       &eg; if you create a rule to block port 22 (and do not specify an IPv4 address), the firewall will create two rules -
        one for IPv4 connections, and one for IPv6 connections. If you now edit the IPv4 version of this rule, and change its
        port number, then the IPv4 rule will be updated, a new IPv6 rule will be created, and the old IPv6 rule will still exist.
        Therefore, after editing the IPv4 rule you would need to delete the old IPv6 rule.
@@ -164,7 +164,7 @@
     <title>Ordering</title>
     <para>
        In the list of rules, IPv6 rules are always grouped after the IPv4 rules, and it is not possible to re-order an IPv6 rule to
-       be before an IPv4 rule. This is because the IPv6 rules are only applied to IPv6 connections, and therefore, Intermingling them
+       be before an IPv4 rule. This is because the IPv6 rules are only applied to IPv6 connections, and therefore, intermingling them
        with IPv4 rules makes no sense.
     </para>
    </sect3>
@@ -191,7 +191,7 @@
  
  <sect1 id="profiles">
   <title>Profiles</title>
-  <para>The current configuration of your firewall maybe saved in a <quote>profile.</quote> These will contain your rules,
+  <para>The current configuration of your firewall may be saved in a <quote>profile.</quote> These will contain your rules,
         the default settings, and the list of active IP-Tables modules. Using profiles allows you to easily switch between firewall settings.</para>
   <para>The profile functions can be accessed via the menu button in the lower-right of the main window.</para>
  </sect1>
@@ -209,11 +209,11 @@
 <sect2 id="description">
 <title>Describing the situation</title>
 
-<para>Let us imagine you have a workstation computer at home that is connected into a closed network with your neighbours, maybe 15 computers in all. You do not know if what neighbours are using as their primary OS'es, you also are not sure that their computers are well attended, virus and spyware free. So, though your network is behind a rooter with a firewall, you do not trust your network too much. You do not run any server or anything like that on your workstation, but sometimes you send and get files via bittorrent network using KTorrent. To make that process efficient, you have forwarded the router ports 6881/TCP and 4444/UDP to your workstation. You also connect to your workstation from outside using ssh, and to make that possible, the router is forwarding to your workstation the port 22. To make the forwarding possible, the router reserves to your workstation IP address 192.168.1.122.</para>
+<para>Let us imagine you have a workstation computer at home that is connected into a closed network with your neighbours, maybe 15 computers in all. You do not know if what neighbours are using as their primary OS'es, you also are not sure that their computers are well attended, virus and spyware free. So, though your network is behind a router with a firewall, you do not trust your network too much. You do not run any server or anything like that on your workstation, but sometimes you send and get files via bittorrent network using KTorrent. To make that process efficient, you have forwarded the router ports 6881/TCP and 4444/UDP to your workstation. You also connect to your workstation from outside using ssh, and to make that possible, the router is forwarding to your workstation the port 22. To make the forwarding possible, the router reserves to your workstation IP address 192.168.1.122.</para>
 
 <para>You also have a laptop that you connect to this network once in a while, but you also connect to other networks and to broadband at your mother's house. So it needs to be flexible about network configuration possibilities and secure at the same time. When you are connected to the home network, the router gives your notebook a reserved address 192.168.1.111.</para>
 
-<para>You use Dropbox on your workstation and your laptop to sync files. You also share files using Samba (windows networking). You want both your computers to have samba shares open to your friend, whose computer has a static IP address 192.168.1.133. </para>
+<para>You use Dropbox on your workstation and your laptop to sync files. You also share files using Samba (&Windows; networking). You want both your computers to have samba shares open to your friend, whose computer has a static IP address 192.168.1.133. </para>
  </sect2>
 
 <sect2 id="configuring">
@@ -308,7 +308,7 @@ Port: 17500. </literallayout>
 </textobject>
 </mediaobject>
 
- <para>Now, you can also get extra security by restricting the access to the Dropbox LAN sync port to only your laptop, which, remember, is constantly given the same IP address 192.168.1.111 by the router. So, You can choose to limit access to that particular IP address. In that case, choose the rule type <guimenuitem>Advanced</guimenuitem>, and fill in:</para> 
+ <para>Now, you can also get extra security by restricting the access to the Dropbox LAN sync port to only your laptop, which, remember, is constantly given the same IP address 192.168.1.111 by the router. So, you can choose to limit access to that particular IP address. In that case, choose the rule type <guimenuitem>Advanced</guimenuitem>, and fill in:</para> 
 
 <literallayout>Policy: Allow; 
 Direction: Incoming;

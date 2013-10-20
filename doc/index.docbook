@@ -143,7 +143,7 @@
      <listitem><para><quote>Description</quote> - a textual description of the rule.</para></listitem>
     </orderedlist>
    </para>
-   <para>The <quote>Advanced</quote> mode will allow you to specify any combination of; source address, source port, destination address, and destination port - as well as specifying the network interface (&eg; wlan0, eth0, &etc;) to apply the rule on. Addresses my be either; an IP address (&eg; 192.168.1.100), or subnet (&eg; 192.168.1.0/24).</para>
+   <para>The <quote>Advanced</quote> mode will allow you to specify any combination of; source address, source port, destination address, and destination port - as well as specifying the network interface (&eg; wlan0, eth0, &etc;) to apply the rule on. Addresses may be either; an IP address (&eg; 192.168.1.100), or subnet (&eg; 192.168.1.0/24).</para>
   </sect2>
   <sect2 id="ipv6_rules">
    <title>IPv6 Rules</title>

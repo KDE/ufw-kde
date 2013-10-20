@@ -69,8 +69,8 @@ QString loggingInformation()
 {
     return i18n("<p>Per rule logging.</ul>"
                 "<li><i><b>None</b></i> no logging is performed when a packet matches a rule.</li>"
-                "<li><i><b>New</b></i> will log all new connections matching a rule.</li>"
-                "<li><i><b>All</b></i> will log all packets matching a rule.</li>"
+                "<li><i><b>New connections</b></i> will log all new connections matching a rule.</li>"
+                "<li><i><b>All packets</b></i> will log all packets matching a rule.</li>"
                 "</ul></p>");
 }
 

@@ -43,7 +43,7 @@
   The second important feature a firewall has to provide is the possibility to log the network traffic. This is a much more important part of it than you may think. Logfiles are give you a good view about the activities in your network, like who did what and when. 
   </para>
   <para>
-  Logs are also really important when the firewall got cracked and you want to know how. In that you would have a much harder life if you hadn't activeted the logging functions so that you can see what has happend and how the configuration could be improved.
+  Logs are also really important when the firewall got cracked and you want to know how. In that you would have a much harder life if you hadn't activated the logging functions so that you can see what has happened and how the configuration could be improved.
   </para>
   <para>
   Most people think about firewalls as just being used to block traffic from the Internet to your host, but you may also configure your firewall to restrict the Internet access. For example you may block some well known porn sites on your Children's PC, or you just want to allow email and Web browsing in your office but you don't want your employees to be able to download files via &FTP;. </para>
@@ -73,21 +73,23 @@
   <sect2 id="logging">
    <title>Logging</title>
    <para>The general logging of the firewall may be set using the <guilabel>Logging level</guilabel> setting. This can be set to one of 
-         the following values:
+         the following values:</para>
     <orderedlist>
-     <!--I have contacted the person who wrote the UFW man page and learned from him that rate limiting here means simply limiting the number of dublicate entries. Corrected the below to make that clear, hope my english is understandable.-->
+     <!--I have contacted the person who wrote the UFW man page and learned from him that rate limiting here means simply limiting the number of duplicate entries. Corrected the below to make that clear, hope my english is understandable.-->
      <listitem><para><quote>Off</quote> - disables logging.</para></listitem>
-     <listitem><para><quote>Low</quote> - logs all blocked packets not matching the default policy (limiting the number of dublicate access attempts logged), as well as
+     <listitem><para><quote>Low</quote> - logs all blocked packets not matching the default policy (limiting the number of duplicate access attempts logged), as well as
                      packets matching logged rules.</para></listitem>
      <listitem><para><quote>Medium</quote> - as per <quote>Low</quote>, plus all allowed packets not matching the default policy, all 
-                     invalid packets, and all new connections. All logging is done limiting the number of dublicate access attempts logged.</para></listitem>
+                     invalid packets, and all new connections. All logging is done limiting the number of duplicate access attempts logged.</para></listitem>
      <listitem><para><quote>High</quote> - as per <quote>Medium</quote> (without limiting), plus all packets with (with limiting).
                </para></listitem>
      <listitem><para><quote>Full</quote> - log everything, without limiting.</para></listitem>
     </orderedlist>
-    NOTE: Levels above <quote>Medium</quote> generate a lot of logging output, and may quickly fill up your disk. Medium  may generate 
+    <note>
+    <para>Levels above <quote>Medium</quote> generate a lot of logging output, and may quickly fill up your disk. Medium  may generate 
     a lot of logging output on a busy system.
-   </para>
+    </para>
+    </note>
   </sect2>
  </sect1>
 
@@ -134,8 +136,8 @@
      <listitem><para><quote>Logging</quote> - controls per-rule logging</para>
       <orderedlist>
        <listitem><para><quote>None</quote> - no logging is performed when a packet matches a rule.</para></listitem>
-       <listitem><para><quote>New</quote> - will log all new connections matching a rule.</para></listitem>
-       <listitem><para><quote>All</quote> - will log all packets matching a rule.</para></listitem>
+       <listitem><para><quote>New connections</quote> - will log all new connections matching a rule.</para></listitem>
+       <listitem><para><quote>All packets</quote> - will log all packets matching a rule.</para></listitem>
       </orderedlist>
      </listitem>
      <listitem><para><quote>Description</quote> - a textual description of the rule.</para></listitem>
@@ -146,13 +148,13 @@
   <sect2 id="ipv6_rules">
    <title>IPv6 Rules</title>
    <para>When IPv6 support is enabled, there are in effect two firewalls - one for IPv4 connections, and one for IPv6 connections.
-       This may cause some unexpected behaviour.
+       This may cause some unexpected behavior.
    </para>
    <sect3 id="ipv6_rules_editing">
     <title>Editing</title>
     <para>
        Each time you create a rule the firewall may create a corresponding IPv6 rule. 
-       e.g. If you create a rule to block port 22 (and dont specify an IPv4 address), the firewall will create two rules -
+       e.g. If you create a rule to block port 22 (and do not specify an IPv4 address), the firewall will create two rules -
        one for IPv4 connections, and one for IPv6 connections. If you now edit the IPv4 version of this rule, and change its
        port number, then the IPv4 rule will be updated, a new IPv6 rule will be created, and the old IPv6 rule will still exist.
        Therefore, after editing the IPv4 rule you would need to delete the old IPv6 rule.
@@ -189,9 +191,9 @@
  
  <sect1 id="profiles">
   <title>Profiles</title>
-  <para>The current configuration of your filewall maybe saved in a <quote>profile.</quote> These will contain your rules,
+  <para>The current configuration of your firewall maybe saved in a <quote>profile.</quote> These will contain your rules,
         the default settings, and the list of active IP-Tables modules. Using profiles allows you to easily switch between firewall settings.</para>
-  <para>The profile fucntions can be accessed via the menu button in the lower-right of the main window.</para>
+  <para>The profile functions can be accessed via the menu button in the lower-right of the main window.</para>
  </sect1>
  
  <sect1 id="logviewer">
@@ -241,7 +243,7 @@
 </mediaobject>
 
 
-<para>After setting the general policy, you will need to make some exceptions to this policy. To enable access to Samba and ssh services on your computers, you will need ssh and Samba ports to be opened. In order to use Dropbox and KTorrent you generally do not need any ports to be opened, but it can help a great deal, if you are using lansync on Dropbox (and you will, since you syncronize files between the workstation and laptop, and it is much quicker using lansync), and if you want better rating on bittorrent network while sharing files with KTorrent. </para>
+<para>After setting the general policy, you will need to make some exceptions to this policy. To enable access to Samba and ssh services on your computers, you will need ssh and Samba ports to be opened. In order to use Dropbox and KTorrent you generally do not need any ports to be opened, but it can help a great deal, if you are using lansync on Dropbox (and you will, since you synchronize files between the workstation and laptop, and it is much quicker using lansync), and if you want better rating on bittorrent network while sharing files with KTorrent. </para>
 
 <para>Let us start with your workstation. </para>
 
@@ -253,7 +255,7 @@
 
  <title>Ssh</title>
 
- <para>Click button "Add", select rule type "Simple", and then fill in: </para>
+ <para>Click button <guibutton>Add</guibutton>, select rule type <guimenuitem>Simple</guimenuitem>, and then fill in: </para>
   
   <literallayout>Policy: Allow;
 Direction: Incoming;

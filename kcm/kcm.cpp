@@ -1211,7 +1211,7 @@ void Kcm::addModules()
     {
         headerItem->setToolTip(MOD_COL_CONN_TRACK,
                                i18n("<p><i>Connection tracking</i> is the ability to maintain connection state "
-                                    "information (such as source and destination address/port, protocol, etc.)  "
+                                    "information (such as source and destination address/port, protocol, etc.) "
                                     "in memory.</p>"
                                     "<p>Using these modules makes the firewall more secure.</p>"));
 

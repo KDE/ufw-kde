@@ -1,5 +1,6 @@
 [Domain]
 Name=Uncomplicated Firewall
+Name[bs]=Nekomplicrani odbrambeni zid
 Name[cs]=Nekomplikovaný firewall
 Name[de]=Unkomplizierte Firewall
 Name[es]=Cortafuegos simple
@@ -17,6 +18,7 @@ Name[x-test]=xxUncomplicated Firewallxx
 Icon=security-high
 [org.kde.ufw.query]
 Name=Query Firewall
+Name[bs]=upit Firewall
 Name[cs]=Dotázat se firewallu
 Name[de]=Firewall abfragen
 Name[es]=Consultar el cortafuegos
@@ -32,6 +34,7 @@ Name[tr]=Sorgu Güvenlik Duvarı
 Name[uk]=Надіслати запит до брандмауера
 Name[x-test]=xxQuery Firewallxx
 Description=Query firewall status
+Description[bs]=Upit za  Firewall postavke
 Description[cs]=Dotázat se na stav firewallu
 Description[de]=Firewallstatus abfragen
 Description[es]=Consultar el estado del cortafuegos
@@ -50,6 +53,7 @@ Policy=yes
 Persistence=session
 [org.kde.ufw.viewlog]
 Name=View Firewall Logs
+Name[bs]=Vidi  Firewall Zapise
 Name[cs]=Zobrazit záznamy firewallu
 Name[de]=Firewall-Protokolle anzeigen
 Name[es]=Ver los registros del cortafuegos
@@ -65,6 +69,7 @@ Name[tr]=Güvenlik Duvarı Günlüklerini Görüntüle
 Name[uk]=Переглянути журнал брандмауера
 Name[x-test]=xxView Firewall Logsxx
 Description=View firewall logs
+Description[bs]=vidi fireval zapise
 Description[cs]=Zobrazit záznamy firewallu
 Description[de]=Firewall-Protokolle anzeigen
 Description[es]=Ver los registros del cortafuegos
@@ -83,6 +88,7 @@ Policy=yes
 Persistence=session
 [org.kde.ufw.modify]
 Name=Modify Firewall
+Name[bs]=promijeni odbrambeni zid
 Name[cs]=Upravit firewall
 Name[de]=Firewall bearbeiten
 Name[es]=Modificar el cortafuegos
@@ -98,6 +104,7 @@ Name[tr]=Güvenlik Duvarını Değiştir
 Name[uk]=Змінити параметри брандмауера
 Name[x-test]=xxModify Firewallxx
 Description=Modify firewall settings
+Description[bs]=promijeni postavke za odbrambeni zid
 Description[cs]=Upravit nastavení firewallu
 Description[de]=Firewall-Einstellungen bearbeiten
 Description[es]=Modificar las preferencias del cortafuegos

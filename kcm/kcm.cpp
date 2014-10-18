@@ -425,7 +425,7 @@ void Kcm::setDefaultIncomingPolicy()
     args["cmd"]="setDefaults";
     args["xml"]=QString("<defaults incoming=\"")+toString((Types::Policy)defaultIncomingPolicy->currentIndex())+QString("\" />");
     modifyAction.setArguments(args);
-    statusLabel->setText(i18n("Setting firewall default incomming policy..."));
+    statusLabel->setText(i18n("Setting firewall default incoming policy..."));
     blocker->setActive(true);
     modifyAction.execute();
 }

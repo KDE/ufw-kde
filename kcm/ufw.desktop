@@ -65,6 +65,6 @@ X-KDE-Keywords[sk]=ufw,firewall
 X-KDE-Keywords[sv]=ufw,brandvägg
 X-KDE-Keywords[tr]=ufw,güvenlik duvarı
 X-KDE-Keywords[uk]=ufw,firewall,брандмауер,файрвол,фаєрвол,мережа,міжмережевий екран
-X-KDE-Keywords[x-test]=xxufw,firewallxx
+X-KDE-Keywords[x-test]=xxufwxx,xxfirewallxx
 Categories=Qt;KDE;X-KDE-settings-system;
 X-KDE-System-Settings-Parent-Category=network-and-connectivity

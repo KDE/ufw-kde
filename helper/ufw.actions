@@ -1,5 +1,6 @@
 [Domain]
 Name=Uncomplicated Firewall
+Name[ast]=Uncomplicated Firewall
 Name[bs]=Nekomplicrani odbrambeni zid
 Name[ca]=Tallafocs sense complicacions
 Name[cs]=Nekomplikovaný firewall
